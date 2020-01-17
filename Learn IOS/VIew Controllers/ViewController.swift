@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var testButton: UIButton!
+    var clickCount = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.testLabel.text = String(clickCount)
     }
 
-
+    @IBAction func click(_ sender: Any) {
+        clickCount += 1
+        self.testLabel.text = String(clickCount)
+    }
+    
 }
 
