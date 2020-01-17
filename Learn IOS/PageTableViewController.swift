@@ -24,16 +24,18 @@ class PageTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     var testList = [
-        PageList(sectionName: "UIKit", row: ["Button"])
+        PageList(sectionName: "UIKit", row: ["Button"], pageId: "learnButtonPage")
     ]
     
     class PageList{
         var sectionName: String
         var row: [String]
+        var pageId: String
         
-        init(sectionName: String, row: [String]) {
+        init(sectionName: String, row: [String], pageId: String) {
             self.sectionName = sectionName
             self.row = row
+            self.pageId = pageId
         }
     }
     
@@ -60,10 +62,13 @@ class PageTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 取消 cell 的選取狀態
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        let name = self.testList[indexPath.section].row[indexPath.row]
-        print("選擇的是 \(name)")
+        let title = self.testList[indexPath.section].row[indexPath.row]
+        print("selected \(title)")
+        
+        if let controller = storyboard?.instantiateViewController(withIdentifier: self.testList[indexPath.section].pageId) {
+            present(controller, animated: true, completion: nil)
+        }
     }
 
     /*
