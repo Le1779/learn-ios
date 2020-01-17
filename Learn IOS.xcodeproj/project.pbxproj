@@ -13,6 +13,7 @@
 		1D6270C423D09BA1001D146B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C223D09BA1001D146B /* Main.storyboard */; };
 		1D6270C623D09BA4001D146B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C523D09BA4001D146B /* Assets.xcassets */; };
 		1D6270C923D09BA4001D146B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C723D09BA4001D146B /* LaunchScreen.storyboard */; };
+		1D6270D523D14394001D146B /* PageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D423D14394001D146B /* PageTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1D6270C523D09BA4001D146B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D6270C823D09BA4001D146B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D6270CA23D09BA4001D146B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D6270D423D14394001D146B /* PageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				1D6270BE23D09BA1001D146B /* SceneDelegate.swift */,
 				1D6270C023D09BA1001D146B /* ViewController.swift */,
 				1D6270C223D09BA1001D146B /* Main.storyboard */,
+				1D6270D423D14394001D146B /* PageTableViewController.swift */,
 				1D6270C523D09BA4001D146B /* Assets.xcassets */,
 				1D6270C723D09BA4001D146B /* LaunchScreen.storyboard */,
 				1D6270CA23D09BA4001D146B /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				1D6270C123D09BA1001D146B /* ViewController.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
+				1D6270D523D14394001D146B /* PageTableViewController.swift in Sources */,
 				1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
