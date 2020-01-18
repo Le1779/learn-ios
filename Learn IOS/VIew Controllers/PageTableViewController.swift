@@ -24,18 +24,27 @@ class PageTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     var testList = [
-        PageList(sectionName: "UIKit", row: ["Button"], pageId: "learnButtonPage")
+        PageList(sectionName: "UIKit", pages: [Page(name: "Button", id: "learnButtonPage")]), 
+        PageList(sectionName: "Bluetooth", pages: [Page(name: "BLE", id: "learnBLEPage")])
     ]
     
     class PageList{
         var sectionName: String
-        var row: [String]
-        var pageId: String
+        var pages: [Page]
         
-        init(sectionName: String, row: [String], pageId: String) {
+        init(sectionName: String, pages: [Page]) {
             self.sectionName = sectionName
-            self.row = row
-            self.pageId = pageId
+            self.pages = pages
+        }
+    }
+    
+    class Page {
+        var name : String
+        var id: String
+        
+        init(name: String, id: String) {
+            self.name = name
+            self.id = id
         }
     }
     
@@ -50,23 +59,23 @@ class PageTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.testList[section].row.count
+        return self.testList[section].pages.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) 
         print("\(#function) --- section = \(indexPath.section), row = \(indexPath.row)")
         // Configure the cell...
-        cell.textLabel?.text = self.testList[indexPath.section].row[indexPath.row]
+        cell.textLabel?.text = self.testList[indexPath.section].pages[indexPath.row].name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        let title = self.testList[indexPath.section].row[indexPath.row]
+        let title = self.testList[indexPath.section].pages[indexPath.row].name
         print("selected \(title)")
         
-        if let controller = storyboard?.instantiateViewController(withIdentifier: self.testList[indexPath.section].pageId) {
+        if let controller = storyboard?.instantiateViewController(withIdentifier: self.testList[indexPath.section].pages[indexPath.row].id) {
             present(controller, animated: true, completion: nil)
         }
     }
