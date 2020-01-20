@@ -15,6 +15,7 @@
 		1D6270C923D09BA4001D146B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C723D09BA4001D146B /* LaunchScreen.storyboard */; };
 		1D6270D523D14394001D146B /* PageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D423D14394001D146B /* PageTableViewController.swift */; };
 		1D6270D823D18047001D146B /* LearnBLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D723D18047001D146B /* LearnBLEViewController.swift */; };
+		1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1D6270CA23D09BA4001D146B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D6270D423D14394001D146B /* PageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTableViewController.swift; sourceTree = "<group>"; };
 		1D6270D723D18047001D146B /* LearnBLEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEViewController.swift; sourceTree = "<group>"; };
+		1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEScanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +76,20 @@
 		1D6270D623D163B7001D146B /* VIew Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1D6270DD23D34AA6001D146B /* BLE */,
 				1D6270D423D14394001D146B /* PageTableViewController.swift */,
 				1D6270C023D09BA1001D146B /* ViewController.swift */,
 				1D6270D723D18047001D146B /* LearnBLEViewController.swift */,
+				1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */,
 			);
 			path = "VIew Controllers";
+			sourceTree = "<group>";
+		};
+		1D6270DD23D34AA6001D146B /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BLE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			files = (
 				1D6270C123D09BA1001D146B /* ViewController.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
+				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewController.swift in Sources */,
 				1D6270D523D14394001D146B /* PageTableViewController.swift in Sources */,
 				1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */,

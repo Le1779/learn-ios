@@ -25,7 +25,8 @@ class PageTableViewController: UITableViewController {
     
     var testList = [
         PageList(sectionName: "UIKit", pages: [Page(name: "Button", id: "learnButtonPage")]), 
-        PageList(sectionName: "Bluetooth", pages: [Page(name: "BLE", id: "learnBLEPage")])
+        PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
+                                                   Page(name: "BLE", id: "learnBLEPage")])
     ]
     
     class PageList{
