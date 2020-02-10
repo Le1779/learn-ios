@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D56B7EA23ED4F1200AA2F86 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D56B7E923ED4F1200AA2F86 /* TestTableViewCell.swift */; };
 		1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BC23D09BA1001D146B /* AppDelegate.swift */; };
 		1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BE23D09BA1001D146B /* SceneDelegate.swift */; };
 		1D6270C123D09BA1001D146B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270C023D09BA1001D146B /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D56B7E923ED4F1200AA2F86 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		1D6270B923D09BA1001D146B /* Learn IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6270BC23D09BA1001D146B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6270BE23D09BA1001D146B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				1D6270C023D09BA1001D146B /* ViewController.swift */,
 				1D6270D723D18047001D146B /* LearnBLEViewController.swift */,
 				1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */,
+				1D56B7E923ED4F1200AA2F86 /* TestTableViewCell.swift */,
 			);
 			path = "VIew Controllers";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewController.swift in Sources */,
+				1D56B7EA23ED4F1200AA2F86 /* TestTableViewCell.swift in Sources */,
 				1D6270D523D14394001D146B /* PageTableViewController.swift in Sources */,
 				1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */,
 			);

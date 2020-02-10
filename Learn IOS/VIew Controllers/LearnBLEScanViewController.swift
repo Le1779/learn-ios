@@ -51,21 +51,18 @@ extension LearnBLEScanViewController :UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier")
-        if cell == nil {
-            cell = UITableViewCell.init(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TestTableViewCell
         
         let peripheral = discoveredPeripherals[indexPath.row]
         
         if peripheral.peripheral.name != nil{
-            cell?.textLabel?.text = String.init(format: "Device Name: %@", (peripheral.peripheral.name)!)
+            cell.nameLabel.text = String.init(format: "Device Name: %@", (peripheral.peripheral.name)!)
         } else{
-            cell?.textLabel?.text = "No Name"
+            cell.nameLabel.text = "No Name"
         }
-        
-        cell?.detailTextLabel?.text = peripheral.rssi.stringValue
-        return cell!
+        cell.addressLabel.text = peripheral.peripheral.identifier.uuidString
+        cell.distanceLabel.text = peripheral.rssi.stringValue
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -114,6 +111,19 @@ extension LearnBLEScanViewController :CBCentralManagerDelegate{
             existedPeripheral.rssi = RSSI
         }
         
+        sortDiscoveredPeripherals()
         self.scanTableView.reloadData()
+    }
+    
+    func sortDiscoveredPeripherals(){
+        for i in 0..<discoveredPeripherals.count {
+            for j in 0..<discoveredPeripherals.count - i - 1{
+                if(discoveredPeripherals[j].rssi.intValue < discoveredPeripherals[j + 1].rssi.intValue){
+                    let temp = discoveredPeripherals[j]
+                    discoveredPeripherals[j] = discoveredPeripherals[j + 1]
+                    discoveredPeripherals[j + 1] = temp
+                }
+            }
+        }
     }
 }
