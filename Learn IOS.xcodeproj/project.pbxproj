@@ -17,6 +17,8 @@
 		1D6270D823D18047001D146B /* LearnBLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D723D18047001D146B /* LearnBLEViewController.swift */; };
 		1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */; };
 		1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D859D6E241776A10026746D /* BleScanTableViewCell.swift */; };
+		1D859D76241783E00026746D /* UIKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D859D74241783E00026746D /* UIKit.storyboard */; };
+		1D859D782417840E0026746D /* Bluetooth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D859D772417840E0026746D /* Bluetooth.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		1D6270D723D18047001D146B /* LearnBLEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEViewController.swift; sourceTree = "<group>"; };
 		1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEScanViewController.swift; sourceTree = "<group>"; };
 		1D859D6E241776A10026746D /* BleScanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleScanTableViewCell.swift; sourceTree = "<group>"; };
+		1D859D75241783E00026746D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Learn IOS/Base.lproj/UIKit.storyboard"; sourceTree = "<group>"; };
+		1D859D772417840E0026746D /* Bluetooth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bluetooth.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 		1D6270B023D09BA1001D146B = {
 			isa = PBXGroup;
 			children = (
+				1D859D772417840E0026746D /* Bluetooth.storyboard */,
+				1D859D74241783E00026746D /* UIKit.storyboard */,
 				1D6270BB23D09BA1001D146B /* Learn IOS */,
 				1D6270BA23D09BA1001D146B /* Products */,
 			);
@@ -145,7 +151,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D859D782417840E0026746D /* Bluetooth.storyboard in Resources */,
 				1D6270C923D09BA4001D146B /* LaunchScreen.storyboard in Resources */,
+				1D859D76241783E00026746D /* UIKit.storyboard in Resources */,
 				1D6270C623D09BA4001D146B /* Assets.xcassets in Resources */,
 				1D6270C423D09BA1001D146B /* Main.storyboard in Resources */,
 			);
@@ -185,6 +193,14 @@
 				1D6270C823D09BA4001D146B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1D859D74241783E00026746D /* UIKit.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D859D75241783E00026746D /* Base */,
+			);
+			name = UIKit.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
