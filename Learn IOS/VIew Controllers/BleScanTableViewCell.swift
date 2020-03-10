@@ -1,14 +1,14 @@
 //
-//  TestTableViewCell.swift
+//  BleScanTableViewCell.swift
 //  Learn IOS
 //
-//  Created by Kevin Le on 2020/2/7.
+//  Created by Kevin Le on 2020/3/10.
 //  Copyright © 2020 Kevin Le. All rights reserved.
 //
 
 import UIKit
 
-class TestTableViewCell: UITableViewCell {
+class BleScanTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!

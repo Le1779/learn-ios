@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LearnButtonViewController: UIViewController {
 
     @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var testButton: UIButton!

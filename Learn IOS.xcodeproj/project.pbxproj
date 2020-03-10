@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D56B7EA23ED4F1200AA2F86 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D56B7E923ED4F1200AA2F86 /* TestTableViewCell.swift */; };
 		1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BC23D09BA1001D146B /* AppDelegate.swift */; };
 		1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BE23D09BA1001D146B /* SceneDelegate.swift */; };
-		1D6270C123D09BA1001D146B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270C023D09BA1001D146B /* ViewController.swift */; };
+		1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */; };
 		1D6270C423D09BA1001D146B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C223D09BA1001D146B /* Main.storyboard */; };
 		1D6270C623D09BA4001D146B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C523D09BA4001D146B /* Assets.xcassets */; };
 		1D6270C923D09BA4001D146B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C723D09BA4001D146B /* LaunchScreen.storyboard */; };
-		1D6270D523D14394001D146B /* PageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D423D14394001D146B /* PageTableViewController.swift */; };
+		1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D423D14394001D146B /* MainTableViewController.swift */; };
 		1D6270D823D18047001D146B /* LearnBLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D723D18047001D146B /* LearnBLEViewController.swift */; };
 		1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */; };
+		1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D859D6E241776A10026746D /* BleScanTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D56B7E923ED4F1200AA2F86 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		1D6270B923D09BA1001D146B /* Learn IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6270BC23D09BA1001D146B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6270BE23D09BA1001D146B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1D6270C023D09BA1001D146B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnButtonViewController.swift; sourceTree = "<group>"; };
 		1D6270C323D09BA1001D146B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D6270C523D09BA4001D146B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D6270C823D09BA4001D146B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D6270CA23D09BA4001D146B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D6270D423D14394001D146B /* PageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTableViewController.swift; sourceTree = "<group>"; };
+		1D6270D423D14394001D146B /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		1D6270D723D18047001D146B /* LearnBLEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEViewController.swift; sourceTree = "<group>"; };
 		1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEScanViewController.swift; sourceTree = "<group>"; };
+		1D859D6E241776A10026746D /* BleScanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleScanTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,21 +78,13 @@
 		1D6270D623D163B7001D146B /* VIew Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D6270DD23D34AA6001D146B /* BLE */,
-				1D6270D423D14394001D146B /* PageTableViewController.swift */,
-				1D6270C023D09BA1001D146B /* ViewController.swift */,
+				1D6270D423D14394001D146B /* MainTableViewController.swift */,
+				1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */,
 				1D6270D723D18047001D146B /* LearnBLEViewController.swift */,
 				1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */,
-				1D56B7E923ED4F1200AA2F86 /* TestTableViewCell.swift */,
+				1D859D6E241776A10026746D /* BleScanTableViewCell.swift */,
 			);
 			path = "VIew Controllers";
-			sourceTree = "<group>";
-		};
-		1D6270DD23D34AA6001D146B /* BLE */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BLE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,12 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D6270C123D09BA1001D146B /* ViewController.swift in Sources */,
+				1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewController.swift in Sources */,
-				1D56B7EA23ED4F1200AA2F86 /* TestTableViewCell.swift in Sources */,
-				1D6270D523D14394001D146B /* PageTableViewController.swift in Sources */,
+				1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */,
+				1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */,
 				1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

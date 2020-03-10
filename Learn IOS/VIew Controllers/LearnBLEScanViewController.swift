@@ -51,7 +51,7 @@ extension LearnBLEScanViewController :UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TestTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BleScanTableViewCell
         
         let peripheral = discoveredPeripherals[indexPath.row]
         
@@ -113,6 +113,8 @@ extension LearnBLEScanViewController :CBCentralManagerDelegate{
         
         sortDiscoveredPeripherals()
         self.scanTableView.reloadData()
+        
+        //sign reload
     }
     
     func sortDiscoveredPeripherals(){
