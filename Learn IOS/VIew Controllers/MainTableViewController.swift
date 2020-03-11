@@ -24,7 +24,8 @@ class MainTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     var testList = [
-        PageList(sectionName: "UIKit", pages: [Page(name: "Button", id: "learnButtonPage")]), 
+        PageList(sectionName: "UIKit", pages: [Page(name: "Button", id: "learnButtonPage"),
+                                               Page(name: "TextField", id: "learnTextFieldPage")]),
         PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
                                                    Page(name: "BLE", id: "learnBLEPage")])
     ]

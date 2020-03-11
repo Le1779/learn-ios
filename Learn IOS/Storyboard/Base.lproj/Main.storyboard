@@ -64,7 +64,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="learnBLEScanPage" storyboardName="Bluetooth" referencedIdentifier="learnBLEScanPage" id="Ihn-6L-Gzl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2r-js-b4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="-733"/>
+            <point key="canvasLocation" x="151" y="-775"/>
         </scene>
         <!--learnBLEPage-->
         <scene sceneID="71W-Aw-VI2">
@@ -73,6 +73,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izz-m0-a17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-77" y="-775"/>
+        </scene>
+        <!--learnTextFieldPage-->
+        <scene sceneID="O1O-hP-Emf">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="learnTextFieldPage" storyboardName="UIKit" referencedIdentifier="learnTextFieldPage" id="6Gz-4B-oKJ" userLabel="learnTextFieldPage" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zx-a2-ypt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="180" y="-818"/>
         </scene>
     </scenes>
 </document>

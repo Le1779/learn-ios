@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */; };
 		1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BC23D09BA1001D146B /* AppDelegate.swift */; };
 		1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BE23D09BA1001D146B /* SceneDelegate.swift */; };
 		1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTextFieldViewController.swift; sourceTree = "<group>"; };
 		1D6270B923D09BA1001D146B /* Learn IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6270BC23D09BA1001D146B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6270BE23D09BA1001D146B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,11 +51,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D30E33E24188F98006CEC8F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1D6270C223D09BA1001D146B /* Main.storyboard */,
+				1D859D772417840E0026746D /* Bluetooth.storyboard */,
+				1D859D74241783E00026746D /* UIKit.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1D30E34024189000006CEC8F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */,
+				1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		1D6270B023D09BA1001D146B = {
 			isa = PBXGroup;
 			children = (
-				1D859D772417840E0026746D /* Bluetooth.storyboard */,
-				1D859D74241783E00026746D /* UIKit.storyboard */,
 				1D6270BB23D09BA1001D146B /* Learn IOS */,
 				1D6270BA23D09BA1001D146B /* Products */,
 			);
@@ -70,10 +89,11 @@
 		1D6270BB23D09BA1001D146B /* Learn IOS */ = {
 			isa = PBXGroup;
 			children = (
+				1D30E33E24188F98006CEC8F /* Storyboard */,
+				1D859D79241785860026746D /* Views */,
 				1D6270D623D163B7001D146B /* VIew Controllers */,
 				1D6270BC23D09BA1001D146B /* AppDelegate.swift */,
 				1D6270BE23D09BA1001D146B /* SceneDelegate.swift */,
-				1D6270C223D09BA1001D146B /* Main.storyboard */,
 				1D6270C523D09BA4001D146B /* Assets.xcassets */,
 				1D6270C723D09BA4001D146B /* LaunchScreen.storyboard */,
 				1D6270CA23D09BA4001D146B /* Info.plist */,
@@ -84,13 +104,20 @@
 		1D6270D623D163B7001D146B /* VIew Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1D30E34024189000006CEC8F /* UIKit */,
 				1D6270D423D14394001D146B /* MainTableViewController.swift */,
-				1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */,
 				1D6270D723D18047001D146B /* LearnBLEViewController.swift */,
 				1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */,
-				1D859D6E241776A10026746D /* BleScanTableViewCell.swift */,
 			);
 			path = "VIew Controllers";
+			sourceTree = "<group>";
+		};
+		1D859D79241785860026746D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D859D6E241776A10026746D /* BleScanTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +196,7 @@
 				1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
+				1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewController.swift in Sources */,
 				1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */,
 				1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */,
