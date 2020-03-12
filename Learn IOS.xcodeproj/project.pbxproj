@@ -70,6 +70,15 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		1D30E3432418BF5A006CEC8F /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				1D6270D723D18047001D146B /* LearnBLEViewController.swift */,
+				1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
 		1D6270B023D09BA1001D146B = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +113,9 @@
 		1D6270D623D163B7001D146B /* VIew Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1D30E3432418BF5A006CEC8F /* Bluetooth */,
 				1D30E34024189000006CEC8F /* UIKit */,
 				1D6270D423D14394001D146B /* MainTableViewController.swift */,
-				1D6270D723D18047001D146B /* LearnBLEViewController.swift */,
-				1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */,
 			);
 			path = "VIew Controllers";
 			sourceTree = "<group>";
