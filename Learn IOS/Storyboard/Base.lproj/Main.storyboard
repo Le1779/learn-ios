@@ -82,5 +82,13 @@
             </objects>
             <point key="canvasLocation" x="180" y="-818"/>
         </scene>
+        <!--layout_bmi_calculator-->
+        <scene sceneID="eGO-5B-upW">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="layout_bmi_calculator" storyboardName="Homework" referencedIdentifier="layout_bmi_calculator" id="Lqc-uD-pYq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doq-CD-Z0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="-717"/>
+        </scene>
     </scenes>
 </document>

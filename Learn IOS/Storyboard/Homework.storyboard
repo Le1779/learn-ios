@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bmi Calculator View Controller-->
+        <scene sceneID="0pL-jY-hhF">
+            <objects>
+                <viewController storyboardIdentifier="layout_bmi_calculator" id="iq4-fs-jlb" customClass="BmiCalculatorViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8UF-Lq-vzk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入身高" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-lc-YqV">
+                                <rect key="frame" x="48" y="144" width="318" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入體重" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-AM-1NI">
+                                <rect key="frame" x="48" y="228" width="318" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="體重(kg)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psc-8z-vUA">
+                                <rect key="frame" x="48" y="202" width="58.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaL-3C-neI">
+                                <rect key="frame" x="283" y="286" width="83" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <state key="normal" title="計算">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="calculate:" destination="iq4-fs-jlb" eventType="touchUpInside" id="aPC-fq-eyg"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UJ1-wk-S1I">
+                                <rect key="frame" x="48" y="364" width="318" height="450"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnn-wa-Hj9">
+                                <rect key="frame" x="48" y="180" width="318" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY7-sw-vx0">
+                                <rect key="frame" x="48" y="264" width="318" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身高(cm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6a-Iq-KY1">
+                                <rect key="frame" x="48" y="118" width="62.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YaL-3C-neI" firstAttribute="top" secondItem="wbW-AM-1NI" secondAttribute="bottom" constant="24" id="1BA-k6-dcp"/>
+                            <constraint firstItem="1iF-vM-rPZ" firstAttribute="bottom" secondItem="UJ1-wk-S1I" secondAttribute="bottom" constant="48" id="1Sa-Oh-8i6"/>
+                            <constraint firstItem="1iF-vM-rPZ" firstAttribute="trailing" secondItem="dVI-lc-YqV" secondAttribute="trailing" constant="48" id="33Y-qv-dAl"/>
+                            <constraint firstItem="dVI-lc-YqV" firstAttribute="leading" secondItem="1iF-vM-rPZ" secondAttribute="leading" constant="48" id="BV6-rq-Gxj"/>
+                            <constraint firstItem="UJ1-wk-S1I" firstAttribute="leading" secondItem="1iF-vM-rPZ" secondAttribute="leading" constant="48" id="ELK-lD-com"/>
+                            <constraint firstItem="wbW-AM-1NI" firstAttribute="leading" secondItem="1iF-vM-rPZ" secondAttribute="leading" constant="48" id="Fn6-8A-eP3"/>
+                            <constraint firstItem="UJ1-wk-S1I" firstAttribute="top" secondItem="YaL-3C-neI" secondAttribute="bottom" constant="48" id="J2f-wl-CWB"/>
+                            <constraint firstItem="1iF-vM-rPZ" firstAttribute="trailing" secondItem="UJ1-wk-S1I" secondAttribute="trailing" constant="48" id="Jgm-Jm-xNh"/>
+                            <constraint firstItem="YaL-3C-neI" firstAttribute="width" secondItem="8UF-Lq-vzk" secondAttribute="width" multiplier="0.2" id="QxC-Es-YRD"/>
+                            <constraint firstItem="dVI-lc-YqV" firstAttribute="top" secondItem="1iF-vM-rPZ" secondAttribute="top" constant="100" id="S35-TZ-B4z"/>
+                            <constraint firstItem="hnn-wa-Hj9" firstAttribute="top" secondItem="dVI-lc-YqV" secondAttribute="bottom" constant="2" id="UDw-cY-I6Q"/>
+                            <constraint firstItem="YaL-3C-neI" firstAttribute="trailing" secondItem="wbW-AM-1NI" secondAttribute="trailing" id="UTq-Dg-VGA"/>
+                            <constraint firstItem="RY7-sw-vx0" firstAttribute="top" secondItem="wbW-AM-1NI" secondAttribute="bottom" constant="2" id="WJp-SN-0mr"/>
+                            <constraint firstItem="hnn-wa-Hj9" firstAttribute="leading" secondItem="dVI-lc-YqV" secondAttribute="leading" id="c2P-LU-GAy"/>
+                            <constraint firstItem="wbW-AM-1NI" firstAttribute="top" secondItem="dVI-lc-YqV" secondAttribute="bottom" constant="50" id="enn-3B-OBJ"/>
+                            <constraint firstItem="wbW-AM-1NI" firstAttribute="leading" secondItem="psc-8z-vUA" secondAttribute="leading" id="fld-95-fnj"/>
+                            <constraint firstItem="1iF-vM-rPZ" firstAttribute="trailing" secondItem="wbW-AM-1NI" secondAttribute="trailing" constant="48" id="idU-3x-uKe"/>
+                            <constraint firstItem="dVI-lc-YqV" firstAttribute="leading" secondItem="L6a-Iq-KY1" secondAttribute="leading" id="kDM-AA-rGu"/>
+                            <constraint firstItem="hnn-wa-Hj9" firstAttribute="trailing" secondItem="dVI-lc-YqV" secondAttribute="trailing" id="ocn-fL-iWE"/>
+                            <constraint firstItem="RY7-sw-vx0" firstAttribute="leading" secondItem="wbW-AM-1NI" secondAttribute="leading" id="ttk-r8-38h"/>
+                            <constraint firstItem="RY7-sw-vx0" firstAttribute="trailing" secondItem="wbW-AM-1NI" secondAttribute="trailing" id="wDJ-cb-i1A"/>
+                            <constraint firstItem="wbW-AM-1NI" firstAttribute="top" secondItem="psc-8z-vUA" secondAttribute="bottom" constant="8" id="zJo-Oi-JWo"/>
+                            <constraint firstItem="dVI-lc-YqV" firstAttribute="top" secondItem="L6a-Iq-KY1" secondAttribute="bottom" constant="8" id="zLB-mO-LOo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1iF-vM-rPZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="YaL-3C-neI" id="UpG-Bw-XQs"/>
+                        <outlet property="heightErrorLabel" destination="hnn-wa-Hj9" id="3g6-aK-MBT"/>
+                        <outlet property="heightTextField" destination="dVI-lc-YqV" id="Z3H-nf-d1Z"/>
+                        <outlet property="resultTextView" destination="UJ1-wk-S1I" id="Mh2-W8-s9K"/>
+                        <outlet property="weightErrorLabel" destination="RY7-sw-vx0" id="rC2-Tm-3AG"/>
+                        <outlet property="weightTextField" destination="wbW-AM-1NI" id="lds-Mc-zKP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ay8-vU-Bye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="-555"/>
+        </scene>
+    </scenes>
+</document>
