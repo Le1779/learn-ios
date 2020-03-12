@@ -26,8 +26,6 @@ class BmiCalculatorViewController: UIViewController {
         let height: Double? = Double(heightTextField.text!)
         let weight: Double? = Double(weightTextField.text!)
         
-        
-        
         if !checkHeight(h: height) {
             return;
         }
@@ -39,6 +37,7 @@ class BmiCalculatorViewController: UIViewController {
         resultTextView.text = getCalculateResultText(h: height!, w: weight!)
     }
     
+    // MARK: - 輸入驗證
     func checkHeight(h: Double?) -> Bool {
         heightErrorLabel.text = ""
         
@@ -71,6 +70,7 @@ class BmiCalculatorViewController: UIViewController {
         return true
     }
     
+    // MARK: - 計算
     func getCalculateResultText(h: Double, w: Double) -> String {
         let bmi: Double = w / (h * h / 10000)
         
@@ -93,14 +93,4 @@ class BmiCalculatorViewController: UIViewController {
         return "你的ＢＭＩ值為：\(String(format:"%.1f",bmi)), \(remark)"
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
