@@ -10,6 +10,9 @@
 		1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */; };
 		1D30E345241A5F53006CEC8F /* Homework.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D30E344241A5F53006CEC8F /* Homework.storyboard */; };
 		1D30E348241A6012006CEC8F /* BmiCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E347241A6012006CEC8F /* BmiCalculatorViewController.swift */; };
+		1D30E34D241BCB78006CEC8F /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E34B241BCB78006CEC8F /* BottomSheetViewController.swift */; };
+		1D30E34E241BCB78006CEC8F /* BottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D30E34C241BCB78006CEC8F /* BottomSheetViewController.xib */; };
+		1D30E350241BCC72006CEC8F /* LearnBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E34F241BCC72006CEC8F /* LearnBottomSheetViewController.swift */; };
 		1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BC23D09BA1001D146B /* AppDelegate.swift */; };
 		1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BE23D09BA1001D146B /* SceneDelegate.swift */; };
 		1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */; };
@@ -28,6 +31,9 @@
 		1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTextFieldViewController.swift; sourceTree = "<group>"; };
 		1D30E344241A5F53006CEC8F /* Homework.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Homework.storyboard; sourceTree = "<group>"; };
 		1D30E347241A6012006CEC8F /* BmiCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorViewController.swift; sourceTree = "<group>"; };
+		1D30E34B241BCB78006CEC8F /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		1D30E34C241BCB78006CEC8F /* BottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetViewController.xib; sourceTree = "<group>"; };
+		1D30E34F241BCC72006CEC8F /* LearnBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBottomSheetViewController.swift; sourceTree = "<group>"; };
 		1D6270B923D09BA1001D146B /* Learn IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6270BC23D09BA1001D146B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6270BE23D09BA1001D146B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 			children = (
 				1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */,
 				1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */,
+				1D30E34F241BCC72006CEC8F /* LearnBottomSheetViewController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -138,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				1D859D6E241776A10026746D /* BleScanTableViewCell.swift */,
+				1D30E34B241BCB78006CEC8F /* BottomSheetViewController.swift */,
+				1D30E34C241BCB78006CEC8F /* BottomSheetViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D859D782417840E0026746D /* Bluetooth.storyboard in Resources */,
+				1D30E34E241BCB78006CEC8F /* BottomSheetViewController.xib in Resources */,
 				1D6270C923D09BA4001D146B /* LaunchScreen.storyboard in Resources */,
 				1D859D76241783E00026746D /* UIKit.storyboard in Resources */,
 				1D6270C623D09BA4001D146B /* Assets.xcassets in Resources */,
@@ -219,6 +229,8 @@
 				1D30E348241A6012006CEC8F /* BmiCalculatorViewController.swift in Sources */,
 				1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
+				1D30E350241BCC72006CEC8F /* LearnBottomSheetViewController.swift in Sources */,
+				1D30E34D241BCB78006CEC8F /* BottomSheetViewController.swift in Sources */,
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
 				1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewController.swift in Sources */,

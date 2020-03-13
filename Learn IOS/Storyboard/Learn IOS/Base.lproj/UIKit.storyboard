@@ -94,5 +94,20 @@
             </objects>
             <point key="canvasLocation" x="57.971014492753625" y="65.625"/>
         </scene>
+        <!--Learn Bottom Sheet View Controller-->
+        <scene sceneID="ASs-cx-J8c">
+            <objects>
+                <viewController storyboardIdentifier="learnBottomSheetPage" id="YvT-1I-lYZ" customClass="LearnBottomSheetViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G5Y-Pg-7lP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="O8E-bj-a0u"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYP-89-eJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="66"/>
+        </scene>
     </scenes>
 </document>
