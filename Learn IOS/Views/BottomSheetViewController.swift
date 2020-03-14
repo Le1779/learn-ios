@@ -73,6 +73,10 @@ class BottomSheetViewController: UIViewController {
     }
     
     func roundView() {
+        let path = UIBezierPath(roundedRect: partialView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        partialView.layer.mask = mask
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
     }

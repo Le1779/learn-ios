@@ -26,7 +26,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partial View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciw-27-BRw">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -49,13 +49,18 @@
                                 <constraint firstAttribute="width" secondItem="Nax-TZ-fzz" secondAttribute="height" multiplier="64:15" id="WcW-3U-sig"/>
                             </constraints>
                             <state key="normal" title="TOP"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcB-Tf-Inz">
                             <rect key="frame" x="0.0" y="75" width="374" height="673"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-Ew-yqA">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="673"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>

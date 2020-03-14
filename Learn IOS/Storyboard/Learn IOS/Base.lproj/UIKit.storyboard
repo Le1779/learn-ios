@@ -101,7 +101,20 @@
                     <view key="view" contentMode="scaleToFill" id="G5Y-Pg-7lP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn Bottom Sheet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZP-1E-tkW">
+                                <rect key="frame" x="38" y="312" width="338.5" height="48"/>
+                                <color key="backgroundColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="0ZP-1E-tkW" firstAttribute="centerY" secondItem="G5Y-Pg-7lP" secondAttribute="centerY" multiplier="0.75" id="tcJ-e3-fRo"/>
+                            <constraint firstItem="0ZP-1E-tkW" firstAttribute="centerX" secondItem="G5Y-Pg-7lP" secondAttribute="centerX" id="xjU-RC-Sfn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O8E-bj-a0u"/>
                     </view>
                 </viewController>
