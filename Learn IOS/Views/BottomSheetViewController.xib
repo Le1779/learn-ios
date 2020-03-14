@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomSheetViewController" customModule="Learn_IOS" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="tNg-BW-cDn" id="o3S-Aj-WtM"/>
+                <outlet property="partialView" destination="9BD-2D-wVk" id="aRj-Rp-IzK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,21 +18,57 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxs-qa-gkD">
-                    <rect key="frame" x="48" y="92" width="318" height="30"/>
-                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNg-BW-cDn">
+                    <rect key="frame" x="20" y="48" width="374" height="748"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BD-2D-wVk">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
+                            <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-TZ-fzz">
+                            <rect key="frame" x="123" y="-15" width="128" height="30"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="DJW-gi-r1b"/>
+                                <constraint firstAttribute="width" secondItem="Nax-TZ-fzz" secondAttribute="height" multiplier="64:15" id="WcW-3U-sig"/>
+                            </constraints>
+                            <state key="normal" title="TOP"/>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcB-Tf-Inz">
+                            <rect key="frame" x="0.0" y="374" width="374" height="374"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="tcB-Tf-Inz" secondAttribute="bottom" id="DuO-aG-UjD"/>
+                        <constraint firstItem="tcB-Tf-Inz" firstAttribute="height" secondItem="tNg-BW-cDn" secondAttribute="height" multiplier="0.5" id="FPx-Ck-uI1"/>
+                        <constraint firstItem="Nax-TZ-fzz" firstAttribute="top" secondItem="tNg-BW-cDn" secondAttribute="top" constant="-15" id="Mi6-HN-B8x"/>
+                        <constraint firstItem="9BD-2D-wVk" firstAttribute="top" secondItem="tNg-BW-cDn" secondAttribute="top" id="S4E-ZP-D41"/>
+                        <constraint firstItem="Nax-TZ-fzz" firstAttribute="centerX" secondItem="tNg-BW-cDn" secondAttribute="centerX" id="fwg-2V-5HC"/>
+                        <constraint firstAttribute="trailing" secondItem="tcB-Tf-Inz" secondAttribute="trailing" id="pPr-YW-Ruq"/>
+                        <constraint firstItem="9BD-2D-wVk" firstAttribute="height" secondItem="tNg-BW-cDn" secondAttribute="height" multiplier="0.1" id="r0e-Gh-xjZ"/>
+                        <constraint firstItem="tcB-Tf-Inz" firstAttribute="leading" secondItem="tNg-BW-cDn" secondAttribute="leading" id="sdi-nv-5T7"/>
+                        <constraint firstItem="9BD-2D-wVk" firstAttribute="leading" secondItem="tNg-BW-cDn" secondAttribute="leading" id="vPF-Cw-8A6"/>
+                        <constraint firstAttribute="trailing" secondItem="9BD-2D-wVk" secondAttribute="trailing" id="yOT-HC-Gtm"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="uxs-qa-gkD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="3iV-Lk-2na"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uxs-qa-gkD" secondAttribute="trailing" constant="48" id="4Ai-3o-2kH"/>
-                <constraint firstItem="uxs-qa-gkD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="cIQ-Vr-YwM"/>
+                <constraint firstItem="tNg-BW-cDn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="3KE-vk-zjh"/>
+                <constraint firstAttribute="bottom" secondItem="tNg-BW-cDn" secondAttribute="bottom" constant="100" id="OFw-Tw-y5E"/>
+                <constraint firstAttribute="trailing" secondItem="tNg-BW-cDn" secondAttribute="trailing" constant="20" id="Z4K-3R-82b"/>
+                <constraint firstItem="tNg-BW-cDn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="sH3-fR-Gbt"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="135"/>
         </view>
     </objects>

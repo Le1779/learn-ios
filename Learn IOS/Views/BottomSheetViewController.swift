@@ -8,25 +8,26 @@
 
 import UIKit
 
-extension BottomSheetViewController {
-    private enum State {
+class BottomSheetViewController: UIViewController {
+
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var partialView: UIView!
+    
+    enum State {
         case partial
         case full
     }
     
-    private enum Constant {
-        static let fullViewYPosition: CGFloat = 100
-        static var partialViewYPosition: CGFloat { UIScreen.main.bounds.height - 130 }
-    }
-}
-
-class BottomSheetViewController: UIViewController {
-
+    let fullViewYPosition: CGFloat = 100
+    var partialViewHeight: CGFloat = 70
+    var partialViewYPosition: CGFloat = 0
+    var currentState: State = .partial
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
         view.addGestureRecognizer(gesture)
-        roundViews()
+        initView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,7 +38,8 @@ class BottomSheetViewController: UIViewController {
     }
     
     private func moveView(state: State) {
-        let yPosition = state == .partial ? Constant.partialViewYPosition : Constant.fullViewYPosition
+        currentState = state
+        let yPosition = state == .partial ? partialViewYPosition : fullViewYPosition
         view.frame = CGRect(x: 0, y: yPosition, width: view.frame.width, height: view.frame.height)
     }
 
@@ -45,7 +47,7 @@ class BottomSheetViewController: UIViewController {
         let translation = recognizer.translation(in: view)
         let minY = view.frame.minY
         
-        if (minY + translation.y >= Constant.fullViewYPosition) && (minY + translation.y <= Constant.partialViewYPosition) {
+        if (minY + translation.y >= fullViewYPosition) && (minY + translation.y <= partialViewYPosition) {
             view.frame = CGRect(x: 0, y: minY + translation.y, width: view.frame.width, height: view.frame.height)
             recognizer.setTranslation(CGPoint.zero, in: view)
         }
@@ -62,20 +64,28 @@ class BottomSheetViewController: UIViewController {
         }
     }
     
-    func roundViews() {
+    // MARK: - Init View
+    func initView(){
+        partialViewHeight = partialView.frame.height
+        partialViewYPosition = UIScreen.main.bounds.height - fullViewYPosition - partialViewHeight
+        roundView()
+        initPartialView()
+    }
+    
+    func roundView() {
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func initPartialView(){
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.clickPartialView))
+        partialView.addGestureRecognizer(gesture)
     }
-    */
-
+    
+    @objc func clickPartialView(sender : UITapGestureRecognizer) {
+        UIView.animate(withDuration: 1, delay: 0.0, options: [.allowUserInteraction], animations: {
+            self.moveView(state: self.currentState == .partial ? .full : .partial)
+        }, completion: nil)
+        
+    }
 }
