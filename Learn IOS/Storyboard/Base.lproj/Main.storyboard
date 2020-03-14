@@ -90,6 +90,14 @@
             </objects>
             <point key="canvasLocation" x="452" y="-818"/>
         </scene>
+        <!--learnPageViewPage-->
+        <scene sceneID="2SU-Bs-ChS">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="learnPageViewPage" storyboardName="UIKit" referencedIdentifier="learnPageViewPage" id="SQk-zs-o9f" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yd3-Ca-tv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="-819"/>
+        </scene>
         <!--layout_bmi_calculator-->
         <scene sceneID="eGO-5B-upW">
             <objects>

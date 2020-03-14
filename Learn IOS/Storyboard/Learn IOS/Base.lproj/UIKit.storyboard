@@ -109,5 +109,94 @@
             </objects>
             <point key="canvasLocation" x="796" y="66"/>
         </scene>
+        <!--Learn Page View View Controller-->
+        <scene sceneID="eaq-aF-TnQ">
+            <objects>
+                <pageViewController storyboardIdentifier="learnPageViewPage" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="BRw-qq-Iei" customClass="LearnPageViewViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELb-SD-G83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="859"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YIU-V9-NnD">
+            <objects>
+                <viewController storyboardIdentifier="learnPageViewFirstPage" id="ncK-tW-rXJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pWf-pH-IhR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjr-ah-iZr">
+                                <rect key="frame" x="113" y="421" width="188.5" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.69158197684230438" blue="0.55608552576838066" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Qjr-ah-iZr" firstAttribute="centerY" secondItem="pWf-pH-IhR" secondAttribute="centerY" id="M6Y-y4-7Gm"/>
+                            <constraint firstItem="Qjr-ah-iZr" firstAttribute="centerX" secondItem="pWf-pH-IhR" secondAttribute="centerX" id="MWR-sX-b03"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uMP-mb-EBh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0e-eI-9O3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="859"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fyp-tq-pMB">
+            <objects>
+                <viewController storyboardIdentifier="learnPageViewSecondPage" id="uwU-c5-g7D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gjG-FG-c3h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-NF-tfO">
+                                <rect key="frame" x="81" y="421" width="252.5" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33629497665467289" green="0.58186049612078072" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="dh3-NF-tfO" firstAttribute="centerY" secondItem="gjG-FG-c3h" secondAttribute="centerY" id="2y0-mZ-qyt"/>
+                            <constraint firstItem="dh3-NF-tfO" firstAttribute="centerX" secondItem="gjG-FG-c3h" secondAttribute="centerX" id="qgx-zE-eBI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wbU-gi-T7Q"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3WM-7q-6yM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="858"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ncH-Bb-5Lj">
+            <objects>
+                <viewController storyboardIdentifier="learnPageViewThirdPage" id="xTD-u9-aWo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cnn-b3-4AQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcv-UU-XrE">
+                                <rect key="frame" x="105" y="421" width="204.5" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83192649628346071" green="0.55105548663964932" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wcv-UU-XrE" firstAttribute="centerX" secondItem="cnn-b3-4AQ" secondAttribute="centerX" id="RbU-eg-c9E"/>
+                            <constraint firstItem="wcv-UU-XrE" firstAttribute="centerY" secondItem="cnn-b3-4AQ" secondAttribute="centerY" id="m95-Mf-5cV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gKG-d0-jxL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXT-pW-MW0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1539" y="858"/>
+        </scene>
     </scenes>
 </document>

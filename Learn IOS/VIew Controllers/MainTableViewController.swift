@@ -26,7 +26,8 @@ class MainTableViewController: UITableViewController {
     var testList = [
         PageList(sectionName: "UIKit", pages: [Page(name: "Button", id: "learnButtonPage"),
                                                Page(name: "TextField", id: "learnTextFieldPage"),
-                                               Page(name: "Bottom Sheet", id: "learnBottomSheetPage")]),
+                                               Page(name: "Bottom Sheet", id: "learnBottomSheetPage"),
+                                               Page(name: "PageView", id: "learnPageViewPage")]),
         PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
                                                    Page(name: "BLE", id: "learnBLEPage")]),
         PageList(sectionName: "Homework", pages: [Page(name: "BmiCalculator", id: "layout_bmi_calculator")])
