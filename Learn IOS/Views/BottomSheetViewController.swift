@@ -57,9 +57,9 @@ class BottomSheetViewController: UIViewController {
         moveView(panGestureRecognizer: recognizer)
         
         if recognizer.state == .ended {
-            UIView.animate(withDuration: 1, delay: 0.0, options: [.allowUserInteraction], animations: {
-                let state: State = recognizer.velocity(in: self.view).y >= 0 ? .partial : .full
-                self.moveView(state: state)
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.25, delay: 0, animations: {
+               let state: State = recognizer.velocity(in: self.view).y >= 0 ? .partial : .full
+               self.moveView(state: state)
             }, completion: nil)
         }
     }
@@ -83,9 +83,8 @@ class BottomSheetViewController: UIViewController {
     }
     
     @objc func clickPartialView(sender : UITapGestureRecognizer) {
-        UIView.animate(withDuration: 1, delay: 0.0, options: [.allowUserInteraction], animations: {
-            self.moveView(state: self.currentState == .partial ? .full : .partial)
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.25, delay: 0, animations: {
+           self.moveView(state: self.currentState == .partial ? .full : .partial)
         }, completion: nil)
-        
     }
 }
