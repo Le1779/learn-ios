@@ -32,8 +32,6 @@ class ScanBleBottomSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeFakeData()
-        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
-        view.addGestureRecognizer(gesture)
         initView()
     }
     
@@ -73,11 +71,17 @@ class ScanBleBottomSheetViewController: UIViewController {
     
     // MARK: - Init View
     func initView(){
+        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
+        view.addGestureRecognizer(gesture)
         partialViewHeight = partialView.frame.height
-        partialViewYPosition = UIScreen.main.bounds.height - fullViewYPosition - partialViewHeight + cornerRadius
+        partialViewYPosition = UIScreen.main.bounds.height - fullViewYPosition - partialViewHeight + getBottomSafeHeight()
         roundView()
         initPartialView()
         initTableVIew()
+    }
+    
+    func getBottomSafeHeight() -> CGFloat {
+        return (UIScreen.main.bounds.height == view.frame.height ? 0 : 34) + cornerRadius
     }
     
     func roundView() {

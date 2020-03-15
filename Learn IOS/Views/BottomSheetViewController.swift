@@ -67,7 +67,7 @@ class BottomSheetViewController: UIViewController {
     // MARK: - Init View
     func initView(){
         partialViewHeight = partialView.frame.height
-        partialViewYPosition = UIScreen.main.bounds.height - fullViewYPosition - partialViewHeight
+        partialViewYPosition = UIScreen.main.bounds.height - fullViewYPosition - partialViewHeight + getBottomSafeHeight()
         roundView()
         initPartialView()
     }
@@ -90,5 +90,9 @@ class BottomSheetViewController: UIViewController {
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.25, delay: 0, animations: {
            self.moveView(state: self.currentState == .partial ? .full : .partial)
         }, completion: nil)
+    }
+    
+    func getBottomSafeHeight() -> CGFloat {
+        return UIScreen.main.bounds.height == view.frame.height ? 0 : 34
     }
 }
