@@ -13,6 +13,8 @@ class ScanBleBottomSheetViewController: UIViewController {
     @IBOutlet weak var partialView: UIView!
     @IBOutlet weak var tableViewContainer: UIView!
     @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var connectingProgress: UIActivityIndicatorView!
+    @IBOutlet weak var connectStateLabel: UILabel!
     
     var scanTableView: UITableView!
     
@@ -40,6 +42,10 @@ class ScanBleBottomSheetViewController: UIViewController {
         UIView.animate(withDuration: 0.6, animations: {
             self.moveView(state: .partial)
         })
+    }
+    
+    public func getPartialViewHeight() -> (CGFloat){
+        return partialViewHeight
     }
     
     private func moveView(state: State) {
@@ -105,30 +111,19 @@ class ScanBleBottomSheetViewController: UIViewController {
     }
     
     func initTableVIew(){
-        scanTableView = UITableView(frame: CGRect(
-        x: 0, y: 0,
-        width: tableViewContainer.frame.width,
-        height: tableViewContainer.frame.height),
-        style: .plain)
+        scanTableView = UITableView(
+            frame: CGRect(
+                x: 0, y: 0,
+                width: tableViewContainer.frame.width,
+                height: tableViewContainer.frame.height),
+            style: .plain)
         
         scanTableView.register(UINib(nibName: "ScanBleTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         scanTableView.delegate = self
         scanTableView.dataSource = self
-
-        // 分隔線的樣式
         scanTableView.separatorStyle = .singleLine
-
-        // 分隔線的間距 四個數值分別代表 上、左、下、右 的間距
         scanTableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-
-        // 是否可以點選 cell
-        scanTableView.allowsSelection = true
-
-        // 是否可以多選 cell
-        scanTableView.allowsMultipleSelection = false
-
-        // 加入到畫面中
         tableViewContainer.addSubview(scanTableView)
     }
 
@@ -138,6 +133,7 @@ class ScanBleBottomSheetViewController: UIViewController {
     
     func makeFakeData(){
         fakeData.append("Device1")
+        fakeData.append("Device2-TESTDEVICENAME")
     }
 }
 
@@ -156,6 +152,7 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ScanBleTableViewCell
         
         cell.nameLabel.text = String.init(format: "Device Name: %@", fakeData[indexPath.row])
+        
         //cell.addressLabel.text = peripheral.peripheral.identifier.uuidString
         //cell.distanceLabel.text = peripheral.rssi.stringValue
         
@@ -163,6 +160,10 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        connectingProgress.startAnimating()
+        connectStateLabel.text = "正在連線(" + fakeData[indexPath.row] + ")"
         print(String.init(format: "Select device Name: %@", fakeData[indexPath.row]))
     }
+    
 }

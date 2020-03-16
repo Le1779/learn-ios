@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanBleBottomSheetViewController" customModule="Learn_IOS" customModuleProvider="target">
             <connections>
+                <outlet property="connectStateLabel" destination="ixR-KT-hdn" id="m6k-dy-U0N"/>
+                <outlet property="connectingProgress" destination="8Zw-6A-XzQ" id="pk5-iJ-t9L"/>
                 <outlet property="partialView" destination="PCm-b6-yqh" id="oBe-hx-Yl1"/>
                 <outlet property="scanButton" destination="CQO-Rh-bKT" id="C5i-aV-hgc"/>
                 <outlet property="tableViewContainer" destination="WDN-d6-a5P" id="ko9-7c-QKy"/>
@@ -26,7 +28,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="374" height="112"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尚未連線" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixR-KT-hdn">
-                                    <rect key="frame" x="85.5" y="38.5" width="82" height="24"/>
+                                    <rect key="frame" x="85.5" y="38.5" width="203.5" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
@@ -35,12 +37,19 @@
                                     <rect key="frame" x="24" y="32" width="37.5" height="35.5"/>
                                     <color key="tintColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </imageView>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8Zw-6A-XzQ">
+                                    <rect key="frame" x="313" y="37.5" width="37" height="37"/>
+                                    <color key="color" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstItem="09w-Md-L6e" firstAttribute="width" secondItem="PCm-b6-yqh" secondAttribute="width" multiplier="0.1" id="51f-GY-MiP"/>
                                 <constraint firstItem="09w-Md-L6e" firstAttribute="height" secondItem="PCm-b6-yqh" secondAttribute="height" multiplier="0.3" id="H0M-UV-VKJ"/>
                                 <constraint firstItem="09w-Md-L6e" firstAttribute="centerY" secondItem="PCm-b6-yqh" secondAttribute="centerY" multiplier="0.9" id="Pao-nt-Yxn"/>
+                                <constraint firstAttribute="trailing" secondItem="8Zw-6A-XzQ" secondAttribute="trailing" constant="24" id="aZn-yD-2Cw"/>
+                                <constraint firstItem="8Zw-6A-XzQ" firstAttribute="leading" secondItem="ixR-KT-hdn" secondAttribute="trailing" constant="24" id="ime-em-Sb6"/>
+                                <constraint firstItem="8Zw-6A-XzQ" firstAttribute="centerY" secondItem="PCm-b6-yqh" secondAttribute="centerY" id="lGd-dV-x1r"/>
                                 <constraint firstItem="ixR-KT-hdn" firstAttribute="leading" secondItem="09w-Md-L6e" secondAttribute="trailing" constant="24" id="uqy-VM-TvH"/>
                                 <constraint firstItem="ixR-KT-hdn" firstAttribute="centerY" secondItem="PCm-b6-yqh" secondAttribute="centerY" multiplier="0.9" id="vcQ-Xt-LVw"/>
                                 <constraint firstItem="09w-Md-L6e" firstAttribute="leading" secondItem="PCm-b6-yqh" secondAttribute="leading" constant="24" id="zR5-sS-mmq"/>
