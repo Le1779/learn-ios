@@ -44,6 +44,10 @@ class ScanBleBottomSheetViewController: UIViewController {
         })
     }
     
+    override func viewDidLayoutSubviews() {
+        scanTableView.frame = CGRect(x: 0, y: 0, width: tableViewContainer.frame.width, height: tableViewContainer.frame.height)
+    }
+    
     public func getPartialViewHeight() -> (CGFloat){
         return partialViewHeight
     }
@@ -112,19 +116,16 @@ class ScanBleBottomSheetViewController: UIViewController {
     
     func initTableVIew(){
         scanTableView = UITableView(
-            frame: CGRect(
-                x: 0, y: 0,
-                width: tableViewContainer.frame.width,
-                height: tableViewContainer.frame.height),
-            style: .plain)
+            frame: CGRect(x: 0, y: 0, width: tableViewContainer.frame.width, height: 100),
+            style: .plain
+        )
         
         scanTableView.register(UINib(nibName: "ScanBleTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        
         scanTableView.delegate = self
         scanTableView.dataSource = self
         scanTableView.separatorStyle = .singleLine
         scanTableView.rowHeight = 80
-        //scanTableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        scanTableView.backgroundColor = UIColor.white
         tableViewContainer.addSubview(scanTableView)
     }
 
@@ -146,6 +147,7 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ScanBleTableViewCell
+        cell.backgroundColor = UIColor.white
         
         let device = Array(scanDevices.values)[indexPath.row]
         

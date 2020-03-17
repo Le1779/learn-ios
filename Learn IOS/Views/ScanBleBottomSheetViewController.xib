@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,23 +22,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drd-nB-kvr">
-                    <rect key="frame" x="20" y="48" width="374" height="748"/>
+                    <rect key="frame" x="20" y="48" width="374" height="758"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCm-b6-yqh">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="112"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="113.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尚未連線" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixR-KT-hdn">
-                                    <rect key="frame" x="85.5" y="38.5" width="203.5" height="24"/>
+                                    <rect key="frame" x="85.5" y="39" width="203.5" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="lightbulb" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="09w-Md-L6e">
-                                    <rect key="frame" x="24" y="32" width="37.5" height="35.5"/>
+                                    <rect key="frame" x="24" y="32.5" width="37.5" height="35.5"/>
                                     <color key="tintColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </imageView>
                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8Zw-6A-XzQ">
-                                    <rect key="frame" x="313" y="37.5" width="37" height="37"/>
+                                    <rect key="frame" x="313" y="38.5" width="37" height="37"/>
                                     <color key="color" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </activityIndicatorView>
                             </subviews>
@@ -55,17 +55,19 @@
                                 <constraint firstItem="09w-Md-L6e" firstAttribute="leading" secondItem="PCm-b6-yqh" secondAttribute="leading" constant="24" id="zR5-sS-mmq"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="搜尋條件" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyK-JB-8AI">
-                            <rect key="frame" x="24" y="136" width="267" height="34"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="搜尋條件" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyK-JB-8AI">
+                            <rect key="frame" x="24" y="137.5" width="267" height="34"/>
+                            <color key="backgroundColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQO-Rh-bKT">
-                            <rect key="frame" x="299" y="136" width="51" height="34"/>
-                            <color key="backgroundColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <rect key="frame" x="299" y="137.5" width="51" height="34"/>
+                            <color key="backgroundColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <inset key="contentEdgeInsets" minX="10" minY="8" maxX="10" maxY="8"/>
                             <state key="normal" title="搜尋">
-                                <color key="titleColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="titleColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -77,11 +79,11 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDN-d6-a5P">
-                            <rect key="frame" x="24" y="194" width="326" height="506"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <rect key="frame" x="24" y="195.5" width="326" height="514.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="WDN-d6-a5P" secondAttribute="trailing" constant="24" id="6uH-Rc-fER"/>
                         <constraint firstAttribute="trailing" secondItem="PCm-b6-yqh" secondAttribute="trailing" id="9Wn-ie-6L5"/>
@@ -99,10 +101,10 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                            <real key="value" value="0.25"/>
+                            <real key="value" value="0.5"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -110,7 +112,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="drd-nB-kvr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="BEJ-8d-b0Y"/>
-                <constraint firstAttribute="bottom" secondItem="drd-nB-kvr" secondAttribute="bottom" constant="100" id="Cij-5o-qFp"/>
+                <constraint firstAttribute="bottom" secondItem="drd-nB-kvr" secondAttribute="bottom" constant="90" id="Cij-5o-qFp"/>
                 <constraint firstAttribute="trailing" secondItem="drd-nB-kvr" secondAttribute="trailing" constant="20" id="Gfe-lH-IEq"/>
                 <constraint firstItem="drd-nB-kvr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ZVM-vM-t02"/>
             </constraints>
