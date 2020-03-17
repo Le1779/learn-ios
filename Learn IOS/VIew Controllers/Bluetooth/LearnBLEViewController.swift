@@ -1,7 +1,7 @@
 //
 //  LearnBLEViewController.swift
 //  Learn IOS
-//
+//  學習如何操作BLE，目標：搜尋 連線 斷線 Read/Write
 //  Created by Kevin Le on 2020/3/14.
 //  Copyright © 2020 Kevin Le. All rights reserved.
 //
@@ -13,7 +13,7 @@ class LearnBLEViewController: UIViewController {
     @IBOutlet weak var commandTextField: UITextField!
     @IBOutlet weak var responseTextView: UITextView!
     @IBOutlet weak var bottomSheetArea: UIView!
-    var bottomSheet: ScanBleBottomSheetViewController!
+    private var bottomSheet: ScanBleBottomSheetViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

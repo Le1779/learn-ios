@@ -20,6 +20,7 @@
 		1D30E35D241D2296006CEC8F /* ScanBleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E35B241D2296006CEC8F /* ScanBleTableViewCell.swift */; };
 		1D30E35E241D2296006CEC8F /* ScanBleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D30E35C241D2296006CEC8F /* ScanBleTableViewCell.xib */; };
 		1D30E361241F1A85006CEC8F /* DiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E360241F1A85006CEC8F /* DiscoveredPeripheral.swift */; };
+		1D30E363241F6B1A006CEC8F /* BleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E362241F6B1A006CEC8F /* BleHelper.swift */; };
 		1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BC23D09BA1001D146B /* AppDelegate.swift */; };
 		1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BE23D09BA1001D146B /* SceneDelegate.swift */; };
 		1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */; };
@@ -48,6 +49,7 @@
 		1D30E35B241D2296006CEC8F /* ScanBleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBleTableViewCell.swift; sourceTree = "<group>"; };
 		1D30E35C241D2296006CEC8F /* ScanBleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanBleTableViewCell.xib; sourceTree = "<group>"; };
 		1D30E360241F1A85006CEC8F /* DiscoveredPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredPeripheral.swift; sourceTree = "<group>"; };
+		1D30E362241F6B1A006CEC8F /* BleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleHelper.swift; sourceTree = "<group>"; };
 		1D6270B923D09BA1001D146B /* Learn IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6270BC23D09BA1001D146B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6270BE23D09BA1001D146B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				1D30E360241F1A85006CEC8F /* DiscoveredPeripheral.swift */,
+				1D30E362241F6B1A006CEC8F /* BleHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				1D30E352241CBE41006CEC8F /* LearnPageViewViewController.swift in Sources */,
 				1D30E361241F1A85006CEC8F /* DiscoveredPeripheral.swift in Sources */,
 				1D30E356241CFA97006CEC8F /* LearnBLEViewController.swift in Sources */,
+				1D30E363241F6B1A006CEC8F /* BleHelper.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewControllerOLD.swift in Sources */,
 				1D30E35D241D2296006CEC8F /* ScanBleTableViewCell.swift in Sources */,
 				1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */,

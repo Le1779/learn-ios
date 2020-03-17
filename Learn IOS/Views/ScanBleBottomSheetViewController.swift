@@ -1,7 +1,7 @@
 //
 //  ScanBleBottomSheetViewController.swift
 //  Learn IOS
-//
+//  藍芽連線的Bottom Sheet，搜尋裝置，點擊列表連接裝置，顯示連線狀態
 //  Created by Kevin Le on 2020/3/14.
 //  Copyright © 2020 Kevin Le. All rights reserved.
 //
@@ -16,7 +16,7 @@ class ScanBleBottomSheetViewController: UIViewController {
     @IBOutlet weak var connectingProgress: UIActivityIndicatorView!
     @IBOutlet weak var connectStateLabel: UILabel!
     
-    var scanTableView: UITableView!
+    private var scanTableView: UITableView!
     
     enum State {
         case partial
@@ -33,6 +33,7 @@ class ScanBleBottomSheetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        BleHelper.instance.addScanListener(listener: self)
         makeFakeData()
         initView()
     }
@@ -128,7 +129,7 @@ class ScanBleBottomSheetViewController: UIViewController {
     }
 
     @IBAction func scan(_ sender: Any) {
-        print("Start Scan")
+        BleHelper.instance.startScan()
     }
     
     func makeFakeData(){
@@ -166,4 +167,19 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
         print(String.init(format: "Select device Name: %@", fakeData[indexPath.row]))
     }
     
+}
+
+extension ScanBleBottomSheetViewController: ScanListener{
+    
+    func getTag() -> (String) {
+        return "ScanBleBottomSheetViewController"
+    }
+    
+    func findNewDevice(name: String, mac: String, rssi:NSNumber){
+        print("findNewDevice N:\(name), M:\(mac), R:\(rssi)")
+    }
+    
+    func updateRssi(mac: String, rssi:NSNumber){
+        print("updateRssi M:\(mac), R:\(rssi)")
+    }
 }
