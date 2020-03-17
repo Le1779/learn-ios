@@ -131,6 +131,7 @@ class ScanBleBottomSheetViewController: UIViewController {
     }
 
     @IBAction func scan(_ sender: Any) {
+        self.scanButton.isEnabled = false
         BleHelper.instance.startScan()
     }
 }
@@ -189,6 +190,12 @@ extension ScanBleBottomSheetViewController: ScanListener{
         scanDevicesDict[mac]?.rssi = rssi
         sortAndSetScanDevices()
         self.scanTableView.reloadData()
+    }
+    
+    func isStopScan(){
+        DispatchQueue.main.async{
+            self.scanButton.isEnabled = true
+        }
     }
     
     func sortAndSetScanDevices(){

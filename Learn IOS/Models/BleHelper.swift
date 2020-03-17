@@ -43,12 +43,14 @@ class BleHelper: NSObject{
     
     public func startScan(){
         print("Start Scan")
+        if self.centralManager!.isScanning {
+            return
+        }
+        
         discoveredDevices.removeAll(keepingCapacity: false)
         DispatchQueue.global().async {
             sleep(UInt32(10))
-            if self.centralManager!.isScanning {
-                self.stopScan()
-            }
+            self.stopScan()
         }
         
         let options = [CBCentralManagerScanOptionAllowDuplicatesKey: true]
@@ -57,7 +59,10 @@ class BleHelper: NSObject{
     
     public func stopScan(){
         print("Stop Scan")
-        centralManager?.stopScan()
+        if self.centralManager!.isScanning {
+            notifyIsStopScan()
+            centralManager?.stopScan()
+        }
     }
     
     public func addScanListener(listener: ScanListener) {
@@ -81,6 +86,12 @@ class BleHelper: NSObject{
         for listener in scanListeners {
             let mac = peripheral.identifier.uuidString
             listener.updateRssi?(mac: mac, rssi: rssi)
+        }
+    }
+    
+    private func notifyIsStopScan(){
+        for listener in scanListeners {
+            listener.isStopScan?()
         }
     }
     
@@ -141,4 +152,9 @@ extension BleHelper: CBCentralManagerDelegate{
      更新裝置的RSSI
      */
     @objc optional func updateRssi(mac: String, rssi:NSNumber)
+    
+    /**
+     已經停止掃描
+     */
+    @objc optional func isStopScan()
 }
