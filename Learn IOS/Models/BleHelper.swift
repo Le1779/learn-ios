@@ -25,12 +25,20 @@ class BleHelper: NSObject{
         centralManager = CBCentralManager.init(delegate: self, queue: .main)
     }
     
-    public func connect(peripheral: CBPeripheral){
-        centralManager?.connect(peripheral, options: nil)
+    public func connect(mac: String){
+        let peripheral = findPeripheralByMac(mac: mac)
+        
+        if peripheral != nil {
+            centralManager?.connect(peripheral!, options: nil)
+        }
     }
     
-    public func disConnect(peripheral:CBPeripheral){
-        centralManager?.cancelPeripheralConnection(peripheral)
+    public func disConnect(mac: String){
+        let peripheral = findPeripheralByMac(mac: mac)
+        
+        if peripheral != nil {
+            centralManager?.cancelPeripheralConnection(peripheral!)
+        }
     }
     
     public func startScan(){
@@ -38,7 +46,9 @@ class BleHelper: NSObject{
         discoveredDevices.removeAll(keepingCapacity: false)
         DispatchQueue.global().async {
             sleep(UInt32(10))
-            self.stopScan()
+            if self.centralManager!.isScanning {
+                self.stopScan()
+            }
         }
         
         let options = [CBCentralManagerScanOptionAllowDuplicatesKey: true]
@@ -72,6 +82,10 @@ class BleHelper: NSObject{
             let mac = peripheral.identifier.uuidString
             listener.updateRssi?(mac: mac, rssi: rssi)
         }
+    }
+    
+    private func findPeripheralByMac(mac: String) -> CBPeripheral? {
+        return discoveredDevices.first(where: {$0.identifier.uuidString == mac})
     }
 }
 

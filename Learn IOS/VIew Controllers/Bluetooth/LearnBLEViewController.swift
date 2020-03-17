@@ -26,6 +26,11 @@ class LearnBLEViewController: UIViewController {
         bottomSheetArea.frame = CGRect(x: 0, y: self.view.frame.height - afterHeight, width: bottomSheetArea.frame.width, height: afterHeight)
     }
     
+    override func viewDidDisappear(_ animated: Bool){
+        super.viewDidDisappear(animated)
+        BleHelper.instance.stopScan()
+    }
+    
     func addBottomSheetView() {
         bottomSheet = ScanBleBottomSheetViewController()
         

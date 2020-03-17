@@ -161,8 +161,9 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        connectingProgress.startAnimating()
+        BleHelper.instance.stopScan()
         
+        connectingProgress.startAnimating()
         let device = scanDevices[indexPath.row]
         connectStateLabel.text = "正在連線(\(device.name))"
         print(String.init(format: "Select device Name: %@", device.name))
