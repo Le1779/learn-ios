@@ -36,11 +36,17 @@ class BleHelper: NSObject{
     public func startScan(){
         print("Start Scan")
         discoveredDevices.removeAll(keepingCapacity: false)
+        DispatchQueue.global().async {
+            sleep(UInt32(10))
+            self.stopScan()
+        }
+        
         let options = [CBCentralManagerScanOptionAllowDuplicatesKey: true]
         centralManager?.scanForPeripherals(withServices: nil, options: options)
     }
     
     public func stopScan(){
+        print("Stop Scan")
         centralManager?.stopScan()
     }
     
@@ -54,9 +60,10 @@ class BleHelper: NSObject{
     
     private func notifyFindNewDevice(peripheral: CBPeripheral, rssi: NSNumber){
         for listener in scanListeners {
-            let name = peripheral.name ?? ""
+            let name = peripheral.name ?? "-"
             let mac = peripheral.identifier.uuidString
-            listener.findNewDevice?(name: name, mac: mac, rssi: rssi)
+            
+            listener.findNewDevice?(device: BleDevice(name: name, mac: mac, rssi: rssi))
         }
     }
     
@@ -110,7 +117,7 @@ extension BleHelper: CBCentralManagerDelegate{
     /**
      找到新的裝置
      */
-    @objc optional func findNewDevice(name: String, mac: String, rssi:NSNumber)
+    @objc optional func findNewDevice(device: BleDevice)
     
     /**
      更新裝置的RSSI

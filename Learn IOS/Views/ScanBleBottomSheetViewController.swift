@@ -29,12 +29,11 @@ class ScanBleBottomSheetViewController: UIViewController {
     var partialViewYPosition: CGFloat = 0
     var currentState: State = .partial
     
-    var fakeData: [String] = []
+    var scanDevices = [String: BleDevice]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         BleHelper.instance.addScanListener(listener: self)
-        makeFakeData()
         initView()
     }
     
@@ -124,17 +123,13 @@ class ScanBleBottomSheetViewController: UIViewController {
         scanTableView.delegate = self
         scanTableView.dataSource = self
         scanTableView.separatorStyle = .singleLine
-        scanTableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        scanTableView.rowHeight = 80
+        //scanTableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         tableViewContainer.addSubview(scanTableView)
     }
 
     @IBAction func scan(_ sender: Any) {
         BleHelper.instance.startScan()
-    }
-    
-    func makeFakeData(){
-        fakeData.append("Device1")
-        fakeData.append("Device2-TESTDEVICENAME")
     }
 }
 
@@ -142,7 +137,7 @@ class ScanBleBottomSheetViewController: UIViewController {
 extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fakeData.count
+        return scanDevices.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -152,7 +147,9 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ScanBleTableViewCell
         
-        cell.nameLabel.text = String.init(format: "Device Name: %@", fakeData[indexPath.row])
+        let device = Array(scanDevices.values)[indexPath.row]
+        
+        cell.nameLabel.text = device.name
         
         //cell.addressLabel.text = peripheral.peripheral.identifier.uuidString
         //cell.distanceLabel.text = peripheral.rssi.stringValue
@@ -163,8 +160,8 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         connectingProgress.startAnimating()
-        connectStateLabel.text = "正在連線(" + fakeData[indexPath.row] + ")"
-        print(String.init(format: "Select device Name: %@", fakeData[indexPath.row]))
+        //connectStateLabel.text = "正在連線(" + fakeData[indexPath.row] + ")"
+        //print(String.init(format: "Select device Name: %@", fakeData[indexPath.row]))
     }
     
 }
@@ -175,11 +172,14 @@ extension ScanBleBottomSheetViewController: ScanListener{
         return "ScanBleBottomSheetViewController"
     }
     
-    func findNewDevice(name: String, mac: String, rssi:NSNumber){
-        print("findNewDevice N:\(name), M:\(mac), R:\(rssi)")
+    func findNewDevice(device: BleDevice){
+        print("findNewDevice N:\(device.name), M:\(device.mac), R:\(device.rssi)")
+        scanDevices[device.mac] = device
+        self.scanTableView.reloadData()
     }
     
     func updateRssi(mac: String, rssi:NSNumber){
         print("updateRssi M:\(mac), R:\(rssi)")
+        scanDevices[mac]?.rssi = rssi
     }
 }
