@@ -30,6 +30,7 @@
 		1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D423D14394001D146B /* MainTableViewController.swift */; };
 		1D6270D823D18047001D146B /* LearnBLEViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D723D18047001D146B /* LearnBLEViewControllerOLD.swift */; };
 		1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */; };
+		1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7395302421D39800916EB0 /* BleDeviceManager.swift */; };
 		1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D859D6E241776A10026746D /* BleScanTableViewCell.swift */; };
 		1D859D76241783E00026746D /* UIKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D859D74241783E00026746D /* UIKit.storyboard */; };
 		1D859D782417840E0026746D /* Bluetooth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D859D772417840E0026746D /* Bluetooth.storyboard */; };
@@ -61,6 +62,7 @@
 		1D6270D423D14394001D146B /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		1D6270D723D18047001D146B /* LearnBLEViewControllerOLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEViewControllerOLD.swift; sourceTree = "<group>"; };
 		1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEScanViewController.swift; sourceTree = "<group>"; };
+		1D7395302421D39800916EB0 /* BleDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleDeviceManager.swift; sourceTree = "<group>"; };
 		1D859D6E241776A10026746D /* BleScanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleScanTableViewCell.swift; sourceTree = "<group>"; };
 		1D859D75241783E00026746D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Learn IOS/Base.lproj/UIKit.storyboard"; sourceTree = "<group>"; };
 		1D859D772417840E0026746D /* Bluetooth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bluetooth.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				1D30E362241F6B1A006CEC8F /* BleHelper.swift */,
 				1D30E3642420A4F0006CEC8F /* BleDevice.swift */,
+				1D7395302421D39800916EB0 /* BleDeviceManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				1D30E350241BCC72006CEC8F /* LearnBottomSheetViewController.swift in Sources */,
 				1D30E34D241BCB78006CEC8F /* BottomSheetViewController.swift in Sources */,
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
+				1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */,
 				1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */,
 				1D30E352241CBE41006CEC8F /* LearnPageViewViewController.swift in Sources */,
 				1D30E356241CFA97006CEC8F /* LearnBLEViewController.swift in Sources */,

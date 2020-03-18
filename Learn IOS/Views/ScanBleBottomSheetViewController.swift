@@ -168,6 +168,7 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
         let device = scanDevices[indexPath.row]
         connectStateLabel.text = "正在連線(\(device.name))"
         print(String.init(format: "Select device Name: %@", device.name))
+        BleHelper.instance.connect(mac: device.mac)
     }
     
 }
