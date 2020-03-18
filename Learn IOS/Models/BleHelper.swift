@@ -11,18 +11,10 @@ import CoreBluetooth
 
 class BleHelper: NSObject{
     
-    enum State {
-        case connected
-        case connecting
-        case disconnect
-        case connectFail
-    }
-    
     static let instance = BleHelper()
     private var centralManager: CBCentralManager?
     private var discoveredDevices: [CBPeripheral] = []
     private var scanListeners = [ScanListener]()
-    private var deviceListeners = [DeviceListener]()
     
     private override init() {
         super.init()
@@ -34,7 +26,6 @@ class BleHelper: NSObject{
         let peripheral = findPeripheralByMac(mac: mac)
         
         if peripheral != nil {
-            notifyStatusChange(state: State.connecting)
             centralManager?.connect(peripheral!, options: nil)
         }
     }
@@ -79,14 +70,6 @@ class BleHelper: NSObject{
         scanListeners.append(listener)
     }
     
-    public func addDeviceListener(listener: DeviceListener) {
-        if let index = deviceListeners.firstIndex(where: {$0 === listener}) {
-            deviceListeners.remove(at: index)
-        }
-        
-        deviceListeners.append(listener)
-    }
-    
     private func notifyFindNewDevice(peripheral: CBPeripheral, rssi: NSNumber){
         for listener in scanListeners {
             let name = peripheral.name ?? "-"
@@ -106,12 +89,6 @@ class BleHelper: NSObject{
     private func notifyIsStopScan(){
         for listener in scanListeners {
             listener.isStopScan?()
-        }
-    }
-    
-    private func notifyStatusChange(state: BleHelper.State){
-        for listener in deviceListeners {
-            listener.statusChange(state: state)
         }
     }
     
@@ -157,20 +134,17 @@ extension BleHelper: CBCentralManagerDelegate{
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("連線成功 \(peripheral.identifier)")
-        
         BleDeviceManager.instance.setPeripheral(peripheral: peripheral)
-        
-        notifyStatusChange(state: State.connected)
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
         print("連線失敗")
-        notifyStatusChange(state: State.connectFail)
+        BleDeviceManager.instance.removePeripheral()
     }
     //斷開連線
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         print("斷開連線")
-        notifyStatusChange(state: State.disconnect)
+        BleDeviceManager.instance.removePeripheral()
     }
 }
 
@@ -195,17 +169,4 @@ extension BleHelper: CBCentralManagerDelegate{
      已經停止掃描
      */
     @objc optional func isStopScan()
-}
-
-/**
- 連線裝置的監聽者
- */
-protocol DeviceListener: NSObjectProtocol {
-    
-    func getTag() -> String
-    
-    /**
-     連線狀態改變
-     */
-    func statusChange(state: BleHelper.State)
 }
