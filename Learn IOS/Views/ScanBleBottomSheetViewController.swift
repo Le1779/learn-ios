@@ -43,6 +43,7 @@ class ScanBleBottomSheetViewController: UIViewController {
         UIView.animate(withDuration: 0.6, animations: {
             self.moveView(state: .partial)
         })
+        BleDeviceManager.instance.addDeviceListener(listener: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -115,6 +116,12 @@ class ScanBleBottomSheetViewController: UIViewController {
         }, completion: nil)
     }
     
+    func collapse() {
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.25, delay: 0, animations: {
+           self.moveView(state: .partial)
+        }, completion: nil)
+    }
+    
     func initTableVIew(){
         scanTableView = UITableView(
             frame: CGRect(x: 0, y: 0, width: tableViewContainer.frame.width, height: 100),
@@ -175,10 +182,6 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
 
 extension ScanBleBottomSheetViewController: ScanListener{
     
-    func getTag() -> (String) {
-        return "ScanBleBottomSheetViewController"
-    }
-    
     func findNewDevice(device: BleDevice){
         print("findNewDevice N:\(device.name), M:\(device.mac), R:\(device.rssi)")
         scanDevicesDict[device.mac] = device
@@ -201,5 +204,23 @@ extension ScanBleBottomSheetViewController: ScanListener{
     
     func sortAndSetScanDevices(){
         scanDevices = Array(scanDevicesDict.values).sorted(by: {Unicode.CanonicalCombiningClass(rawValue: Unicode.CanonicalCombiningClass.RawValue(truncating: $0.rssi)) > Unicode.CanonicalCombiningClass(rawValue: Unicode.CanonicalCombiningClass.RawValue(truncating: $1.rssi))})
+    }
+}
+
+extension ScanBleBottomSheetViewController: DeviceListener{
+    
+    func statusChange(state: BleDeviceManager.State) {
+        switch state {
+            case BleDeviceManager.State.connected:
+                connectStateLabel.text =  BleDeviceManager.instance.getDeviceName()
+                break
+            case BleDeviceManager.State.disconnect:
+                connectStateLabel.text = "尚未連線"
+                break
+            default:
+                break
+        }
+        connectingProgress.stopAnimating()
+        collapse()
     }
 }

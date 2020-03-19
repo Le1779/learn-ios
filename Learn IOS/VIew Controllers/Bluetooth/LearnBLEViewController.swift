@@ -17,7 +17,9 @@ class LearnBLEViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        disableAllView()
         addBottomSheetView()
+        BleDeviceManager.instance.addDeviceListener(listener: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,5 +49,31 @@ class LearnBLEViewController: UIViewController {
         let command = commandTextField.text
         responseTextView.text += "->\(command ?? "null")\n"
         responseTextView.scrollRangeToVisible(NSMakeRange(responseTextView.text.count - 1, 0))
+    }
+    
+    func enableAllView() {
+        commandTextField.isUserInteractionEnabled = true
+        responseTextView.backgroundColor = UIColor.init(displayP3Red: 24/255, green: 29/255, blue: 45/255, alpha: 1)
+    }
+    
+    func disableAllView() {
+        commandTextField.isUserInteractionEnabled = false
+        responseTextView.backgroundColor = UIColor.init(displayP3Red: 24/255, green: 29/255, blue: 45/255, alpha: 0.8)
+    }
+}
+
+extension LearnBLEViewController: DeviceListener{
+    
+    func statusChange(state: BleDeviceManager.State) {
+        switch state {
+            case BleDeviceManager.State.connected:
+                enableAllView()
+                break
+            case BleDeviceManager.State.disconnect:
+                disableAllView()
+                break
+            default:
+                break
+        }
     }
 }

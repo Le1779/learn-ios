@@ -153,8 +153,6 @@ extension BleHelper: CBCentralManagerDelegate{
  */
 @objc protocol ScanListener: NSObjectProtocol {
     
-    func getTag() -> String
-    
     /**
      找到新的裝置
      */

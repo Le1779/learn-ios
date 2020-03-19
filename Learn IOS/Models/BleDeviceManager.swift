@@ -46,6 +46,10 @@ class BleDeviceManager: NSObject {
         return peripheral != nil
     }
     
+    public func getDeviceName() -> String {
+        return peripheral?.name ?? ""
+    }
+    
     public func addDeviceListener(listener: DeviceListener) {
         if let index = deviceListeners.firstIndex(where: {$0 === listener}) {
             deviceListeners.remove(at: index)
@@ -92,8 +96,6 @@ extension BleDeviceManager:CBPeripheralDelegate {
 }
 
 protocol DeviceListener: NSObjectProtocol {
-    
-    func getTag() -> String
     
     /**
      連線狀態改變
