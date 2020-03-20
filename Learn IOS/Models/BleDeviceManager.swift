@@ -12,12 +12,17 @@ import CoreBluetooth
 class BleDeviceManager: NSObject {
     
     static let instance = BleDeviceManager()
-    var peripheral: CBPeripheral?
+    private var connectedPeripheral: CBPeripheral?
+    private var responseLock: NSLock = NSLock()
+    private var sendLock: NSLock = NSLock()
     
-    let WRITE_SERVICE_UUID: String = "FFE5"
-    let READ_SERVICE_UUID: String = "FFE0"
-    let WRITE_CHARACTERISTICS_UUID: String = "FFE9"
-    let READ_CHARACTERISTICS_UUID: String = "FFE4"
+    private let WRITE_SERVICE_UUID: String = "FFE5"
+    private let NOTIFY_SERVICE_UUID: String = "FFE0"
+    private let WRITE_CHARACTERISTICS_UUID: String = "FFE9"
+    private let NOTIFY_CHARACTERISTICS_UUID: String = "FFE4"
+    
+    private var writeCharacteristics: CBCharacteristic?
+    private var notifyCharacteristics: CBCharacteristic?
     
     private var deviceListeners = [DeviceListener]()
     
@@ -33,21 +38,21 @@ class BleDeviceManager: NSObject {
     
     public func setPeripheral(peripheral: CBPeripheral){
         peripheral.delegate = self
-        peripheral.discoverServices([CBUUID(string: WRITE_SERVICE_UUID), CBUUID(string: READ_SERVICE_UUID)])
-        self.peripheral = peripheral
+        peripheral.discoverServices([CBUUID(string: WRITE_SERVICE_UUID), CBUUID(string: NOTIFY_SERVICE_UUID)])
+        self.connectedPeripheral = peripheral
     }
     
     public func removePeripheral(){
-        peripheral = nil
+        connectedPeripheral = nil
         notifyStatusChange(state: State.disconnect)
     }
     
     public func isConnected() -> Bool {
-        return peripheral != nil
+        return connectedPeripheral != nil
     }
     
     public func getDeviceName() -> String {
-        return peripheral?.name ?? ""
+        return connectedPeripheral?.name ?? ""
     }
     
     public func addDeviceListener(listener: DeviceListener) {
@@ -58,9 +63,21 @@ class BleDeviceManager: NSObject {
         deviceListeners.append(listener)
     }
     
+    public func sendData(data: String) {
+        sendLock.lock()
+        connectedPeripheral?.writeValue(data.data(using: .utf8)!, for: writeCharacteristics!, type: .withResponse)
+        sendLock.unlock()
+    }
+    
     private func notifyStatusChange(state: BleDeviceManager.State){
         for listener in deviceListeners {
             listener.statusChange(state: state)
+        }
+    }
+    
+    private func notifyGetResponse(response: String){
+        for listener in deviceListeners {
+            listener.getResponse(response: response)
         }
     }
 }
@@ -72,9 +89,11 @@ extension BleDeviceManager:CBPeripheralDelegate {
         for service: CBService in peripheral.services! {
             print("didDiscoverServices：\(service)")
             if service.uuid == CBUUID(string: WRITE_SERVICE_UUID) {
+                print("didDiscoverServices：Wuuid - \(service.uuid)")
                 peripheral.discoverCharacteristics([CBUUID(string: WRITE_CHARACTERISTICS_UUID)], for: service)
             } else {
-                peripheral.discoverCharacteristics([CBUUID(string: READ_CHARACTERISTICS_UUID)], for: service)
+                print("didDiscoverServices：Ruuid - \(service.uuid)")
+                peripheral.discoverCharacteristics([CBUUID(string: NOTIFY_CHARACTERISTICS_UUID)], for: service)
             }
         }
     }
@@ -82,17 +101,66 @@ extension BleDeviceManager:CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         for characteristic: CBCharacteristic in service.characteristics! {
             print("didDiscoverCharacteristicsFor：\(characteristic)")
+            switch characteristic.uuid {
+                case CBUUID(string: WRITE_CHARACTERISTICS_UUID):
+                    if characteristic.properties.contains(CBCharacteristicProperties.write){
+                        writeCharacteristics = characteristic
+                        notifyStatusChange(state: State.connected)
+                    } else {
+                        disconnect()
+                    }
+                    break
+                case CBUUID(string: NOTIFY_CHARACTERISTICS_UUID):
+                    if characteristic.properties.contains(CBCharacteristicProperties.notify){
+                        notifyCharacteristics = characteristic
+                        connectedPeripheral?.setNotifyValue(true, for: notifyCharacteristics!)
+                        notifyStatusChange(state: State.connected)
+                    } else {
+                        disconnect()
+                    }
+                    break
+                default:
+                    disconnect()
+            }
         }
-        notifyStatusChange(state: State.connected)
     }
     
      func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-         
+        self.responseLock.lock()
+        
+        guard error == nil else {
+            print(error!)
+            return
+        }
+        
+        let response = String(data: characteristic.value!, encoding: .utf8)!
+        self.notifyGetResponse(response: response)
+        
+        self.responseLock.unlock()
      }
     
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
+        guard error == nil else {
+            print(error!)
+            return
+        }
+        
+        if !characteristic.isNotifying {
+            disconnect()
+        }
+    }
+    
      func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-         
+        guard error == nil else {
+            print(error!)
+            return
+        }
      }
+    
+    private func disconnect(){
+        BleHelper.instance.disConnect(mac: connectedPeripheral!.identifier.uuidString)
+        notifyStatusChange(state: State.disconnect)
+    }
 }
 
 protocol DeviceListener: NSObjectProtocol {
@@ -101,4 +169,6 @@ protocol DeviceListener: NSObjectProtocol {
      連線狀態改變
      */
     func statusChange(state: BleDeviceManager.State)
+    
+    func getResponse(response: String)
 }

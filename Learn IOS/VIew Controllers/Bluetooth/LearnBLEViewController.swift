@@ -20,6 +20,12 @@ class LearnBLEViewController: UIViewController {
         disableAllView()
         addBottomSheetView()
         BleDeviceManager.instance.addDeviceListener(listener: self)
+        commandTextField.delegate = self
+        responseTextView.isEditable = false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,8 +53,8 @@ class LearnBLEViewController: UIViewController {
 
     @IBAction func sendCommand(_ sender: Any) {
         let command = commandTextField.text
-        responseTextView.text += "->\(command ?? "null")\n"
-        responseTextView.scrollRangeToVisible(NSMakeRange(responseTextView.text.count - 1, 0))
+        BleDeviceManager.instance.sendData(data: command! + "\r\n")
+        addText(text: "SEND: \(command ?? "null")\n")
     }
     
     func enableAllView() {
@@ -59,6 +65,11 @@ class LearnBLEViewController: UIViewController {
     func disableAllView() {
         commandTextField.isUserInteractionEnabled = false
         responseTextView.backgroundColor = UIColor.init(displayP3Red: 24/255, green: 29/255, blue: 45/255, alpha: 0.8)
+    }
+    
+    func addText(text: String) {
+        responseTextView.text += text
+        responseTextView.scrollRangeToVisible(NSMakeRange(responseTextView.text.count - 1, 0))
     }
 }
 
@@ -75,5 +86,19 @@ extension LearnBLEViewController: DeviceListener{
             default:
                 break
         }
+    }
+    
+    func getResponse(response: String) {
+        DispatchQueue.main.async{
+            self.addText(text: "GET: \(response)\n")
+        }
+    }
+}
+
+extension LearnBLEViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+          return true
     }
 }

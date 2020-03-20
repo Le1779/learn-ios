@@ -223,4 +223,9 @@ extension ScanBleBottomSheetViewController: DeviceListener{
         connectingProgress.stopAnimating()
         collapse()
     }
+    
+    func getResponse(response: String) {
+        
+    }
+    
 }
