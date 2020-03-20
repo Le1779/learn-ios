@@ -29,7 +29,7 @@ class MainTableViewController: UITableViewController {
                                                Page(name: "Bottom Sheet", id: "learnBottomSheetPage"),
                                                Page(name: "PageView", id: "learnPageViewPage")]),
         PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
-                                                   Page(name: "BLE", id: "learnBLEPage")]),
+                                                   Page(name: "Learn BLE", id: "learnBLEPage")]),
         PageList(sectionName: "Homework", pages: [Page(name: "BmiCalculator", id: "layout_bmi_calculator")])
     ]
     
