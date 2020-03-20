@@ -122,11 +122,40 @@
 		1D30E35F241F1A1E006CEC8F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1D4C69862424F62600C2DD9B /* BLE */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1D4C69862424F62600C2DD9B /* BLE */ = {
+			isa = PBXGroup;
+			children = (
 				1D30E362241F6B1A006CEC8F /* BleHelper.swift */,
 				1D30E3642420A4F0006CEC8F /* BleDevice.swift */,
 				1D7395302421D39800916EB0 /* BleDeviceManager.swift */,
 			);
-			path = Models;
+			path = BLE;
+			sourceTree = "<group>";
+		};
+		1D4C69872424F66200C2DD9B /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				1D30E34B241BCB78006CEC8F /* BottomSheetViewController.swift */,
+				1D30E34C241BCB78006CEC8F /* BottomSheetViewController.xib */,
+				1D30E357241CFC71006CEC8F /* ScanBleBottomSheetViewController.swift */,
+				1D30E358241CFC71006CEC8F /* ScanBleBottomSheetViewController.xib */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		1D4C69882424F6A600C2DD9B /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				1D859D6E241776A10026746D /* BleScanTableViewCell.swift */,
+				1D30E35B241D2296006CEC8F /* ScanBleTableViewCell.swift */,
+				1D30E35C241D2296006CEC8F /* ScanBleTableViewCell.xib */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 		1D6270B023D09BA1001D146B = {
@@ -175,13 +204,8 @@
 		1D859D79241785860026746D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1D859D6E241776A10026746D /* BleScanTableViewCell.swift */,
-				1D30E34B241BCB78006CEC8F /* BottomSheetViewController.swift */,
-				1D30E34C241BCB78006CEC8F /* BottomSheetViewController.xib */,
-				1D30E357241CFC71006CEC8F /* ScanBleBottomSheetViewController.swift */,
-				1D30E358241CFC71006CEC8F /* ScanBleBottomSheetViewController.xib */,
-				1D30E35B241D2296006CEC8F /* ScanBleTableViewCell.swift */,
-				1D30E35C241D2296006CEC8F /* ScanBleTableViewCell.xib */,
+				1D4C69882424F6A600C2DD9B /* TableCell */,
+				1D4C69872424F66200C2DD9B /* BottomSheet */,
 			);
 			path = Views;
 			sourceTree = "<group>";
