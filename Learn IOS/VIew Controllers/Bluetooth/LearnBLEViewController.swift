@@ -37,6 +37,7 @@ class LearnBLEViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool){
         super.viewDidDisappear(animated)
         BleHelper.instance.stopScan()
+        BleDeviceManager.instance.disconnect()
     }
     
     func addBottomSheetView() {
@@ -52,6 +53,10 @@ class LearnBLEViewController: UIViewController {
     }
 
     @IBAction func sendCommand(_ sender: Any) {
+        if !BleDeviceManager.instance.isConnected() {
+            addText(text: "尚未連線\n")
+            return
+        }
         let command = commandTextField.text
         BleDeviceManager.instance.sendData(data: command! + "\r\n")
         addText(text: "SEND: \(command ?? "null")\n")

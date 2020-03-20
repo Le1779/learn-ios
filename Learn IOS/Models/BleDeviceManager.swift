@@ -69,6 +69,11 @@ class BleDeviceManager: NSObject {
         sendLock.unlock()
     }
     
+    public func disconnect(){
+        BleHelper.instance.disConnect(mac: connectedPeripheral!.identifier.uuidString)
+        notifyStatusChange(state: State.disconnect)
+    }
+    
     private func notifyStatusChange(state: BleDeviceManager.State){
         for listener in deviceListeners {
             listener.statusChange(state: state)
@@ -156,11 +161,6 @@ extension BleDeviceManager:CBPeripheralDelegate {
             return
         }
      }
-    
-    private func disconnect(){
-        BleHelper.instance.disConnect(mac: connectedPeripheral!.identifier.uuidString)
-        notifyStatusChange(state: State.disconnect)
-    }
 }
 
 protocol DeviceListener: NSObjectProtocol {
