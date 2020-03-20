@@ -12,6 +12,7 @@
                 <outlet property="connectingProgress" destination="8Zw-6A-XzQ" id="pk5-iJ-t9L"/>
                 <outlet property="partialView" destination="PCm-b6-yqh" id="oBe-hx-Yl1"/>
                 <outlet property="scanButton" destination="CQO-Rh-bKT" id="C5i-aV-hgc"/>
+                <outlet property="scanKeywordTextField" destination="iyK-JB-8AI" id="SSo-Gh-Zg4"/>
                 <outlet property="tableViewContainer" destination="WDN-d6-a5P" id="ko9-7c-QKy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -55,7 +56,7 @@
                                 <constraint firstItem="09w-Md-L6e" firstAttribute="leading" secondItem="PCm-b6-yqh" secondAttribute="leading" constant="24" id="zR5-sS-mmq"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="搜尋條件" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyK-JB-8AI">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tv500u" borderStyle="roundedRect" placeholder="搜尋條件" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyK-JB-8AI">
                             <rect key="frame" x="24" y="137.5" width="267" height="34"/>
                             <color key="backgroundColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="textColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

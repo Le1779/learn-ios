@@ -70,6 +70,10 @@ class BleDeviceManager: NSObject {
     }
     
     public func disconnect(){
+        if !isConnected() {
+            return
+        }
+        
         BleHelper.instance.disConnect(mac: connectedPeripheral!.identifier.uuidString)
         notifyStatusChange(state: State.disconnect)
     }

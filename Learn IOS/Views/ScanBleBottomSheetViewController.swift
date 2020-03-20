@@ -15,6 +15,7 @@ class ScanBleBottomSheetViewController: UIViewController {
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var connectingProgress: UIActivityIndicatorView!
     @IBOutlet weak var connectStateLabel: UILabel!
+    @IBOutlet weak var scanKeywordTextField: UITextField!
     
     private var scanTableView: UITableView!
     
@@ -48,6 +49,10 @@ class ScanBleBottomSheetViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         scanTableView.frame = CGRect(x: 0, y: 0, width: tableViewContainer.frame.width, height: tableViewContainer.frame.height)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     public func getPartialViewHeight() -> (CGFloat){
@@ -90,6 +95,7 @@ class ScanBleBottomSheetViewController: UIViewController {
         roundView()
         initPartialView()
         initTableVIew()
+        scanKeywordTextField.delegate = self
     }
     
     func getBottomSafeHeight() -> CGFloat {
@@ -138,8 +144,14 @@ class ScanBleBottomSheetViewController: UIViewController {
     }
 
     @IBAction func scan(_ sender: Any) {
-        self.scanButton.isEnabled = false
-        BleHelper.instance.startScan()
+        BleDeviceManager.instance.disconnect()
+        if BleHelper.instance.isScanning() {
+            BleHelper.instance.stopScan()
+            return
+        }
+        self.scanDevicesDict.removeAll()
+        self.scanButton.setTitle("停止", for: .normal)
+        BleHelper.instance.startScan(keyword: scanKeywordTextField.text)
     }
 }
 
@@ -180,6 +192,14 @@ extension ScanBleBottomSheetViewController: UITableViewDelegate,UITableViewDataS
     
 }
 
+extension ScanBleBottomSheetViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+          return true
+    }
+}
+
 extension ScanBleBottomSheetViewController: ScanListener{
     
     func findNewDevice(device: BleDevice){
@@ -198,7 +218,7 @@ extension ScanBleBottomSheetViewController: ScanListener{
     
     func isStopScan(){
         DispatchQueue.main.async{
-            self.scanButton.isEnabled = true
+            self.scanButton.setTitle("掃描", for: .normal)
         }
     }
     
@@ -213,6 +233,7 @@ extension ScanBleBottomSheetViewController: DeviceListener{
         switch state {
             case BleDeviceManager.State.connected:
                 connectStateLabel.text =  BleDeviceManager.instance.getDeviceName()
+                collapse()
                 break
             case BleDeviceManager.State.disconnect:
                 connectStateLabel.text = "尚未連線"
@@ -221,7 +242,6 @@ extension ScanBleBottomSheetViewController: DeviceListener{
                 break
         }
         connectingProgress.stopAnimating()
-        collapse()
     }
     
     func getResponse(response: String) {

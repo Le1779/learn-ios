@@ -15,6 +15,7 @@ class BleHelper: NSObject{
     private var centralManager: CBCentralManager?
     private var discoveredDevices: [CBPeripheral] = []
     private var scanListeners = [ScanListener]()
+    private var scanKeyword: String?
     
     private override init() {
         super.init()
@@ -38,12 +39,13 @@ class BleHelper: NSObject{
         }
     }
     
-    public func startScan(){
-        if self.centralManager!.isScanning {
+    public func startScan(keyword: String?){
+        if isScanning() {
             return
         }
         
         print("Start Scan")
+        self.scanKeyword = keyword
         discoveredDevices.removeAll(keepingCapacity: false)
         DispatchQueue.global().async {
             sleep(UInt32(10))
@@ -55,11 +57,15 @@ class BleHelper: NSObject{
     }
     
     public func stopScan(){
-        if self.centralManager!.isScanning {
+        if isScanning() {
             print("Stop Scan")
             notifyIsStopScan()
             centralManager?.stopScan()
         }
+    }
+    
+    public func isScanning() -> Bool{
+        return self.centralManager!.isScanning
     }
     
     public func addScanListener(listener: ScanListener) {
@@ -120,7 +126,7 @@ extension BleHelper: CBCentralManagerDelegate{
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber){
         
-        if peripheral.name == nil || !peripheral.name!.contains("Tv500u"){
+        if peripheral.name == nil || !peripheral.name!.contains(self.scanKeyword ?? ""){
             return
         }
         
