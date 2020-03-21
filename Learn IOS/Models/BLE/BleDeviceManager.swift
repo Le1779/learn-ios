@@ -114,7 +114,6 @@ extension BleDeviceManager:CBPeripheralDelegate {
                 case CBUUID(string: WRITE_CHARACTERISTICS_UUID):
                     if characteristic.properties.contains(CBCharacteristicProperties.write){
                         writeCharacteristics = characteristic
-                        notifyStatusChange(state: State.connected)
                     } else {
                         disconnect()
                     }
@@ -123,7 +122,6 @@ extension BleDeviceManager:CBPeripheralDelegate {
                     if characteristic.properties.contains(CBCharacteristicProperties.notify){
                         notifyCharacteristics = characteristic
                         connectedPeripheral?.setNotifyValue(true, for: notifyCharacteristics!)
-                        notifyStatusChange(state: State.connected)
                     } else {
                         disconnect()
                     }
@@ -156,6 +154,8 @@ extension BleDeviceManager:CBPeripheralDelegate {
         
         if !characteristic.isNotifying {
             disconnect()
+        } else {
+            notifyStatusChange(state: State.connected)
         }
     }
     
