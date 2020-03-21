@@ -21,10 +21,11 @@
 		1D30E35E241D2296006CEC8F /* ScanBleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D30E35C241D2296006CEC8F /* ScanBleTableViewCell.xib */; };
 		1D30E363241F6B1A006CEC8F /* BleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E362241F6B1A006CEC8F /* BleHelper.swift */; };
 		1D30E3652420A4F0006CEC8F /* BleDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E3642420A4F0006CEC8F /* BleDevice.swift */; };
+		1D4C698A24261A6400C2DD9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4C698924261A6400C2DD9B /* Main.storyboard */; };
+		1D4C698C24261A8F00C2DD9B /* UIKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4C698B24261A8F00C2DD9B /* UIKit.storyboard */; };
 		1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BC23D09BA1001D146B /* AppDelegate.swift */; };
 		1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BE23D09BA1001D146B /* SceneDelegate.swift */; };
 		1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */; };
-		1D6270C423D09BA1001D146B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C223D09BA1001D146B /* Main.storyboard */; };
 		1D6270C623D09BA4001D146B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C523D09BA4001D146B /* Assets.xcassets */; };
 		1D6270C923D09BA4001D146B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6270C723D09BA4001D146B /* LaunchScreen.storyboard */; };
 		1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270D423D14394001D146B /* MainTableViewController.swift */; };
@@ -32,7 +33,6 @@
 		1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */; };
 		1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7395302421D39800916EB0 /* BleDeviceManager.swift */; };
 		1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D859D6E241776A10026746D /* BleScanTableViewCell.swift */; };
-		1D859D76241783E00026746D /* UIKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D859D74241783E00026746D /* UIKit.storyboard */; };
 		1D859D782417840E0026746D /* Bluetooth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D859D772417840E0026746D /* Bluetooth.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -51,11 +51,12 @@
 		1D30E35C241D2296006CEC8F /* ScanBleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanBleTableViewCell.xib; sourceTree = "<group>"; };
 		1D30E362241F6B1A006CEC8F /* BleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleHelper.swift; sourceTree = "<group>"; };
 		1D30E3642420A4F0006CEC8F /* BleDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleDevice.swift; sourceTree = "<group>"; };
+		1D4C698924261A6400C2DD9B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1D4C698B24261A8F00C2DD9B /* UIKit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIKit.storyboard; sourceTree = "<group>"; };
 		1D6270B923D09BA1001D146B /* Learn IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6270BC23D09BA1001D146B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6270BE23D09BA1001D146B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnButtonViewController.swift; sourceTree = "<group>"; };
-		1D6270C323D09BA1001D146B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D6270C523D09BA4001D146B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D6270C823D09BA4001D146B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D6270CA23D09BA4001D146B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		1D6270DB23D34A9F001D146B /* LearnBLEScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnBLEScanViewController.swift; sourceTree = "<group>"; };
 		1D7395302421D39800916EB0 /* BleDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleDeviceManager.swift; sourceTree = "<group>"; };
 		1D859D6E241776A10026746D /* BleScanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleScanTableViewCell.swift; sourceTree = "<group>"; };
-		1D859D75241783E00026746D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Learn IOS/Base.lproj/UIKit.storyboard"; sourceTree = "<group>"; };
 		1D859D772417840E0026746D /* Bluetooth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bluetooth.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,9 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				1D30E344241A5F53006CEC8F /* Homework.storyboard */,
-				1D6270C223D09BA1001D146B /* Main.storyboard */,
+				1D4C698924261A6400C2DD9B /* Main.storyboard */,
+				1D4C698B24261A8F00C2DD9B /* UIKit.storyboard */,
 				1D859D772417840E0026746D /* Bluetooth.storyboard */,
-				1D859D74241783E00026746D /* UIKit.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -269,14 +269,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D859D782417840E0026746D /* Bluetooth.storyboard in Resources */,
+				1D4C698C24261A8F00C2DD9B /* UIKit.storyboard in Resources */,
+				1D4C698A24261A6400C2DD9B /* Main.storyboard in Resources */,
 				1D30E34E241BCB78006CEC8F /* BottomSheetViewController.xib in Resources */,
 				1D30E35E241D2296006CEC8F /* ScanBleTableViewCell.xib in Resources */,
 				1D30E35A241CFC71006CEC8F /* ScanBleBottomSheetViewController.xib in Resources */,
 				1D6270C923D09BA4001D146B /* LaunchScreen.storyboard in Resources */,
-				1D859D76241783E00026746D /* UIKit.storyboard in Resources */,
 				1D6270C623D09BA4001D146B /* Assets.xcassets in Resources */,
 				1D30E345241A5F53006CEC8F /* Homework.storyboard in Resources */,
-				1D6270C423D09BA1001D146B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,28 +311,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1D6270C223D09BA1001D146B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D6270C323D09BA1001D146B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1D6270C723D09BA4001D146B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1D6270C823D09BA4001D146B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		1D859D74241783E00026746D /* UIKit.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D859D75241783E00026746D /* Base */,
-			);
-			name = UIKit.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
