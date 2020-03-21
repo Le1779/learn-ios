@@ -27,3 +27,4 @@ DerivedData/
 
 UserInterfaceState.xcuserstate  
 UserInterface.xcuserstate 
+*.xcbkptlist
