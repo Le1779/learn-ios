@@ -12,14 +12,15 @@ class SceneSwitchLightViewController: UIViewController {
 
     @IBOutlet weak var powerSwitch: UISwitch!
     @IBOutlet weak var nightLithgPowerSwitch: UISwitch!
-    @IBOutlet weak var colorTemperatureSlider: UISlider!
     @IBOutlet weak var brightSlider: UISlider!
+    @IBOutlet weak var colorTemperatureSlider: UISlider!
     @IBOutlet weak var commandTextView: UITextView!
     @IBOutlet weak var bottomSheetArea: UIView!
     private var bottomSheet: ScanBleBottomSheetViewController!
     
     private var light: SceneSwitchLight?
     private var preSendTime: Double = NSDate().timeIntervalSince1970 * 1000
+    private var needGetBrightAndColorTemperatureFromDevice :Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,7 @@ class SceneSwitchLightViewController: UIViewController {
     func enableAllView() {
         powerSwitch.isEnabled = true
         nightLithgPowerSwitch.isEnabled = true
+        brightSlider.isEnabled = true
         colorTemperatureSlider.isEnabled = true
         commandTextView.backgroundColor = UIColor.init(displayP3Red: 24/255, green: 29/255, blue: 45/255, alpha: 1)
     }
@@ -84,6 +86,7 @@ class SceneSwitchLightViewController: UIViewController {
         powerSwitch.isEnabled = false
         nightLithgPowerSwitch.isOn = false
         nightLithgPowerSwitch.isEnabled = false
+        brightSlider.isEnabled = false
         colorTemperatureSlider.isEnabled = false
         commandTextView.backgroundColor = UIColor.init(displayP3Red: 24/255, green: 29/255, blue: 45/255, alpha: 0.8)
     }
@@ -135,7 +138,6 @@ extension SceneSwitchLightViewController: DeviceListener{
     
     func getResponse(response: String) {
         DispatchQueue.main.async{
-            //self.addCommand(command: "GET: \(response)")
             self.light?.analysisResponse(response: response)
         }
     }
@@ -148,6 +150,7 @@ extension SceneSwitchLightViewController: SceneSwitchLightListener {
         self.addCommand(command: "Power On")
         self.enableAllView()
         self.powerSwitch.isOn = true
+        needGetBrightAndColorTemperatureFromDevice = true
     }
     
     func powerOff() {
@@ -155,30 +158,42 @@ extension SceneSwitchLightViewController: SceneSwitchLightListener {
         self.addCommand(command: "Power Off")
         self.enableAllView()
         self.powerSwitch.isOn = false
+        needGetBrightAndColorTemperatureFromDevice = true
     }
     
     func nightLightOn() {
         print("Night Light On")
         self.addCommand(command: "Night Light On")
         self.nightLithgPowerSwitch.isOn = true
+        needGetBrightAndColorTemperatureFromDevice = true
     }
     
     func nightLightOff() {
         print("Night Light Off")
         self.addCommand(command: "Night Light Off")
         self.nightLithgPowerSwitch.isOn = false
+        needGetBrightAndColorTemperatureFromDevice = true
     }
     
     func led(bright: Int) {
+        if !needGetBrightAndColorTemperatureFromDevice {
+            return
+        }
+        
         print("LED: \(bright)")
         self.addCommand(command: "LED: \(bright)")
-        //brightSlider.value = Float(bright)/255
+        brightSlider.value = Float(bright)/255
     }
     
     func colorTemperature(colorTemperature: Int) {
+        if !needGetBrightAndColorTemperatureFromDevice {
+            return
+        }
+        
         print("Color Temperature: \(colorTemperature)")
         self.addCommand(command: "Color Temperature: \(colorTemperature)")
-        //colorTemperatureSlider.value = Float(colorTemperature)/255
+        colorTemperatureSlider.value = Float(colorTemperature)/255
+        needGetBrightAndColorTemperatureFromDevice = false
     }
     
     func timer(timer: Int) {
