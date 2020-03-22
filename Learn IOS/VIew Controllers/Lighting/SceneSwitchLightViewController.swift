@@ -13,7 +13,7 @@ class SceneSwitchLightViewController: UIViewController {
     @IBOutlet weak var powerSwitch: UISwitch!
     @IBOutlet weak var nightLithgPowerSwitch: UISwitch!
     @IBOutlet weak var colorTemperatureSlider: UISlider!
-    @IBOutlet weak var BrightSlider: UISlider!
+    @IBOutlet weak var brightSlider: UISlider!
     @IBOutlet weak var commandTextView: UITextView!
     @IBOutlet weak var bottomSheetArea: UIView!
     private var bottomSheet: ScanBleBottomSheetViewController!
@@ -158,11 +158,13 @@ extension SceneSwitchLightViewController: SceneSwitchLightListener {
     func led(bright: Int) {
         print("LED: \(bright)")
         self.addCommand(command: "LED: \(bright)")
+        brightSlider.value = Float(bright)/255
     }
     
     func colorTemperature(colorTemperature: Int) {
         print("Color Temperature: \(colorTemperature)")
         self.addCommand(command: "Color Temperature: \(colorTemperature)")
+        colorTemperatureSlider.value = Float(colorTemperature)/255
     }
     
     func timer(timer: Int) {

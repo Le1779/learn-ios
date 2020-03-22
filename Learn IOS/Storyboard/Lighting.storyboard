@@ -133,8 +133,8 @@
                         <viewLayoutGuide key="safeArea" id="ZxT-KH-dTE"/>
                     </view>
                     <connections>
-                        <outlet property="BrightSlider" destination="kzX-HO-GdJ" id="7tl-lr-Ysr"/>
                         <outlet property="bottomSheetArea" destination="AKS-BH-gM3" id="kru-P5-ul1"/>
+                        <outlet property="brightSlider" destination="kzX-HO-GdJ" id="7tl-lr-Ysr"/>
                         <outlet property="colorTemperatureSlider" destination="XpU-UJ-m6L" id="OTe-Mw-BSc"/>
                         <outlet property="commandTextView" destination="pS2-QN-YFL" id="tkj-L1-xjB"/>
                         <outlet property="nightLithgPowerSwitch" destination="6gF-PJ-C2f" id="1HW-44-KRN"/>
