@@ -14,6 +14,9 @@ class SceneSwitchLight: Light {
     
     enum SendCommand: String {
         case POWER_ON = "key 80"
+        case NIGHT_LIGHT_POWER_ON = "key 40"
+        case LED = "led "
+        case COLOR_TEMPERATURE = "ctemp "
     }
     
     enum GetCommandRegex: String {
@@ -36,6 +39,10 @@ class SceneSwitchLight: Light {
             print("analysisResponse: " + command)
             if isHandle(command: command, target: GetCommandRegex.POWER_ON) {
                 listener?.powerOn()
+            } else if isHandle(command: command, target: GetCommandRegex.POWER_OFF) {
+                listener?.powerOff()
+            } else if isHandle(command: command, target: GetCommandRegex.NIGHT_LIGHT_POWER_ON) {
+                listener?.nightLightOn()
             } else if isHandle(command: command, target: GetCommandRegex.NIGHT_LIGHT_POWER_OFF) {
                 listener?.nightLightOff()
             } else if isHandle(command: command, target: GetCommandRegex.LED) {

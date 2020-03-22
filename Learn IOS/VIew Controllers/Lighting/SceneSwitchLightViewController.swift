@@ -19,6 +19,7 @@ class SceneSwitchLightViewController: UIViewController {
     private var bottomSheet: ScanBleBottomSheetViewController!
     
     private var light: SceneSwitchLight?
+    private var preSendTime: Double = NSDate().timeIntervalSince1970 * 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +43,21 @@ class SceneSwitchLightViewController: UIViewController {
     }
     
     @IBAction func onPowerChange(_ sender: Any) {
+        sendCommand(command: SceneSwitchLight.SendCommand.POWER_ON.rawValue)
     }
     
     @IBAction func onNightLIghtPowerChange(_ sender: Any) {
+        sendCommand(command: SceneSwitchLight.SendCommand.NIGHT_LIGHT_POWER_ON.rawValue)
     }
     
     @IBAction func onBrightChange(_ sender: Any) {
+        let bright = String(brightSlider.value*100)
+        sendCommand(command: SceneSwitchLight.SendCommand.LED.rawValue + bright)
     }
     
     @IBAction func onColorTemperatureChange(_ sender: Any) {
+        let colorTemperature = String(colorTemperatureSlider.value*100)
+        sendCommand(command: SceneSwitchLight.SendCommand.COLOR_TEMPERATURE.rawValue + colorTemperature)
     }
     
     func addBottomSheetView() {
@@ -87,6 +94,12 @@ class SceneSwitchLightViewController: UIViewController {
     }
     
     func sendCommand(command: String) {
+        let currentTime = NSDate().timeIntervalSince1970 * 1000
+        if(currentTime - preSendTime < 200){
+            return
+        }
+        
+        preSendTime = NSDate().timeIntervalSince1970 * 1000
         BleDeviceManager.instance.sendData(data: command + "\r\n")
         addCommand(command: "SEND: \(command)")
     }
@@ -122,7 +135,7 @@ extension SceneSwitchLightViewController: DeviceListener{
     
     func getResponse(response: String) {
         DispatchQueue.main.async{
-            self.addCommand(command: "GET: \(response)")
+            //self.addCommand(command: "GET: \(response)")
             self.light?.analysisResponse(response: response)
         }
     }
@@ -140,6 +153,7 @@ extension SceneSwitchLightViewController: SceneSwitchLightListener {
     func powerOff() {
         print("Power Off")
         self.addCommand(command: "Power Off")
+        self.enableAllView()
         self.powerSwitch.isOn = false
     }
     
@@ -158,13 +172,13 @@ extension SceneSwitchLightViewController: SceneSwitchLightListener {
     func led(bright: Int) {
         print("LED: \(bright)")
         self.addCommand(command: "LED: \(bright)")
-        brightSlider.value = Float(bright)/255
+        //brightSlider.value = Float(bright)/255
     }
     
     func colorTemperature(colorTemperature: Int) {
         print("Color Temperature: \(colorTemperature)")
         self.addCommand(command: "Color Temperature: \(colorTemperature)")
-        colorTemperatureSlider.value = Float(colorTemperature)/255
+        //colorTemperatureSlider.value = Float(colorTemperature)/255
     }
     
     func timer(timer: Int) {
