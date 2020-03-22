@@ -15,6 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cu-sJ-nDg">
+                                <rect key="frame" x="290" y="104" width="76" height="30"/>
+                                <color key="backgroundColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Connected">
+                                    <color key="titleColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendConnectedCommand:" destination="i5P-zJ-qmM" eventType="touchUpInside" id="4b2-Af-1uN"/>
+                                </connections>
+                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8GJ-Ug-pbq">
                                 <rect key="frame" x="48" y="104" width="51" height="31"/>
                                 <color key="onTintColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -22,13 +32,6 @@
                                     <action selector="onPowerChange:" destination="i5P-zJ-qmM" eventType="valueChanged" id="rkg-ne-3kK"/>
                                 </connections>
                             </switch>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKS-BH-gM3">
-                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="yZB-ut-ypz"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開關" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SA-Yt-uoP">
                                 <rect key="frame" x="121" y="109" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -48,6 +51,13 @@
                                     <action selector="onNightLIghtPowerChange:" destination="i5P-zJ-qmM" eventType="valueChanged" id="tBa-JB-MnU"/>
                                 </connections>
                             </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XpU-UJ-m6L">
+                                <rect key="frame" x="46" y="316" width="322" height="31"/>
+                                <color key="tintColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="onColorTemperatureChange:" destination="i5P-zJ-qmM" eventType="valueChanged" id="Bgx-Nj-Xkr"/>
+                                </connections>
+                            </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kzX-HO-GdJ">
                                 <rect key="frame" x="46" y="238" width="322" height="31"/>
                                 <color key="tintColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -68,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pS2-QN-YFL">
-                                <rect key="frame" x="24" y="370" width="366" height="468"/>
+                                <rect key="frame" x="24" y="370" width="366" height="398"/>
                                 <color key="backgroundColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -82,23 +92,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cu-sJ-nDg">
-                                <rect key="frame" x="290" y="104" width="76" height="30"/>
-                                <color key="backgroundColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Connected">
-                                    <color key="titleColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendConnectedCommand:" destination="i5P-zJ-qmM" eventType="touchUpInside" id="4b2-Af-1uN"/>
-                                </connections>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XpU-UJ-m6L">
-                                <rect key="frame" x="46" y="316" width="322" height="31"/>
-                                <color key="tintColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="onColorTemperatureChange:" destination="i5P-zJ-qmM" eventType="valueChanged" id="Bgx-Nj-Xkr"/>
-                                </connections>
-                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKS-BH-gM3">
+                                <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="yZB-ut-ypz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -120,8 +120,8 @@
                             <constraint firstItem="ZxT-KH-dTE" firstAttribute="trailing" secondItem="XpU-UJ-m6L" secondAttribute="trailing" constant="48" id="Uif-0K-dID"/>
                             <constraint firstItem="jjH-7J-Q1K" firstAttribute="leading" secondItem="6gF-PJ-C2f" secondAttribute="leading" id="XdX-I1-8cv"/>
                             <constraint firstItem="XpU-UJ-m6L" firstAttribute="leading" secondItem="ZxT-KH-dTE" secondAttribute="leading" constant="48" id="Zyb-b5-zQs"/>
+                            <constraint firstItem="AKS-BH-gM3" firstAttribute="top" secondItem="pS2-QN-YFL" secondAttribute="bottom" constant="24" id="asx-Vs-Opz"/>
                             <constraint firstItem="pS2-QN-YFL" firstAttribute="leading" secondItem="ZxT-KH-dTE" secondAttribute="leading" constant="24" id="edQ-Rl-E06"/>
-                            <constraint firstItem="ZxT-KH-dTE" firstAttribute="bottom" secondItem="pS2-QN-YFL" secondAttribute="bottom" constant="24" id="i1B-kr-r5T"/>
                             <constraint firstItem="ZxT-KH-dTE" firstAttribute="trailing" secondItem="pS2-QN-YFL" secondAttribute="trailing" constant="24" id="iRu-8X-6pz"/>
                             <constraint firstItem="Wok-Sg-5tH" firstAttribute="top" secondItem="kzX-HO-GdJ" secondAttribute="bottom" constant="24" id="j2N-HP-sgk"/>
                             <constraint firstItem="ZxT-KH-dTE" firstAttribute="bottom" secondItem="AKS-BH-gM3" secondAttribute="bottom" id="juJ-M4-ht4"/>
