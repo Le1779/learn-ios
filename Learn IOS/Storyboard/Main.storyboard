@@ -106,6 +106,14 @@
             </objects>
             <point key="canvasLocation" x="752" y="-819"/>
         </scene>
+        <!--rgbLightPage-->
+        <scene sceneID="dt3-Z3-uRE">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="rgbLightPage" storyboardName="Lighting" referencedIdentifier="rgbLightPage" id="Wea-zi-qDG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xS5-y6-32Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="203" y="-686"/>
+        </scene>
         <!--learnDatePickerPage-->
         <scene sceneID="Rj0-cZ-YgH">
             <objects>

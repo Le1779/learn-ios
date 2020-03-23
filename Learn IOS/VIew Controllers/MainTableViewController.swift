@@ -31,7 +31,8 @@ class MainTableViewController: UITableViewController {
                                                Page(name: "Date Picker", id: "learnDatePickerPage")]),
         PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
                                                    Page(name: "Learn BLE", id: "learnBLEPage")]),
-        PageList(sectionName: "Lighting", pages: [Page(name: "Scene Switch", id: "sceneSwitchLightPage")]),
+        PageList(sectionName: "Lighting", pages: [Page(name: "Scene Switch", id: "sceneSwitchLightPage"),
+                                                  Page(name: "RGB", id: "rgbLightPage")]),
         PageList(sectionName: "Homework", pages: [Page(name: "BmiCalculator", id: "layout_bmi_calculator")])
     ]
     

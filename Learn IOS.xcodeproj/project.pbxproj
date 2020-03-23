@@ -28,6 +28,7 @@
 		1D6220602426568200F41513 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D62205F2426568200F41513 /* Light.swift */; };
 		1D62206224265B2E00F41513 /* SceneSwitchLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D62206124265B2E00F41513 /* SceneSwitchLight.swift */; };
 		1D622064242859BC00F41513 /* LearnDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D622063242859BC00F41513 /* LearnDatePickerViewController.swift */; };
+		1D622066242893F500F41513 /* RGBLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D622065242893F500F41513 /* RGBLightViewController.swift */; };
 		1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BC23D09BA1001D146B /* AppDelegate.swift */; };
 		1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270BE23D09BA1001D146B /* SceneDelegate.swift */; };
 		1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6270C023D09BA1001D146B /* LearnButtonViewController.swift */; };
@@ -63,6 +64,7 @@
 		1D62205F2426568200F41513 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		1D62206124265B2E00F41513 /* SceneSwitchLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSwitchLight.swift; sourceTree = "<group>"; };
 		1D622063242859BC00F41513 /* LearnDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDatePickerViewController.swift; sourceTree = "<group>"; };
+		1D622065242893F500F41513 /* RGBLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBLightViewController.swift; sourceTree = "<group>"; };
 		1D6270B923D09BA1001D146B /* Learn IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6270BC23D09BA1001D146B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D6270BE23D09BA1001D146B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				1D62205C2426471E00F41513 /* SceneSwitchLightViewController.swift */,
+				1D622065242893F500F41513 /* RGBLightViewController.swift */,
 			);
 			path = Lighting;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				1D30E359241CFC71006CEC8F /* ScanBleBottomSheetViewController.swift in Sources */,
 				1D30E348241A6012006CEC8F /* BmiCalculatorViewController.swift in Sources */,
+				1D622066242893F500F41513 /* RGBLightViewController.swift in Sources */,
 				1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
 				1D30E350241BCC72006CEC8F /* LearnBottomSheetViewController.swift in Sources */,

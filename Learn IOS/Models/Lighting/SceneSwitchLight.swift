@@ -36,7 +36,7 @@ class SceneSwitchLight: Light {
     func analysisResponse(response: String) {
         let responses = response.replacingOccurrences(of: ">", with: "").components(separatedBy: "\r\n")
         for command in responses {
-            print("analysisResponse: " + command)
+            //print("analysisResponse: " + command)
             if isHandle(command: command, target: GetCommandRegex.POWER_ON) {
                 listener?.powerOn()
             } else if isHandle(command: command, target: GetCommandRegex.POWER_OFF) {
