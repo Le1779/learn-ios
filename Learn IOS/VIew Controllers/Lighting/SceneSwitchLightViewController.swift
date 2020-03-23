@@ -148,7 +148,6 @@ extension SceneSwitchLightViewController: SceneSwitchLightListener {
     func powerOn() {
         print("Power On")
         self.addCommand(command: "Power On")
-        self.enableAllView()
         self.powerSwitch.isOn = true
         needGetBrightAndColorTemperatureFromDevice = true
     }
@@ -156,7 +155,6 @@ extension SceneSwitchLightViewController: SceneSwitchLightListener {
     func powerOff() {
         print("Power Off")
         self.addCommand(command: "Power Off")
-        self.enableAllView()
         self.powerSwitch.isOn = false
         needGetBrightAndColorTemperatureFromDevice = true
     }
@@ -199,6 +197,7 @@ extension SceneSwitchLightViewController: SceneSwitchLightListener {
     func timer(timer: Int) {
         print("Timer: \(timer)")
         self.addCommand(command: "Timer: \(timer)")
+        self.enableAllView()
     }
     
     
