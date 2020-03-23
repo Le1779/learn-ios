@@ -211,5 +211,71 @@
             </objects>
             <point key="canvasLocation" x="1539" y="858"/>
         </scene>
+        <!--Learn Date Picker View Controller-->
+        <scene sceneID="VRZ-Go-JEH">
+            <objects>
+                <viewController storyboardIdentifier="learnDatePickerPage" id="FdK-mS-vTW" customClass="LearnDatePickerViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lnO-Yt-JON">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hEi-9f-zzd">
+                                <rect key="frame" x="0.0" y="294" width="414" height="216"/>
+                                <connections>
+                                    <action selector="datePickerChange:" destination="FdK-mS-vTW" eventType="valueChanged" id="kMK-aS-voi"/>
+                                </connections>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kc-VQ-MMl">
+                                <rect key="frame" x="48" y="214" width="318" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BbT-D8-3X7">
+                                <rect key="frame" x="48" y="116" width="51" height="31"/>
+                                <connections>
+                                    <action selector="showDateSwitchChange:" destination="FdK-mS-vTW" eventType="valueChanged" id="bzP-WU-WDX"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPu-BL-O9I">
+                                <rect key="frame" x="121" y="121" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4W9-Ox-jGy">
+                                <rect key="frame" x="248" y="116" width="118" height="30"/>
+                                <state key="normal" title="Show Timer Alert"/>
+                                <connections>
+                                    <action selector="showAlert:" destination="FdK-mS-vTW" eventType="touchUpInside" id="23F-2J-KJg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1Kc-VQ-MMl" firstAttribute="top" secondItem="q9d-he-L2k" secondAttribute="top" constant="170" id="0Wk-PJ-Wj7"/>
+                            <constraint firstItem="1Kc-VQ-MMl" firstAttribute="leading" secondItem="q9d-he-L2k" secondAttribute="leading" constant="48" id="1zi-aq-WaA"/>
+                            <constraint firstItem="hEi-9f-zzd" firstAttribute="leading" secondItem="q9d-he-L2k" secondAttribute="leading" id="CO6-i7-qdw"/>
+                            <constraint firstItem="vPu-BL-O9I" firstAttribute="centerY" secondItem="BbT-D8-3X7" secondAttribute="centerY" id="EK0-gY-FmU"/>
+                            <constraint firstItem="4W9-Ox-jGy" firstAttribute="top" secondItem="q9d-he-L2k" secondAttribute="top" constant="72" id="EkR-uX-K9T"/>
+                            <constraint firstItem="BbT-D8-3X7" firstAttribute="leading" secondItem="q9d-he-L2k" secondAttribute="leading" constant="48" id="GWq-iN-m0R"/>
+                            <constraint firstItem="hEi-9f-zzd" firstAttribute="trailing" secondItem="q9d-he-L2k" secondAttribute="trailing" id="HVg-7o-KSG"/>
+                            <constraint firstItem="BbT-D8-3X7" firstAttribute="top" secondItem="q9d-he-L2k" secondAttribute="top" constant="72" id="PoD-dN-hph"/>
+                            <constraint firstItem="hEi-9f-zzd" firstAttribute="top" secondItem="q9d-he-L2k" secondAttribute="top" constant="250" id="dKw-93-9Lo"/>
+                            <constraint firstItem="q9d-he-L2k" firstAttribute="trailing" secondItem="4W9-Ox-jGy" secondAttribute="trailing" constant="48" id="dgR-3h-BWl"/>
+                            <constraint firstItem="q9d-he-L2k" firstAttribute="trailing" secondItem="1Kc-VQ-MMl" secondAttribute="trailing" constant="48" id="m7p-Ws-pZ0"/>
+                            <constraint firstItem="vPu-BL-O9I" firstAttribute="leading" secondItem="BbT-D8-3X7" secondAttribute="trailing" constant="24" id="wnZ-Sa-WJc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q9d-he-L2k"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="hEi-9f-zzd" id="EVe-hZ-Qme"/>
+                        <outlet property="pickerTextField" destination="1Kc-VQ-MMl" id="i3p-nX-B54"/>
+                        <outlet property="showDateSwitch" destination="BbT-D8-3X7" id="Kzc-8j-7uE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5t-CX-8lF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="1525"/>
+        </scene>
     </scenes>
 </document>
