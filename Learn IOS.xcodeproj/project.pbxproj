@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0FCA08242B9B3000D485FD /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FCA07242B9B3000D485FD /* Custom.storyboard */; };
+		1D0FCA0B242B9B7D00D485FD /* CustomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */; };
 		1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */; };
 		1D30E345241A5F53006CEC8F /* Homework.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D30E344241A5F53006CEC8F /* Homework.storyboard */; };
 		1D30E348241A6012006CEC8F /* BmiCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E347241A6012006CEC8F /* BmiCalculatorViewController.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0FCA07242B9B3000D485FD /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
+		1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewController.swift; sourceTree = "<group>"; };
 		1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTextFieldViewController.swift; sourceTree = "<group>"; };
 		1D30E344241A5F53006CEC8F /* Homework.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Homework.storyboard; sourceTree = "<group>"; };
 		1D30E347241A6012006CEC8F /* BmiCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0FCA09242B9B4800D485FD /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		1D30E33E24188F98006CEC8F /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +111,7 @@
 				1D4C698B24261A8F00C2DD9B /* UIKit.storyboard */,
 				1D859D772417840E0026746D /* Bluetooth.storyboard */,
 				1D6220572426419600F41513 /* Lighting.storyboard */,
+				1D0FCA07242B9B3000D485FD /* Custom.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -226,6 +239,7 @@
 		1D6270D623D163B7001D146B /* VIew Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1D0FCA09242B9B4800D485FD /* Custom */,
 				1D622059242641B500F41513 /* Lighting */,
 				1D30E346241A5FEF006CEC8F /* Homework */,
 				1D30E3432418BF5A006CEC8F /* Bluetooth */,
@@ -310,6 +324,7 @@
 				1D30E35A241CFC71006CEC8F /* ScanBleBottomSheetViewController.xib in Resources */,
 				1D6270C923D09BA4001D146B /* LaunchScreen.storyboard in Resources */,
 				1D6270C623D09BA4001D146B /* Assets.xcassets in Resources */,
+				1D0FCA08242B9B3000D485FD /* Custom.storyboard in Resources */,
 				1D30E345241A5F53006CEC8F /* Homework.storyboard in Resources */,
 				1D6220582426419600F41513 /* Lighting.storyboard in Resources */,
 			);
@@ -340,6 +355,7 @@
 				1D30E363241F6B1A006CEC8F /* BleHelper.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewControllerOLD.swift in Sources */,
 				1D30E35D241D2296006CEC8F /* ScanBleTableViewCell.swift in Sources */,
+				1D0FCA0B242B9B7D00D485FD /* CustomButtonViewController.swift in Sources */,
 				1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */,
 				1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */,
 				1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */,

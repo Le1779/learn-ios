@@ -29,6 +29,7 @@ class MainTableViewController: UITableViewController {
                                                Page(name: "Bottom Sheet", id: "learnBottomSheetPage"),
                                                Page(name: "PageView", id: "learnPageViewPage"),
                                                Page(name: "Date Picker", id: "learnDatePickerPage")]),
+        PageList(sectionName: "Custom View", pages: [Page(name: "Button", id: "customButtonPage")]),
         PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
                                                    Page(name: "Learn BLE", id: "learnBLEPage")]),
         PageList(sectionName: "Lighting", pages: [Page(name: "Scene Switch", id: "sceneSwitchLightPage"),
