@@ -1,7 +1,7 @@
 //
 //  LoadingButton.swift
 //  Learn IOS
-//
+//  學習怎麼製作客製化元件
 //  Created by Kevin Le on 2020/3/26.
 //  Copyright © 2020 Kevin Le. All rights reserved.
 //
@@ -10,146 +10,112 @@ import UIKit
 
 class CustomButton: UIButton {
     
-    var shadowLayer: UIView?
-    
-    var shadowAdded: Bool = false
-    
-    var withShadow: Bool = true
-    
-    var bgColor: UIColor = .lightGray
-    
-    var cornerRadius: CGFloat = 12.0 {
-        didSet {
-            self.layer.cornerRadius = self.cornerRadius
-        }
-    }
-
-    public init(
-        frame: CGRect = .zero,
-        icon: UIImage? = nil,
-        text: String? = nil,
-        textColor: UIColor? = .white,
-        bgColor: UIColor = .black,
-        cornerRadius: CGFloat = 12.0,
-        withShadow: Bool = true
-    ) {
-        super.init(frame: frame)
-        if let text = text {
-            self.setTitle(text, for: .normal)
-            self.setTitleColor(textColor, for: .normal)
-            self.titleLabel?.adjustsFontSizeToFitWidth = true
-        }
-        self.bgColor = bgColor
-        self.backgroundColor = bgColor
-        self.contentEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-        self.setCornerBorder(cornerRadius: cornerRadius)
-        self.withShadow = withShadow
-        self.cornerRadius = cornerRadius
-    
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+    private var originalBackgroundColor: UIColor = .black
+    private var activeBackgroundColor: UIColor = .black
+    private var withShadow: Bool = false
+    private var shadowLayer: ShadowLayer?
+    private var isAddedShadow: Bool = false
     
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
-        if shadowAdded || !withShadow { return }
-        shadowAdded = true
-        // Set up shadow layer
-        shadowLayer = UIView(frame: self.frame)
-        guard let shadowLayer = shadowLayer else { return }
-        shadowLayer.setAsShadow(bounds: bounds, cornerRadius: self.cornerRadius)
+        if isAddedShadow || !withShadow {
+            return
+        }
+        
+        isAddedShadow = true
+        
+        guard let shadowLayer = shadowLayer else {
+            return
+        }
+        
         self.superview?.insertSubview(shadowLayer, belowSubview: self)
-        print("button draw")
     }
     
-    // MARK: Touch
-    // touchesBegan
-    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        self.backgroundColor = self.bgColor.getColorTint()
-    }
-    // touchesEnded
-    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        self.backgroundColor = self.bgColor
-    }
-    // touchesCancelled
-    open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        self.backgroundColor = self.bgColor
-    }
-    // touchesMoved
-    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        self.backgroundColor = self.bgColor.getColorTint()
+    public class Builder {
+        
+        var button: CustomButton
+        
+        public init(frame: CGRect) {
+            button = CustomButton(frame: frame)
+            button.backgroundColor = .black
+            button.setTitleColor(.black, for: .normal)
+            self.button.layer.borderWidth = 1.5
+            self.button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        }
+        
+        public func setBackgroundColor(color: UIColor) -> Builder {
+            self.button.backgroundColor = color
+            self.button.originalBackgroundColor = color
+            self.button.activeBackgroundColor = color.getColorTint()
+            return self
+        }
+        
+        public func setText(text: String) -> Builder {
+            self.button.setTitle(text, for: .normal)
+            self.button.titleLabel?.adjustsFontSizeToFitWidth = true
+            return self
+        }
+        
+        public func setTextColor(color: UIColor) -> Builder {
+            self.button.setTitleColor(color, for: .normal)
+            return self
+        }
+        
+        public func setCornerRadius(radius: CGFloat) -> Builder {
+            self.button.layer.cornerRadius = radius
+            self.button.clipsToBounds = true
+            return self
+        }
+        
+        public func setBorderWidth(width: CGFloat) -> Builder {
+            self.button.layer.borderWidth = width
+            return self
+        }
+        
+        public func setBorderColor(color: CGColor) -> Builder {
+            self.button.layer.borderColor = color
+            return self
+        }
+        
+        public func setWithShadow(withShadow: Bool) -> Builder {
+            self.button.withShadow = withShadow
+            if withShadow {
+                self.button.shadowLayer = ShadowLayer(frame: self.button.frame, bounds: self.button.bounds, cornerRadius: self.button.layer.cornerRadius)
+            }
+            
+            return self
+        }
+        
+        public func build() -> CustomButton {
+            return button
+        }
     }
     
 }
 
-// MARK: UIView
-extension UIView {
-    /**
-     Set the corner radius of the view.
-     
-     - Parameter color:        The color of the border.
-     - Parameter cornerRadius: The radius of the rounded corner.
-     - Parameter borderWidth:  The width of the border.
-     */
-    open func setCornerBorder(color: UIColor? = nil, cornerRadius: CGFloat = 15.0, borderWidth: CGFloat = 1.5) {
-        self.layer.borderColor = color != nil ? color!.cgColor : UIColor.clear.cgColor
-        self.layer.borderWidth = borderWidth
-        self.layer.cornerRadius = cornerRadius
-        self.clipsToBounds = true
+// MARK: Touch
+extension CustomButton {
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.backgroundColor = self.activeBackgroundColor
     }
-    /**
-     Set the shadow layer of the view.
-     
-     - Parameter bounds:       The bounds in CGRect of the shadow.
-     - Parameter cornerRadius: The radius of the shadow path.
-     - Parameter shadowRadius: The radius of the shadow.
-     */
-    open func setAsShadow(bounds: CGRect, cornerRadius: CGFloat = 0.0, shadowRadius: CGFloat = 1) {
-        self.backgroundColor = UIColor.clear
-        self.layer.shadowColor = UIColor.lightGray.cgColor
-        self.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
-        self.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        self.layer.shadowOpacity = 0.7
-        self.layer.shadowRadius = shadowRadius
-        self.layer.masksToBounds = true
-        self.clipsToBounds = false
+    
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        self.backgroundColor = self.originalBackgroundColor
     }
-    /**
-     Add subviews and make it prepared for AutoLayout.
-     
-     - Parameter views: The views to be added as subviews of current view.
-     */
-    public func addSubViews(_ views: [UIView]) {
-        views.forEach({
-            self.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        })
+    
+    open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        self.backgroundColor = self.originalBackgroundColor
     }
-    /**
-     Make the specified view (in parameter) to be centered of current view.
-     
-     - Parameter view: The view to be positioned to the center of current view.
-     */
-    public func centerSubView(_ view: UIView) {
-        self.addConstraints(
-            [
-                NSLayoutConstraint(item: view, attribute: .centerX,
-                                   relatedBy: .equal,
-                                   toItem: self, attribute: .centerX,
-                                   multiplier: 1.0, constant: 0.0),
-                NSLayoutConstraint(item: view, attribute: .centerY,
-                                   relatedBy: .equal,
-                                   toItem: self, attribute: .centerY,
-                                   multiplier: 1.0, constant: 0.0)
-            ]
-        )
+    
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        self.backgroundColor = self.activeBackgroundColor
     }
+    
 }
 
 // MARK: - UIColor

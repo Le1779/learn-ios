@@ -13,9 +13,16 @@ class CustomButtonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loadingButton = CustomButton(text: "Loading")
-        loadingButton.frame = CGRect(x: 50, y: 50, width: 100, height: 50)
-        self.view.addSubview(loadingButton)
+        let buttonFrame = CGRect(x: 50, y: 50, width: 100, height: 50)
+        let customButton = CustomButton.Builder(frame: buttonFrame)
+            .setBackgroundColor(color: .gray)
+            .setText(text: "Click me!")
+            .setTextColor(color: .white)
+            .setCornerRadius(radius: 12.0)
+            .setWithShadow(withShadow: true)
+            .build()
+        
+        self.view.addSubview(customButton)
     }
 
     /*
