@@ -39,7 +39,7 @@ class CustomButton: UIButton {
             button = CustomButton(frame: frame)
             button.backgroundColor = .black
             button.setTitleColor(.black, for: .normal)
-            self.button.layer.borderWidth = 1.5
+            self.button.layer.borderWidth = 0
             self.button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         }
         
@@ -99,11 +99,17 @@ extension CustomButton {
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.backgroundColor = self.activeBackgroundColor
+        if shadowLayer != nil {
+            shadowLayer?.layer.shadowColor = UIColor.clear.cgColor
+        }
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         self.backgroundColor = self.originalBackgroundColor
+        if shadowLayer != nil {
+            shadowLayer?.layer.shadowColor = UIColor.lightGray.cgColor
+        }
     }
     
     open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
