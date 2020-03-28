@@ -114,6 +114,14 @@
             </objects>
             <point key="canvasLocation" x="203" y="-686"/>
         </scene>
+        <!--touchpadPage-->
+        <scene sceneID="pFB-9e-Twc">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="touchpadPage" storyboardName="Custom" referencedIdentifier="touchpadPage" id="woF-aC-C5Y" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVF-Bm-c77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231" y="-633"/>
+        </scene>
         <!--learnDatePickerPage-->
         <scene sceneID="Rj0-cZ-YgH">
             <objects>

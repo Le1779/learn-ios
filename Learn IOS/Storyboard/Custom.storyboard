@@ -22,5 +22,41 @@
             </objects>
             <point key="canvasLocation" x="139" y="119"/>
         </scene>
+        <!--Touchpad View Controller-->
+        <scene sceneID="lIG-oj-9Tn">
+            <objects>
+                <viewController storyboardIdentifier="touchpadPage" modalPresentationStyle="fullScreen" id="ymU-eY-nYV" customClass="TouchpadViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QmW-km-dAW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Y-zz-jZp">
+                                <rect key="frame" x="24" y="44" width="55.5" height="38"/>
+                                <color key="tintColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-8" maxY="0.0"/>
+                                <state key="normal" title="Back" image="lessthan" catalog="system">
+                                    <color key="titleColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBackButton:" destination="ymU-eY-nYV" eventType="touchUpInside" id="xF5-Wc-uYq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="13Y-zz-jZp" firstAttribute="top" secondItem="Def-27-HA0" secondAttribute="top" id="BYU-Tg-j8z"/>
+                            <constraint firstItem="13Y-zz-jZp" firstAttribute="leading" secondItem="Def-27-HA0" secondAttribute="leading" constant="24" id="vqs-9R-jNa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Def-27-HA0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfq-mF-uAY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="119"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="lessthan" catalog="system" width="64" height="54"/>
+    </resources>
 </document>
