@@ -46,6 +46,8 @@
 		1D859D782417840E0026746D /* Bluetooth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D859D772417840E0026746D /* Bluetooth.storyboard */; };
 		1D87EA2C242F72F400E20BFC /* TouchpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA2B242F72F400E20BFC /* TouchpadViewController.swift */; };
 		1D87EA2E242F745F00E20BFC /* TouchpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA2D242F745F00E20BFC /* TouchpadView.swift */; };
+		1D87EA3024307A7F00E20BFC /* BrightAndKelvinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA2F24307A7F00E20BFC /* BrightAndKelvinViewController.swift */; };
+		1D87EA3224307B5700E20BFC /* BrightAndKelvinTouchpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		1D859D772417840E0026746D /* Bluetooth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bluetooth.storyboard; sourceTree = "<group>"; };
 		1D87EA2B242F72F400E20BFC /* TouchpadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchpadViewController.swift; sourceTree = "<group>"; };
 		1D87EA2D242F745F00E20BFC /* TouchpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchpadView.swift; sourceTree = "<group>"; };
+		1D87EA2F24307A7F00E20BFC /* BrightAndKelvinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightAndKelvinViewController.swift; sourceTree = "<group>"; };
+		1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightAndKelvinTouchpadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			children = (
 				1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */,
 				1D87EA2B242F72F400E20BFC /* TouchpadViewController.swift */,
+				1D87EA2F24307A7F00E20BFC /* BrightAndKelvinViewController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				1D0FCA0C242CF2B100D485FD /* CustomButton.swift */,
 				1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */,
 				1D87EA2D242F745F00E20BFC /* TouchpadView.swift */,
+				1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,12 +363,14 @@
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
 				1D30E350241BCC72006CEC8F /* LearnBottomSheetViewController.swift in Sources */,
 				1D30E34D241BCB78006CEC8F /* BottomSheetViewController.swift in Sources */,
+				1D87EA3024307A7F00E20BFC /* BrightAndKelvinViewController.swift in Sources */,
 				1D6220602426568200F41513 /* Light.swift in Sources */,
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
 				1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */,
 				1D0FCA0F242E3F3400D485FD /* ShadowLayer.swift in Sources */,
 				1D62206224265B2E00F41513 /* SceneSwitchLight.swift in Sources */,
 				1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */,
+				1D87EA3224307B5700E20BFC /* BrightAndKelvinTouchpadView.swift in Sources */,
 				1D30E352241CBE41006CEC8F /* LearnPageViewViewController.swift in Sources */,
 				1D62205D2426471E00F41513 /* SceneSwitchLightViewController.swift in Sources */,
 				1D87EA2E242F745F00E20BFC /* TouchpadView.swift in Sources */,

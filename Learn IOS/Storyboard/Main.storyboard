@@ -120,7 +120,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="touchpadPage" storyboardName="Custom" referencedIdentifier="touchpadPage" id="woF-aC-C5Y" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVF-Bm-c77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231" y="-633"/>
+            <point key="canvasLocation" x="161" y="-635"/>
+        </scene>
+        <!--brightAndKelvinPage-->
+        <scene sceneID="oGh-KH-1NB">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="brightAndKelvinPage" storyboardName="Custom" referencedIdentifier="brightAndKelvinPage" id="vka-vT-29P" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8h-fh-hxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="-635"/>
         </scene>
         <!--learnDatePickerPage-->
         <scene sceneID="Rj0-cZ-YgH">

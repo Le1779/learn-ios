@@ -68,6 +68,52 @@
             </objects>
             <point key="canvasLocation" x="880" y="119"/>
         </scene>
+        <!--Bright And Kelvin View Controller-->
+        <scene sceneID="IZs-iA-RZY">
+            <objects>
+                <viewController storyboardIdentifier="brightAndKelvinPage" modalPresentationStyle="fullScreen" id="kWL-Kz-26u" customClass="BrightAndKelvinViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="REg-MT-v2Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FJ-fR-98m">
+                                <rect key="frame" x="24" y="44" width="55.5" height="38"/>
+                                <color key="tintColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-8" maxY="0.0"/>
+                                <state key="normal" title="Back" image="lessthan" catalog="system">
+                                    <color key="titleColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickBackButton:" destination="kWL-Kz-26u" eventType="touchUpInside" id="aRS-zl-Csa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coj-YR-Zo1">
+                                <rect key="frame" x="48" y="694" width="318" height="24"/>
+                                <color key="backgroundColor" red="0.098771221940000001" green="0.112290509" blue="0.1725560427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="USq-sO-sr4" firstAttribute="bottom" secondItem="Coj-YR-Zo1" secondAttribute="bottom" constant="144" id="Akc-08-0xf"/>
+                            <constraint firstItem="1FJ-fR-98m" firstAttribute="leading" secondItem="USq-sO-sr4" secondAttribute="leading" constant="24" id="LCC-c7-cBt"/>
+                            <constraint firstItem="1FJ-fR-98m" firstAttribute="top" secondItem="USq-sO-sr4" secondAttribute="top" id="QQG-Vz-smg"/>
+                            <constraint firstItem="Coj-YR-Zo1" firstAttribute="leading" secondItem="USq-sO-sr4" secondAttribute="leading" constant="48" id="Ye5-UG-hXG"/>
+                            <constraint firstItem="USq-sO-sr4" firstAttribute="trailing" secondItem="Coj-YR-Zo1" secondAttribute="trailing" constant="48" id="usz-hW-lJj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="USq-sO-sr4"/>
+                    </view>
+                    <connections>
+                        <outlet property="touchLocationLabel" destination="Coj-YR-Zo1" id="p4n-dR-Tfo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yFj-8b-pzs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="119"/>
+        </scene>
     </scenes>
     <resources>
         <image name="lessthan" catalog="system" width="64" height="54"/>

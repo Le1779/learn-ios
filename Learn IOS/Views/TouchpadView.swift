@@ -46,7 +46,7 @@ class TouchpadView: UIView {
     }
     
     private func blurBackground() {
-        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffect = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = frame
         self.addSubview(blurView)
