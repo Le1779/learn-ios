@@ -11,12 +11,12 @@ import UIKit
 class TouchpadView: UIView {
     
     private var touchpadListeners = [TouchpadListener]()
+    private var isDrawShadow: Bool = false
 
     public override init(frame: CGRect){
         super.init(frame: frame)
         blurBackground()
         setCorner()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -32,7 +32,11 @@ class TouchpadView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        
+        if !isDrawShadow {
+            isDrawShadow = true
+            let shadowLayer = ShadowLayer(frame: self.frame, bounds: self.bounds, cornerRadius: self.layer.cornerRadius)
+            self.superview?.insertSubview(shadowLayer, belowSubview: self)
+        }
     }
     
     private func notifyLocationChange(location: CGPoint) {
