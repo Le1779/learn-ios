@@ -9,23 +9,55 @@
 import UIKit
 
 class TouchpadView: UIView {
+    
+    private var touchpadListeners = [TouchpadListener]()
 
     public override init(frame: CGRect){
         super.init(frame: frame)
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = frame
-        self.addSubview(blurView)
+        blurBackground()
+        setCorner()
+        
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    public func addTouchpadListener(listener: TouchpadListener) {
+        if let index = touchpadListeners.firstIndex(where: {$0 === listener}) {
+            touchpadListeners.remove(at: index)
+        }
+        
+        touchpadListeners.append(listener)
+    }
+    
     override func draw(_ rect: CGRect) {
         
     }
     
+    private func notifyLocationChange(location: CGPoint) {
+        for listener in touchpadListeners {
+            listener.locationChange(location: location)
+        }
+    }
+    
+    private func blurBackground() {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = frame
+        self.addSubview(blurView)
+    }
+    
+    private func setCorner() {
+        self.layer.cornerRadius = self.frame.width/20
+        self.clipsToBounds = true
+    }
+    
+}
+
+protocol TouchpadListener: NSObjectProtocol {
+    
+    func locationChange(location: CGPoint)
 }
 
 // MARK: Touch
@@ -60,7 +92,7 @@ extension TouchpadView {
         super.touchesMoved(touches, with: event)
         if let touch = touches.first {
             let touchLocation = touch.location(in: self)
-            print("touchesMoved x:\(touchLocation.x), y:\(touchLocation.y)")
+            notifyLocationChange(location: touchLocation)
         }
     }
     
