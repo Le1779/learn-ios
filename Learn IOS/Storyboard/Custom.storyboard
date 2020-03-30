@@ -114,6 +114,21 @@
             </objects>
             <point key="canvasLocation" x="1664" y="119"/>
         </scene>
+        <!--Selector View Controller-->
+        <scene sceneID="GjM-pG-hhK">
+            <objects>
+                <viewController storyboardIdentifier="rgbSelectorPage" id="Qol-Qe-Ewv" customClass="RGBSelectorViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KkZ-jx-CQ7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.89348930120000003" green="0.8758590221" blue="0.79998916389999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="0P4-cV-E0M"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Fz-RT-Gvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2426" y="119"/>
+        </scene>
     </scenes>
     <resources>
         <image name="lessthan" catalog="system" width="64" height="54"/>

@@ -130,6 +130,14 @@
             </objects>
             <point key="canvasLocation" x="409" y="-635"/>
         </scene>
+        <!--rgbSelectorPage-->
+        <scene sceneID="KWM-34-06G">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="rgbSelectorPage" storyboardName="Custom" referencedIdentifier="rgbSelectorPage" id="EVj-gt-nq8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c6F-Vy-nrz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="-635"/>
+        </scene>
         <!--learnDatePickerPage-->
         <scene sceneID="Rj0-cZ-YgH">
             <objects>
