@@ -13,13 +13,16 @@ class ShadowLayer: UIView {
     public init(frame: CGRect,
                 bounds: CGRect,
                 cornerRadius: CGFloat = 0.0,
-                shadowRadius: CGFloat = 1){
+                shadowRadius: CGFloat = 1,
+                shadowOpacity: Float = 0.7,
+                shadowOffset: CGSize = CGSize(width: 2.0, height: 2.0),
+                shadowColor: UIColor = .lightGray){
         super.init(frame: frame)
         self.backgroundColor = UIColor.clear
-        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowColor = shadowColor.cgColor
         self.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
-        self.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        self.layer.shadowOpacity = 0.7
+        self.layer.shadowOffset = shadowOffset
+        self.layer.shadowOpacity = shadowOpacity
         self.layer.shadowRadius = shadowRadius
         self.layer.masksToBounds = true
         self.clipsToBounds = false

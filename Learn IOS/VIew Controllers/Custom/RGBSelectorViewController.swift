@@ -12,15 +12,25 @@ class RGBSelectorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let smRgbSelect = RGBSelector()
+        self.addChild(smRgbSelect)
+        self.view.addSubview(smRgbSelect.view)
+        smRgbSelect.didMove(toParent: self)
+        smRgbSelect.view.frame = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 100)
+        
+        
+        let mdRgbSelect = RGBSelector()
+        self.addChild(mdRgbSelect)
+        self.view.addSubview(mdRgbSelect.view)
+        mdRgbSelect.didMove(toParent: self)
+        mdRgbSelect.view.frame = CGRect(x: 0, y: 200, width: self.view.frame.width, height: 120)
 
         let rgbSelect = RGBSelector()
-        print("before add tableview")
         self.addChild(rgbSelect)
         self.view.addSubview(rgbSelect.view)
         rgbSelect.didMove(toParent: self)
-        print("after add tableview")
-        
-        rgbSelect.view.frame = CGRect(x: 0, y: 100, width: self.view.frame.width, height: 150)
+        rgbSelect.view.frame = CGRect(x: 0, y: 300, width: self.view.frame.width, height: 150)
     }
     
 
