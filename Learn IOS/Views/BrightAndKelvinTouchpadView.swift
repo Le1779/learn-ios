@@ -54,6 +54,9 @@ class BrightAndKelvinTouchpadView: TouchpadView {
             initKelvinView()
             self.superview?.insertSubview(kelvinView, belowSubview: self)
         }
+        
+        self.redrawBrightView()
+        self.redrawKelvinView()
     }
 
     private func onTouch(location: CGPoint) {
@@ -71,8 +74,12 @@ class BrightAndKelvinTouchpadView: TouchpadView {
         currentBright = x/viewWidth
         currentKelvin = 1 - y/viewHeight
         notifyBrightAndKelvinChange()
-        redrawBrightView()
-        redrawKelvinView()
+        let animator = UIViewPropertyAnimator(duration: 0.5, curve:  .linear, animations: {
+            self.redrawBrightView()
+            self.redrawKelvinView()
+        })
+        animator.startAnimation()
+        
     }
     
     private func notifyBrightAndKelvinChange() {
