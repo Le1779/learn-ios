@@ -11,6 +11,7 @@
 		1D0FCA0B242B9B7D00D485FD /* CustomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */; };
 		1D0FCA0D242CF2B100D485FD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0C242CF2B100D485FD /* CustomButton.swift */; };
 		1D0FCA0F242E3F3400D485FD /* ShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */; };
+		1D21DA3A2462682F00450209 /* StarrySkyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D21DA392462682F00450209 /* StarrySkyView.swift */; };
 		1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */; };
 		1D30E345241A5F53006CEC8F /* Homework.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D30E344241A5F53006CEC8F /* Homework.storyboard */; };
 		1D30E348241A6012006CEC8F /* BmiCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E347241A6012006CEC8F /* BmiCalculatorViewController.swift */; };
@@ -50,6 +51,7 @@
 		1D87EA3224307B5700E20BFC /* BrightAndKelvinTouchpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */; };
 		1D87EA362430BD3D00E20BFC /* RGBSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA352430BD3D00E20BFC /* RGBSelector.swift */; };
 		1D87EA382430C29500E20BFC /* RGBSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */; };
+		1DC51CCC244ED5AA004433E4 /* StarrySkyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,7 @@
 		1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewController.swift; sourceTree = "<group>"; };
 		1D0FCA0C242CF2B100D485FD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLayer.swift; sourceTree = "<group>"; };
+		1D21DA392462682F00450209 /* StarrySkyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyView.swift; sourceTree = "<group>"; };
 		1D30E34124189114006CEC8F /* LearnTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnTextFieldViewController.swift; sourceTree = "<group>"; };
 		1D30E344241A5F53006CEC8F /* Homework.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Homework.storyboard; sourceTree = "<group>"; };
 		1D30E347241A6012006CEC8F /* BmiCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightAndKelvinTouchpadView.swift; sourceTree = "<group>"; };
 		1D87EA352430BD3D00E20BFC /* RGBSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSelector.swift; sourceTree = "<group>"; };
 		1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSelectorViewController.swift; sourceTree = "<group>"; };
+		1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 				1D87EA2B242F72F400E20BFC /* TouchpadViewController.swift */,
 				1D87EA2F24307A7F00E20BFC /* BrightAndKelvinViewController.swift */,
 				1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */,
+				1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				1D87EA2D242F745F00E20BFC /* TouchpadView.swift */,
 				1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */,
 				1D87EA352430BD3D00E20BFC /* RGBSelector.swift */,
+				1D21DA392462682F00450209 /* StarrySkyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D30E359241CFC71006CEC8F /* ScanBleBottomSheetViewController.swift in Sources */,
+				1D21DA3A2462682F00450209 /* StarrySkyView.swift in Sources */,
 				1D30E348241A6012006CEC8F /* BmiCalculatorViewController.swift in Sources */,
 				1D0FCA0D242CF2B100D485FD /* CustomButton.swift in Sources */,
 				1D622066242893F500F41513 /* RGBLightViewController.swift in Sources */,
@@ -392,6 +399,7 @@
 				1D87EA2C242F72F400E20BFC /* TouchpadViewController.swift in Sources */,
 				1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */,
 				1D30E3652420A4F0006CEC8F /* BleDevice.swift in Sources */,
+				1DC51CCC244ED5AA004433E4 /* StarrySkyViewController.swift in Sources */,
 				1D622064242859BC00F41513 /* LearnDatePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
