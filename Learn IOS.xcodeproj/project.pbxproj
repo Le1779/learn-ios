@@ -51,6 +51,8 @@
 		1D87EA3224307B5700E20BFC /* BrightAndKelvinTouchpadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */; };
 		1D87EA362430BD3D00E20BFC /* RGBSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA352430BD3D00E20BFC /* RGBSelector.swift */; };
 		1D87EA382430C29500E20BFC /* RGBSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */; };
+		1D9F8C70246D730A00D9A9E1 /* MoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F8C6F246D730A00D9A9E1 /* MoonViewController.swift */; };
+		1D9F8C72246D732200D9A9E1 /* MoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F8C71246D732200D9A9E1 /* MoonView.swift */; };
 		1DC51CCC244ED5AA004433E4 /* StarrySkyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,8 @@
 		1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightAndKelvinTouchpadView.swift; sourceTree = "<group>"; };
 		1D87EA352430BD3D00E20BFC /* RGBSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSelector.swift; sourceTree = "<group>"; };
 		1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSelectorViewController.swift; sourceTree = "<group>"; };
+		1D9F8C6F246D730A00D9A9E1 /* MoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonViewController.swift; sourceTree = "<group>"; };
+		1D9F8C71246D732200D9A9E1 /* MoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonView.swift; sourceTree = "<group>"; };
 		1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +127,7 @@
 				1D87EA2F24307A7F00E20BFC /* BrightAndKelvinViewController.swift */,
 				1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */,
 				1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */,
+				1D9F8C6F246D730A00D9A9E1 /* MoonViewController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */,
 				1D87EA352430BD3D00E20BFC /* RGBSelector.swift */,
 				1D21DA392462682F00450209 /* StarrySkyView.swift */,
+				1D9F8C71246D732200D9A9E1 /* MoonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				1D30E34D241BCB78006CEC8F /* BottomSheetViewController.swift in Sources */,
 				1D87EA3024307A7F00E20BFC /* BrightAndKelvinViewController.swift in Sources */,
 				1D6220602426568200F41513 /* Light.swift in Sources */,
+				1D9F8C70246D730A00D9A9E1 /* MoonViewController.swift in Sources */,
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
 				1D87EA382430C29500E20BFC /* RGBSelectorViewController.swift in Sources */,
 				1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */,
@@ -399,6 +406,7 @@
 				1D87EA2C242F72F400E20BFC /* TouchpadViewController.swift in Sources */,
 				1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */,
 				1D30E3652420A4F0006CEC8F /* BleDevice.swift in Sources */,
+				1D9F8C72246D732200D9A9E1 /* MoonView.swift in Sources */,
 				1DC51CCC244ED5AA004433E4 /* StarrySkyViewController.swift in Sources */,
 				1D622064242859BC00F41513 /* LearnDatePickerViewController.swift in Sources */,
 			);

@@ -122,6 +122,14 @@
             </objects>
             <point key="canvasLocation" x="161" y="-635"/>
         </scene>
+        <!--moonPage-->
+        <scene sceneID="wNp-io-ayN">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="moonPage" storyboardName="Custom" referencedIdentifier="moonPage" id="1ND-hE-Cph" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="350-4g-bRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202" y="-593"/>
+        </scene>
         <!--brightAndKelvinPage-->
         <scene sceneID="oGh-KH-1NB">
             <objects>

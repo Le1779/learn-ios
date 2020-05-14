@@ -14,7 +14,7 @@ class StarrySkyView: UIView {
     var stars: [UIView] = []
     let starNum: Int = 20
     let starMinWidth: Int = 5
-    let starMaxWidth: Int = 8
+    let starMaxWidth: Int = 6
     
     public override init(frame: CGRect){
         super.init(frame: frame)
@@ -54,7 +54,7 @@ class StarrySkyView: UIView {
     
     func startAnimations() {
         stars.forEach { star in
-            UIView.animate(withDuration: TimeInterval(Int.random(in: 5...10)), delay: 0, options: [.repeat, .autoreverse], animations: {
+            UIView.animate(withDuration: TimeInterval(Int.random(in: 1...5)), delay: 0, options: [.repeat, .autoreverse], animations: {
                 star.alpha = 1.0
             }, completion: nil)
         }
