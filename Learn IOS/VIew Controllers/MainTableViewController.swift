@@ -33,6 +33,7 @@ class MainTableViewController: UITableViewController {
                                                      Page(name: "Touchpad", id: "touchpadPage"),
                                                      Page(name: "Bright & Kelvin", id: "brightAndKelvinPage"),
                                                      Page(name: "RGB Selector", id: "rgbSelectorPage"),
+                                                     Page(name: "Color Picker", id: "colorPickerPage"),
                                                      Page(name: "Starry Sky", id: "starrySkyPage"),
                                                      Page(name: "Moon", id: "moonPage")]),
         PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
