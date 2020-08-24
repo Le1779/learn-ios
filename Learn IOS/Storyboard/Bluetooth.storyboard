@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,10 +21,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="62Q-Wc-fx4" detailTextLabel="5wU-RP-NHc" style="IBUITableViewCellStyleValue1" id="6YP-eI-oMN">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6YP-eI-oMN" id="rEa-tw-kkD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="62Q-Wc-fx4">
@@ -99,7 +99,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cka-3v-YS3">
-                                                    <rect key="frame" x="22" y="13" width="90.5" height="54.5"/>
+                                                    <rect key="frame" x="26" y="13" width="90.5" height="54.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radiowaves.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ngD-x7-R6E">
                                                             <rect key="frame" x="0.0" y="0.5" width="13.5" height="53.5"/>
@@ -245,8 +245,117 @@
             </objects>
             <point key="canvasLocation" x="772" y="717"/>
         </scene>
+        <!--Modify DevicePWD View Controller-->
+        <scene sceneID="ZSn-xg-ZFb">
+            <objects>
+                <viewController storyboardIdentifier="modifyDevicePWDPage" id="GRx-dc-Ujc" customClass="ModifyDevicePWDViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bEX-5M-tLU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WrJ-BC-20X">
+                                <rect key="frame" x="0.0" y="748.5" width="414" height="89.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="連線密碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2R-G7-qmg">
+                                <rect key="frame" x="172.5" y="92" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="舊密碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djg-WI-l94">
+                                <rect key="frame" x="181" y="265" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新密碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQx-4V-bzn">
+                                <rect key="frame" x="181" y="352" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OeE-FY-TYH">
+                                <rect key="frame" x="24" y="129" width="366" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsT-LA-UZL">
+                                <rect key="frame" x="24" y="187" width="366" height="30"/>
+                                <color key="backgroundColor" red="0.002449896652" green="0.017460556700000001" blue="0.17648327350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="中斷連線">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="disconnect:" destination="GRx-dc-Ujc" eventType="touchUpInside" id="h6P-Iy-ihA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ai-d7-6xG">
+                                <rect key="frame" x="24" y="302" width="366" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDA-VZ-FuG">
+                                <rect key="frame" x="24" y="389" width="366" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-i8-bLe">
+                                <rect key="frame" x="24" y="439" width="366" height="30"/>
+                                <color key="backgroundColor" red="0.002449896652" green="0.017460556700000001" blue="0.17648327350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="設定新密碼">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingNewPassword:" destination="GRx-dc-Ujc" eventType="touchUpInside" id="DPW-Ro-N10"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8as-62-J0g" firstAttribute="trailing" secondItem="mZg-i8-bLe" secondAttribute="trailing" constant="24" id="1G4-na-jHu"/>
+                            <constraint firstItem="fsT-LA-UZL" firstAttribute="leading" secondItem="8as-62-J0g" secondAttribute="leading" constant="24" id="2tm-wG-NeC"/>
+                            <constraint firstItem="mZg-i8-bLe" firstAttribute="top" secondItem="JDA-VZ-FuG" secondAttribute="bottom" constant="16" id="5VN-QP-8AC"/>
+                            <constraint firstItem="WrJ-BC-20X" firstAttribute="leading" secondItem="8as-62-J0g" secondAttribute="leading" id="EyW-Ly-OFf"/>
+                            <constraint firstItem="OeE-FY-TYH" firstAttribute="leading" secondItem="8as-62-J0g" secondAttribute="leading" constant="24" id="JO8-6L-wfK"/>
+                            <constraint firstItem="WrJ-BC-20X" firstAttribute="trailing" secondItem="8as-62-J0g" secondAttribute="trailing" id="MB3-L8-1DW"/>
+                            <constraint firstItem="WrJ-BC-20X" firstAttribute="height" secondItem="bEX-5M-tLU" secondAttribute="height" multiplier="0.1" id="Oxg-wG-FdB"/>
+                            <constraint firstItem="8Ai-d7-6xG" firstAttribute="top" secondItem="Djg-WI-l94" secondAttribute="bottom" constant="16" id="Sla-d6-Ldy"/>
+                            <constraint firstItem="8as-62-J0g" firstAttribute="trailing" secondItem="OeE-FY-TYH" secondAttribute="trailing" constant="24" id="WYM-gD-sbi"/>
+                            <constraint firstItem="OeE-FY-TYH" firstAttribute="top" secondItem="o2R-G7-qmg" secondAttribute="bottom" constant="16" id="XQ2-Eh-g1g"/>
+                            <constraint firstItem="8as-62-J0g" firstAttribute="bottom" secondItem="WrJ-BC-20X" secondAttribute="bottom" constant="24" id="XeK-2w-e7P"/>
+                            <constraint firstItem="Djg-WI-l94" firstAttribute="top" secondItem="fsT-LA-UZL" secondAttribute="bottom" constant="48" id="Xw1-vE-jNK"/>
+                            <constraint firstItem="o2R-G7-qmg" firstAttribute="top" secondItem="8as-62-J0g" secondAttribute="top" constant="48" id="YBS-zF-sXq"/>
+                            <constraint firstItem="8as-62-J0g" firstAttribute="trailing" secondItem="JDA-VZ-FuG" secondAttribute="trailing" constant="24" id="YJC-yk-Rf2"/>
+                            <constraint firstItem="JDA-VZ-FuG" firstAttribute="leading" secondItem="8as-62-J0g" secondAttribute="leading" constant="24" id="YiK-Hu-Zrz"/>
+                            <constraint firstItem="JDA-VZ-FuG" firstAttribute="top" secondItem="JQx-4V-bzn" secondAttribute="bottom" constant="16" id="beL-Vg-6uh"/>
+                            <constraint firstItem="8Ai-d7-6xG" firstAttribute="leading" secondItem="8as-62-J0g" secondAttribute="leading" constant="24" id="d3F-MD-tPO"/>
+                            <constraint firstItem="JQx-4V-bzn" firstAttribute="centerX" secondItem="8as-62-J0g" secondAttribute="centerX" id="dQk-ID-4dq"/>
+                            <constraint firstItem="fsT-LA-UZL" firstAttribute="top" secondItem="OeE-FY-TYH" secondAttribute="bottom" constant="24" id="dQz-GH-AlJ"/>
+                            <constraint firstItem="8as-62-J0g" firstAttribute="trailing" secondItem="fsT-LA-UZL" secondAttribute="trailing" constant="24" id="gYU-sG-3zI"/>
+                            <constraint firstItem="8as-62-J0g" firstAttribute="trailing" secondItem="8Ai-d7-6xG" secondAttribute="trailing" constant="24" id="jpM-Rv-fSY"/>
+                            <constraint firstItem="o2R-G7-qmg" firstAttribute="centerX" secondItem="8as-62-J0g" secondAttribute="centerX" id="msm-E9-FyA"/>
+                            <constraint firstItem="Djg-WI-l94" firstAttribute="centerX" secondItem="8as-62-J0g" secondAttribute="centerX" id="nac-cd-kXE"/>
+                            <constraint firstItem="JQx-4V-bzn" firstAttribute="top" secondItem="8Ai-d7-6xG" secondAttribute="bottom" constant="16" id="pOk-jd-IJS"/>
+                            <constraint firstItem="mZg-i8-bLe" firstAttribute="leading" secondItem="8as-62-J0g" secondAttribute="leading" constant="24" id="ptb-pO-nlb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8as-62-J0g"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomSheetArea" destination="WrJ-BC-20X" id="KIE-eq-3dT"/>
+                        <outlet property="connectPasswordTextField" destination="OeE-FY-TYH" id="ikF-lZ-ycG"/>
+                        <outlet property="disconnectButton" destination="fsT-LA-UZL" id="eZg-NW-k5I"/>
+                        <outlet property="newPasswordTextField" destination="JDA-VZ-FuG" id="5Kd-fV-4Pt"/>
+                        <outlet property="oldPasswordTextField" destination="8Ai-d7-6xG" id="BQS-Tu-psM"/>
+                        <outlet property="settingPasswordButton" destination="mZg-i8-bLe" id="Ad7-bN-pFM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5XH-ks-cAF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684.05797101449275" y="1406.9196428571429"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="radiowaves.right" catalog="system" width="44" height="64"/>
+        <image name="radiowaves.right" catalog="system" width="90" height="128"/>
     </resources>
 </document>

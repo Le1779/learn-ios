@@ -37,7 +37,8 @@ class MainTableViewController: UITableViewController {
                                                      Page(name: "Starry Sky", id: "starrySkyPage"),
                                                      Page(name: "Moon", id: "moonPage")]),
         PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
-                                                   Page(name: "Learn BLE", id: "learnBLEPage")]),
+                                                   Page(name: "Learn BLE", id: "learnBLEPage"),
+                                                   Page(name: "Modify Device Password", id: "modifyDevicePWDPage")]),
         PageList(sectionName: "Lighting", pages: [Page(name: "Scene Switch", id: "sceneSwitchLightPage"),
                                                   Page(name: "RGB", id: "rgbLightPage")]),
         PageList(sectionName: "Homework", pages: [Page(name: "BmiCalculator", id: "layout_bmi_calculator")])
