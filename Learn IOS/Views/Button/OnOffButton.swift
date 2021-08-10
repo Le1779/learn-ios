@@ -104,7 +104,6 @@ extension OnOffButton {
         indicatorLight.isOn = isOn
         
         statusLabel.text = isOn ? "ON  " : "OFF"
-        statusLabel.layoutIfNeeded()
         statusLabel.setFontSizeToFill()
     }
 }

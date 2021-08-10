@@ -31,6 +31,7 @@
 		1D4B501626C2A79D00C5427F /* OnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501526C2A79D00C5427F /* OnOffButton.swift */; };
 		1D4B501826C2CAFB00C5427F /* IndicatorLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501726C2CAFA00C5427F /* IndicatorLight.swift */; };
 		1D4B501A26C2DFB500C5427F /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501926C2DFB500C5427F /* UILabel.swift */; };
+		1D4B501C26C2E0E000C5427F /* UVCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501B26C2E0E000C5427F /* UVCButton.swift */; };
 		1D4C698A24261A6400C2DD9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4C698924261A6400C2DD9B /* Main.storyboard */; };
 		1D4C698C24261A8F00C2DD9B /* UIKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4C698B24261A8F00C2DD9B /* UIKit.storyboard */; };
 		1D6220582426419600F41513 /* Lighting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6220572426419600F41513 /* Lighting.storyboard */; };
@@ -88,6 +89,7 @@
 		1D4B501526C2A79D00C5427F /* OnOffButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnOffButton.swift; sourceTree = "<group>"; };
 		1D4B501726C2CAFA00C5427F /* IndicatorLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorLight.swift; sourceTree = "<group>"; };
 		1D4B501926C2DFB500C5427F /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		1D4B501B26C2E0E000C5427F /* UVCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCButton.swift; sourceTree = "<group>"; };
 		1D4C698924261A6400C2DD9B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1D4C698B24261A8F00C2DD9B /* UIKit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIKit.storyboard; sourceTree = "<group>"; };
 		1D6220572426419600F41513 /* Lighting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lighting.storyboard; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				1D4B501226C1B1A100C5427F /* LeButton.swift */,
 				1D4B501526C2A79D00C5427F /* OnOffButton.swift */,
+				1D4B501B26C2E0E000C5427F /* UVCButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */,
 				1D0FCA0F242E3F3400D485FD /* ShadowLayer.swift in Sources */,
 				1D62206224265B2E00F41513 /* SceneSwitchLight.swift in Sources */,
+				1D4B501C26C2E0E000C5427F /* UVCButton.swift in Sources */,
 				1D30E34224189114006CEC8F /* LearnTextFieldViewController.swift in Sources */,
 				1D87EA3224307B5700E20BFC /* BrightAndKelvinTouchpadView.swift in Sources */,
 				1D30E352241CBE41006CEC8F /* LearnPageViewViewController.swift in Sources */,

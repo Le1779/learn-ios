@@ -14,6 +14,7 @@ extension UILabel {
      讓字體大小響應9成寬度
      */
     func setFontSizeToFill() {
+        layoutIfNeeded()
         let boundsSize  = self.bounds.size
         guard boundsSize.height > 0 && boundsSize.width > 0 && self.text != nil else {
             return
