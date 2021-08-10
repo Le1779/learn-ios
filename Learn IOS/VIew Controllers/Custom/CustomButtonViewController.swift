@@ -15,6 +15,7 @@ class CustomButtonViewController: UIViewController {
     private let backButton = LeButton()
     private let lightButton = LeButton()
     private let fanButton = LeButton()
+    private let onOffButton = OnOffButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class CustomButtonViewController: UIViewController {
     }
     
     @objc func onClick(_ sender:UIButton) {
+        onOffButton.isOn = !onOffButton.isOn
         UIImpactFeedbackGenerator().impactOccurred()
     }
 }
@@ -37,6 +39,7 @@ extension CustomButtonViewController {
         initBackButton()
         initLightButton()
         initFanButton()
+        initOnOffButton()
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -83,6 +86,20 @@ extension CustomButtonViewController {
         constraints.append(fanButton.leadingAnchor.constraint(equalTo: lightButton.trailingAnchor, constant: 24))
         constraints.append(fanButton.heightAnchor.constraint(equalToConstant: 48))
         constraints.append(fanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4))
+    }
+    
+    private func initOnOffButton() {
+        view.addSubview(onOffButton)
+        onOffButton.layer.cornerRadius = 28
+        onOffButton.setShadow(color: UIColor(hexString: "#00000020"), blur: 5)
+        
+        onOffButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+        
+        onOffButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(onOffButton.topAnchor.constraint(equalTo: lightButton.bottomAnchor, constant: 48))
+        constraints.append(onOffButton.leadingAnchor.constraint(equalTo: lightButton.leadingAnchor))
+        constraints.append(onOffButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2))
+        constraints.append(onOffButton.heightAnchor.constraint(equalTo: onOffButton.widthAnchor, multiplier: 1.3))
     }
 }
 
