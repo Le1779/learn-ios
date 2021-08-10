@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D0FCA08242B9B3000D485FD /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FCA07242B9B3000D485FD /* Custom.storyboard */; };
 		1D0FCA0B242B9B7D00D485FD /* CustomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */; };
-		1D0FCA0D242CF2B100D485FD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0C242CF2B100D485FD /* CustomButton.swift */; };
 		1D0FCA0F242E3F3400D485FD /* ShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */; };
 		1D21DA3A2462682F00450209 /* StarrySkyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D21DA392462682F00450209 /* StarrySkyView.swift */; };
 		1D303C3624CE791E00630B70 /* ModifyDevicePWDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D303C3524CE791E00630B70 /* ModifyDevicePWDViewController.swift */; };
@@ -64,7 +63,6 @@
 /* Begin PBXFileReference section */
 		1D0FCA07242B9B3000D485FD /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
 		1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewController.swift; sourceTree = "<group>"; };
-		1D0FCA0C242CF2B100D485FD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLayer.swift; sourceTree = "<group>"; };
 		1D21DA392462682F00450209 /* StarrySkyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyView.swift; sourceTree = "<group>"; };
 		1D303C3524CE791E00630B70 /* ModifyDevicePWDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDevicePWDViewController.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 			children = (
 				1D4C69882424F6A600C2DD9B /* TableCell */,
 				1D4C69872424F66200C2DD9B /* BottomSheet */,
-				1D0FCA0C242CF2B100D485FD /* CustomButton.swift */,
 				1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */,
 				1D87EA2D242F745F00E20BFC /* TouchpadView.swift */,
 				1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */,
@@ -391,7 +388,6 @@
 				1D30E359241CFC71006CEC8F /* ScanBleBottomSheetViewController.swift in Sources */,
 				1D21DA3A2462682F00450209 /* StarrySkyView.swift in Sources */,
 				1D30E348241A6012006CEC8F /* BmiCalculatorViewController.swift in Sources */,
-				1D0FCA0D242CF2B100D485FD /* CustomButton.swift in Sources */,
 				1D622066242893F500F41513 /* RGBLightViewController.swift in Sources */,
 				1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,

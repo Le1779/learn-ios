@@ -38,6 +38,7 @@ class LeButton: UIButton {
     
     public override init(frame: CGRect){
         super.init(frame: frame)
+        setBackgroundColor(.systemBackground)
         clipsToBounds = true
     }
     
@@ -103,5 +104,17 @@ extension LeButton {
         super.touchesEnded(touches, with: event)
         self.backgroundColor = self.originalBackgroundColor
         shadowLayer?.setShadowRadius(shadowRadius: shadowBlur)
+    }
+    
+    open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        self.backgroundColor = self.originalBackgroundColor
+        shadowLayer?.setShadowRadius(shadowRadius: shadowBlur)
+    }
+    
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        self.backgroundColor = self.activeBackgroundColor
+        shadowLayer?.setShadowRadius(shadowRadius: (shadowBlur ?? 1)/2)
     }
 }

@@ -14,6 +14,7 @@ class CustomButtonViewController: UIViewController {
     
     private let backButton = LeButton()
     private let lightButton = LeButton()
+    private let fanButton = LeButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ extension CustomButtonViewController {
     private func initViews() {
         initBackButton()
         initLightButton()
-        initCustomButton()
+        initFanButton()
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -70,17 +71,18 @@ extension CustomButtonViewController {
         constraints.append(lightButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4))
     }
     
-    private func initCustomButton() {
-        let buttonFrame = CGRect(x: 50, y: 500, width: 100, height: 50)
-        let customButton = CustomButton.Builder(frame: buttonFrame)
-            .setBackgroundColor(color: .gray)
-            .setText(text: "Click me!")
-            .setTextColor(color: .white)
-            .setCornerRadius(radius: 12.0)
-            .setWithShadow(withShadow: true)
-            .build()
+    private func initFanButton() {
+        view.addSubview(fanButton)
+        fanButton.setImage(withName: "Fan", tintColor: UIColor(hexString: "#585858"))
+        fanButton.layer.cornerRadius = 20
+        fanButton.setTitle("風扇", tintColor: UIColor(hexString: "#585858"))
+        fanButton.setShadow(color: UIColor(hexString: "#00000020"), blur: 10)
         
-        self.view.addSubview(customButton)
+        fanButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(fanButton.topAnchor.constraint(equalTo: lightButton.topAnchor))
+        constraints.append(fanButton.leadingAnchor.constraint(equalTo: lightButton.trailingAnchor, constant: 24))
+        constraints.append(fanButton.heightAnchor.constraint(equalToConstant: 48))
+        constraints.append(fanButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4))
     }
 }
 
