@@ -10,8 +10,8 @@ import UIKit
 
 class ShadowLayer: UIView {
 
-    public init(frame: CGRect,
-                bounds: CGRect,
+    public init(frame: CGRect = .zero,
+                bounds: CGRect = .zero,
                 cornerRadius: CGFloat = 0.0,
                 shadowRadius: CGFloat = 1,
                 shadowOpacity: Float = 0.7,
@@ -44,12 +44,16 @@ class ShadowLayer: UIView {
         self.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
     }
     
-    public func setShadowColor(shadowColor: UIColor) {
-        self.layer.shadowColor = shadowColor.cgColor
+    public func setShadowColor(shadowColor: UIColor?) {
+        if let color = shadowColor {
+            self.layer.shadowColor = color.cgColor
+        }
     }
     
-    public func setShadowRadius(shadowRadius: CGFloat) {
-        self.layer.shadowRadius = shadowRadius
+    public func setShadowRadius(shadowRadius: CGFloat?) {
+        if let radius = shadowRadius {
+            self.layer.shadowRadius = radius
+        }
     }
     
 }
