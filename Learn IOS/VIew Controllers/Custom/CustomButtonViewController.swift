@@ -12,7 +12,7 @@ class CustomButtonViewController: UIViewController {
 
     private var constraints = [NSLayoutConstraint]()
     
-    private let backButton = UIButton()
+    private let backButton = LeButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,10 @@ class CustomButtonViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         updateViews()
+    }
+    
+    @objc func onClick(_ sender:UIButton) {
+        UIImpactFeedbackGenerator().impactOccurred()
     }
 }
 
@@ -35,9 +39,11 @@ extension CustomButtonViewController {
     
     private func initBackButton() {
         view.addSubview(backButton)
-        backButton.backgroundColor = UIColor(hexString: "#C8C8C840")
-        backButton.setImage(UIImage(named: "ArrowBack")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backButton.cornerType = .round
+        backButton.setImage(withName: "ArrowBack")
+        backButton.setBackgroundColor(UIColor(hexString: "#C8C8C840"))
         backButton.tintColor = UIColor(hexString: "#585858")
+        backButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
         
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
@@ -63,13 +69,5 @@ extension CustomButtonViewController {
 
 //MARK: Update Views
 extension CustomButtonViewController {
-    private func updateViews() {
-        updateBackButton()
-    }
-    
-    private func updateBackButton() {
-        backButton.layer.cornerRadius = backButton.frame.size.width/2
-        let edge = backButton.frame.size.width/4
-        backButton.imageEdgeInsets = UIEdgeInsets(top: edge, left: edge, bottom: edge, right: edge)
-    }
+    private func updateViews() {}
 }
