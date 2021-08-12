@@ -32,6 +32,9 @@
 		1D4B501826C2CAFB00C5427F /* IndicatorLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501726C2CAFA00C5427F /* IndicatorLight.swift */; };
 		1D4B501A26C2DFB500C5427F /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501926C2DFB500C5427F /* UILabel.swift */; };
 		1D4B501C26C2E0E000C5427F /* UVCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501B26C2E0E000C5427F /* UVCButton.swift */; };
+		1D4B501E26C3E13F00C5427F /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501D26C3E13F00C5427F /* SliderViewController.swift */; };
+		1D4B502126C3F24F00C5427F /* RoundSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B502026C3F24F00C5427F /* RoundSlider.swift */; };
+		1D4B502326C4112C00C5427F /* TrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B502226C4112C00C5427F /* TrackLayer.swift */; };
 		1D4C698A24261A6400C2DD9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4C698924261A6400C2DD9B /* Main.storyboard */; };
 		1D4C698C24261A8F00C2DD9B /* UIKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D4C698B24261A8F00C2DD9B /* UIKit.storyboard */; };
 		1D6220582426419600F41513 /* Lighting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6220572426419600F41513 /* Lighting.storyboard */; };
@@ -90,6 +93,9 @@
 		1D4B501726C2CAFA00C5427F /* IndicatorLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorLight.swift; sourceTree = "<group>"; };
 		1D4B501926C2DFB500C5427F /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		1D4B501B26C2E0E000C5427F /* UVCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCButton.swift; sourceTree = "<group>"; };
+		1D4B501D26C3E13F00C5427F /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		1D4B502026C3F24F00C5427F /* RoundSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSlider.swift; sourceTree = "<group>"; };
+		1D4B502226C4112C00C5427F /* TrackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLayer.swift; sourceTree = "<group>"; };
 		1D4C698924261A6400C2DD9B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1D4C698B24261A8F00C2DD9B /* UIKit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIKit.storyboard; sourceTree = "<group>"; };
 		1D6220572426419600F41513 /* Lighting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lighting.storyboard; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */,
+				1D4B501D26C3E13F00C5427F /* SliderViewController.swift */,
 				1D87EA2B242F72F400E20BFC /* TouchpadViewController.swift */,
 				1D87EA2F24307A7F00E20BFC /* BrightAndKelvinViewController.swift */,
 				1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */,
@@ -210,6 +217,15 @@
 				1D4B501B26C2E0E000C5427F /* UVCButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		1D4B501F26C3F21800C5427F /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				1D4B502026C3F24F00C5427F /* RoundSlider.swift */,
+				1D4B502226C4112C00C5427F /* TrackLayer.swift */,
+			);
+			path = Slider;
 			sourceTree = "<group>";
 		};
 		1D4C69862424F62600C2DD9B /* BLE */ = {
@@ -310,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				1D4B501426C2A77200C5427F /* Button */,
+				1D4B501F26C3F21800C5427F /* Slider */,
 				1D4C69882424F6A600C2DD9B /* TableCell */,
 				1D4C69872424F66200C2DD9B /* BottomSheet */,
 				1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */,
@@ -441,6 +458,7 @@
 				1D87EA362430BD3D00E20BFC /* RGBSelector.swift in Sources */,
 				1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */,
 				1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */,
+				1D4B501E26C3E13F00C5427F /* SliderViewController.swift in Sources */,
 				1D303C3624CE791E00630B70 /* ModifyDevicePWDViewController.swift in Sources */,
 				1D87EA2C242F72F400E20BFC /* TouchpadViewController.swift in Sources */,
 				1D6270BF23D09BA1001D146B /* SceneDelegate.swift in Sources */,
@@ -449,6 +467,8 @@
 				1D9F8C72246D732200D9A9E1 /* MoonView.swift in Sources */,
 				1DC51CCC244ED5AA004433E4 /* StarrySkyViewController.swift in Sources */,
 				1D622064242859BC00F41513 /* LearnDatePickerViewController.swift in Sources */,
+				1D4B502126C3F24F00C5427F /* RoundSlider.swift in Sources */,
+				1D4B502326C4112C00C5427F /* TrackLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

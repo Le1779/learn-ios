@@ -140,6 +140,14 @@
             </objects>
             <point key="canvasLocation" x="409" y="-635"/>
         </scene>
+        <!--sliderPage-->
+        <scene sceneID="cE4-9Q-ifA">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="sliderPage" storyboardName="Custom" referencedIdentifier="sliderPage" id="Ypz-KZ-Hmq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HGh-EF-xWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="-593"/>
+        </scene>
         <!--rgbSelectorPage-->
         <scene sceneID="KWM-34-06G">
             <objects>
