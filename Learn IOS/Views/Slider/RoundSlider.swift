@@ -10,7 +10,7 @@ import UIKit
 
 class RoundSlider: UIControl {
     
-    public var color: UIColor = .blue {
+    public var color: UIColor = .clear {
         didSet {
             self.backgroundColor = color
         }
@@ -25,25 +25,23 @@ class RoundSlider: UIControl {
             var value = newValue
             self._value = value
             print("update value")
-            //self.sendActions(for: .valueChanged)
-            //self.layout(degree)
         }
     }
     
-    public var beginAngle: CGFloat = 0 {
+    public var beginAngle: CGFloat = 0
+    public var endAngle: CGFloat = 359 
+    
+    public var thumbWidth: CGFloat = 20
+    public var thumbView: ThumbView! {
         didSet {
-            if trackLayer != nil {
-                trackLayer.beginAngle = beginAngle
+            self.addSubview(self.thumbView)
+            if let path = inactiveTrackPath {
+                thumbView.center = path.getPointFromAngle(beginAngle)
             }
         }
     }
-    public var endAngle: CGFloat = 359 {
-        didSet {
-            if trackLayer != nil {
-                trackLayer.endAngle = endAngle
-            }
-        }
-    }
+    
+    private var inactiveTrackPath: TrackPath?
     
     private var trackLayer: TrackLayer! {
         didSet {
@@ -77,12 +75,38 @@ class RoundSlider: UIControl {
     
     override func layoutSublayers(of _: CALayer) {
         if trackLayer == nil {
-            trackLayer = TrackLayer(bounds: bounds, beginAngle: beginAngle, endAngle: endAngle)
+            let angleRange = TrackPath.AngleRange(begin: beginAngle, end: endAngle)
+            inactiveTrackPath = TrackPath(bounds: bounds, width: 5, angleRange: angleRange)
+            if let path = inactiveTrackPath?.path {
+                trackLayer = TrackLayer(bounds: bounds, maskPath: path, pathWidth: 5)
+            }
+        }
+        
+        if thumbView == nil {
+            thumbView = ThumbView(width: thumbWidth)
         }
     }
     
+    open override func hitTest(_ point: CGPoint, with _: UIEvent?) -> UIView? {
+        if !(thumbView.frame.contains(point)) {
+            return nil
+        }
+        return self
+    }
+    
     open override func continueTracking(_ touch: UITouch, with _: UIEvent?) -> Bool {
-        //print("continueTracking")
+        guard let path = inactiveTrackPath else {
+            return true
+        }
+        
+        let angle = path.getAngleFromPoint(touch.location(in: self))
+        if path.isInAngleRange(angle) {
+            thumbView.center = path.getPointFromAngle(angle)
+        } else {
+            
+        }
+        
+        
         return true
     }
 }

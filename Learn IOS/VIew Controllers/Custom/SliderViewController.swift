@@ -63,7 +63,6 @@ extension SliderViewController {
     
     private func initCenterSlider() {
         view.addSubview(centerSlider)
-        centerSlider.color = UIColor(hexString: "#880E4F80")
         centerSlider.beginAngle = 0
         centerSlider.endAngle = 359
         
@@ -76,7 +75,6 @@ extension SliderViewController {
     
     private func initTopSlider() {
         view.addSubview(topSlider)
-        topSlider.color = UIColor(hexString: "#3E272380")
         topSlider.beginAngle = 20
         topSlider.endAngle = 160
         
@@ -89,7 +87,6 @@ extension SliderViewController {
     
     private func initBottomSlider() {
         view.addSubview(bottomSlider)
-        bottomSlider.color = UIColor(hexString: "#BF360C80")
         bottomSlider.beginAngle = 200
         bottomSlider.endAngle = 340
         
@@ -102,7 +99,6 @@ extension SliderViewController {
     
     private func initLeftSlider() {
         view.addSubview(leftSlider)
-        leftSlider.color = UIColor(hexString: "#004D4080")
         leftSlider.beginAngle = 110
         leftSlider.endAngle = 250
         
@@ -115,7 +111,6 @@ extension SliderViewController {
     
     private func initRightSlider() {
         view.addSubview(rightSlider)
-        rightSlider.color = UIColor(hexString: "#1A237E80")
         rightSlider.beginAngle = 290
         rightSlider.endAngle = 70
         

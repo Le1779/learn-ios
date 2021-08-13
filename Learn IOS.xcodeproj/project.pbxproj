@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D06AED526C6997B00F860B9 /* TrackPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06AED426C6997B00F860B9 /* TrackPath.swift */; };
+		1D06AED726C6C57400F860B9 /* ThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06AED626C6C57400F860B9 /* ThumbView.swift */; };
 		1D0FCA08242B9B3000D485FD /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FCA07242B9B3000D485FD /* Custom.storyboard */; };
 		1D0FCA0B242B9B7D00D485FD /* CustomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */; };
 		1D0FCA0F242E3F3400D485FD /* ShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D06AED426C6997B00F860B9 /* TrackPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPath.swift; sourceTree = "<group>"; };
+		1D06AED626C6C57400F860B9 /* ThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbView.swift; sourceTree = "<group>"; };
 		1D0FCA07242B9B3000D485FD /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
 		1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewController.swift; sourceTree = "<group>"; };
 		1D0FCA0E242E3F3400D485FD /* ShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowLayer.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 			children = (
 				1D4B502026C3F24F00C5427F /* RoundSlider.swift */,
 				1D4B502226C4112C00C5427F /* TrackLayer.swift */,
+				1D06AED426C6997B00F860B9 /* TrackPath.swift */,
+				1D06AED626C6C57400F860B9 /* ThumbView.swift */,
 			);
 			path = Slider;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 				1DC7375E24A19E73009CEB7F /* ColorPickerViewController.swift in Sources */,
 				1D9F8C70246D730A00D9A9E1 /* MoonViewController.swift in Sources */,
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
+				1D06AED726C6C57400F860B9 /* ThumbView.swift in Sources */,
 				1D87EA382430C29500E20BFC /* RGBSelectorViewController.swift in Sources */,
 				1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */,
 				1D0FCA0F242E3F3400D485FD /* ShadowLayer.swift in Sources */,
@@ -450,6 +457,7 @@
 				1D4B501626C2A79D00C5427F /* OnOffButton.swift in Sources */,
 				1D87EA2E242F745F00E20BFC /* TouchpadView.swift in Sources */,
 				1D30E356241CFA97006CEC8F /* LearnBLEViewController.swift in Sources */,
+				1D06AED526C6997B00F860B9 /* TrackPath.swift in Sources */,
 				1D30E363241F6B1A006CEC8F /* BleHelper.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewControllerOLD.swift in Sources */,
 				1D30E35D241D2296006CEC8F /* ScanBleTableViewCell.swift in Sources */,
