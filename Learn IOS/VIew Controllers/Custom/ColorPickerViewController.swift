@@ -11,7 +11,7 @@ import UIKit
 class ColorPickerViewController: UIViewController {
 
     let colorView: UIView = UIView()
-    var shadowLayer: ShadowLayer?
+    var shadowLayer: ShadowView?
     let redPicker = ColorPicker()
     let greenPicker = ColorPicker()
     let bluePicker = ColorPicker()
@@ -44,7 +44,7 @@ class ColorPickerViewController: UIViewController {
         colorView.clipsToBounds = true
         colorView.backgroundColor = .black
         
-        shadowLayer = ShadowLayer(frame: colorView.frame,
+        shadowLayer = ShadowView(frame: colorView.frame,
                                   bounds: colorView.bounds,
                                   cornerRadius: colorView.layer.cornerRadius,
                                   shadowRadius: colorView.frame.width/5,

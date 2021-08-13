@@ -60,7 +60,7 @@ class MoonView: UIView {
             moonLight.alpha = 0.2
             moonLight.layer.cornerRadius = cornerRadius
             
-            let shadowLayer = ShadowLayer(frame: moonLight.frame,
+            let shadowLayer = ShadowView(frame: moonLight.frame,
                                       bounds: moonLight.bounds,
                                       cornerRadius: cornerRadius,
                                       shadowRadius: 10,

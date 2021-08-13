@@ -115,14 +115,14 @@ class RGBSelector: UITableViewController {
         var viewFrame: CGRect = CGRect()
         var cornerRadius: CGFloat = 0.0
         var colorView: UIView
-        var shadowLayer : ShadowLayer
+        var shadowLayer : ShadowView
         var selectedView: UIView
         
         override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
             colorView = UIView()
             colorView.clipsToBounds = true
             
-            shadowLayer = ShadowLayer(frame: colorView.frame,
+            shadowLayer = ShadowView(frame: colorView.frame,
                                       bounds: colorView.bounds,
                                       shadowOpacity: 0.5,
                                       shadowOffset: CGSize(width: 0.0, height: 0.0)

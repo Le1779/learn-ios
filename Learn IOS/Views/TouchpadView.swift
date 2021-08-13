@@ -34,7 +34,7 @@ class TouchpadView: UIView {
     override func draw(_ rect: CGRect) {
         if !isDrawShadow {
             isDrawShadow = true
-            let shadowLayer = ShadowLayer(frame: self.frame, bounds: self.bounds, cornerRadius: self.layer.cornerRadius)
+            let shadowLayer = ShadowView(frame: self.frame, bounds: self.bounds, cornerRadius: self.layer.cornerRadius)
             self.superview?.insertSubview(shadowLayer, belowSubview: self)
         }
     }

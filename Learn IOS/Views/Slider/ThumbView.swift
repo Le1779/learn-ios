@@ -11,7 +11,7 @@ import UIKit
 class ThumbView: UIView {
     
     private var width: CGFloat
-    private var shadowLayer: ShadowLayer?
+    private var shadowLayer: ShadowView?
     private var shadowColor: UIColor?
     private var shadowBlur: CGFloat?
     private var isDrawnShadow = true

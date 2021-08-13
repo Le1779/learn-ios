@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShadowLayer: UIView {
+class ShadowView: UIView {
 
     public init(frame: CGRect = .zero,
                 bounds: CGRect = .zero,

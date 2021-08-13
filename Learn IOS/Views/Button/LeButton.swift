@@ -23,7 +23,7 @@ class LeButton: UIButton {
     
     private var originalBackgroundColor: UIColor?
     private var activeBackgroundColor: UIColor?
-    private var shadowLayer: ShadowLayer?
+    private var shadowLayer: ShadowView?
     private var shadowColor: UIColor?
     private var shadowBlur: CGFloat?
     private var isDrawnShadow = false
@@ -70,7 +70,7 @@ class LeButton: UIButton {
     func setShadow(color: UIColor, blur: CGFloat) {
         shadowColor = color
         shadowBlur = blur
-        shadowLayer = ShadowLayer(shadowRadius: blur, shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 4) ,shadowColor: color)
+        shadowLayer = ShadowView(shadowRadius: blur, shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 4) ,shadowColor: color)
     }
 }
 
