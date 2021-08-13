@@ -11,6 +11,7 @@ import UIKit
 class SliderViewController: UIViewController {
 
     private let backButton = LeButton()
+    private let sliderValueLabel = UILabel()
     private let centerSlider = RoundSlider()
     private let topSlider = RoundSlider()
     private let leftSlider = RoundSlider()
@@ -39,6 +40,7 @@ class SliderViewController: UIViewController {
 extension SliderViewController {
     private func initViews() {
         initBackButton()
+        initSliderValueLabel()
         initCenterSlider()
         initTopSlider()
         initBottomSlider()
@@ -61,10 +63,20 @@ extension SliderViewController {
         constraints.append(backButton.heightAnchor.constraint(equalTo: backButton.widthAnchor))
     }
     
+    private func initSliderValueLabel() {
+        view.addSubview(sliderValueLabel)
+        sliderValueLabel.textAlignment = .center
+        
+        sliderValueLabel.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(sliderValueLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60))
+        constraints.append(sliderValueLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+    }
+    
     private func initCenterSlider() {
         view.addSubview(centerSlider)
         centerSlider.beginAngle = 0
         centerSlider.endAngle = 359
+        centerSlider.delegate = self
         
         centerSlider.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(centerSlider.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5))
@@ -77,6 +89,7 @@ extension SliderViewController {
         view.addSubview(topSlider)
         topSlider.beginAngle = 20
         topSlider.endAngle = 160
+        topSlider.delegate = self
         
         topSlider.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(topSlider.heightAnchor.constraint(equalTo: centerSlider.heightAnchor, multiplier: 0.6))
@@ -89,6 +102,7 @@ extension SliderViewController {
         view.addSubview(bottomSlider)
         bottomSlider.beginAngle = 200
         bottomSlider.endAngle = 340
+        bottomSlider.delegate = self
         
         bottomSlider.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(bottomSlider.heightAnchor.constraint(equalTo: centerSlider.heightAnchor, multiplier: 0.7))
@@ -101,6 +115,7 @@ extension SliderViewController {
         view.addSubview(leftSlider)
         leftSlider.beginAngle = 110
         leftSlider.endAngle = 250
+        leftSlider.delegate = self
         
         leftSlider.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(leftSlider.widthAnchor.constraint(equalTo: centerSlider.widthAnchor, multiplier: 0.8))
@@ -113,6 +128,7 @@ extension SliderViewController {
         view.addSubview(rightSlider)
         rightSlider.beginAngle = 290
         rightSlider.endAngle = 70
+        rightSlider.delegate = self
         
         rightSlider.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(rightSlider.widthAnchor.constraint(equalTo: centerSlider.widthAnchor, multiplier: 0.9))
@@ -127,4 +143,23 @@ extension SliderViewController {
 //MARK: Update Views
 extension SliderViewController {
     private func updateViews() {}
+}
+
+extension SliderViewController: RoundSliderDelegate {
+    func onChanged(_ value: Float, slider: RoundSlider) {
+        var sliderName = ""
+        if topSlider == slider {
+            sliderName = "Top Slider"
+        } else if bottomSlider == slider {
+            sliderName = "Bottom Slider"
+        } else if leftSlider == slider {
+            sliderName = "Left Slider"
+        } else if rightSlider == slider {
+            sliderName = "Right Slider"
+        } else if centerSlider == slider {
+            sliderName = "Center Slider"
+        }
+        
+        sliderValueLabel.text = "\(sliderName), Value: \(value)"
+    }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class RoundSlider: UIControl {
     
+    public var delegate: RoundSliderDelegate?
+    
     public var color: UIColor = .clear {
         didSet {
             self.backgroundColor = color
@@ -22,9 +24,9 @@ class RoundSlider: UIControl {
             return self._value
         }
         set {
-            var value = newValue
+            let value = round(100*newValue)/100
             self._value = value
-            print("update value")
+            delegate?.onChanged(value, slider: self)
         }
     }
     
@@ -102,10 +104,18 @@ class RoundSlider: UIControl {
         let angle = path.getAngleFromPoint(touch.location(in: self))
         if path.isInAngleRange(angle) {
             thumbView.center = path.getPointFromAngle(angle)
-        } else {
+            var range = endAngle - beginAngle
+            var originAngle = angle - beginAngle
+            if endAngle < beginAngle {
+                range = 360 - beginAngle + endAngle
+                if angle <= endAngle && angle >= 0 {
+                    originAngle = angle + (360 - beginAngle)
+                }
+            }
             
+            
+            self.value = Float(originAngle/range)
         }
-        
         
         return true
     }
@@ -135,4 +145,8 @@ extension RoundSlider {
         super.touchesEnded(touches, with: event)
         self.backgroundColor = color
     }
+}
+
+protocol RoundSliderDelegate {
+    func onChanged(_ value: Float, slider: RoundSlider)
 }
