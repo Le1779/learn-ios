@@ -11,16 +11,18 @@ import UIKit
 class ThumbView: UIView {
     
     private var width: CGFloat
-    private var shadowLayer: ShadowView?
-    private var shadowColor: UIColor?
-    private var shadowBlur: CGFloat?
-    private var isDrawnShadow = true
     
     public init(width: CGFloat){
         self.width = width
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: width))
-        backgroundColor = .darkGray
+        backgroundColor = .white
         layer.cornerRadius = width/2
+        
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        layer.shadowOpacity = 0.7
+        layer.shadowRadius = width/2
+        
     }
     
     required init?(coder: NSCoder) {
