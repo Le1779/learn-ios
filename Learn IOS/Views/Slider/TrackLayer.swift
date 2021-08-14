@@ -44,7 +44,7 @@ internal class TrackLayer: CAShapeLayer {
         maskLayer.fillColor = UIColor.clear.cgColor
         maskLayer.lineCap = .round
         maskLayer.path = maskPath
-
+        
         mask = maskLayer
     }
 }

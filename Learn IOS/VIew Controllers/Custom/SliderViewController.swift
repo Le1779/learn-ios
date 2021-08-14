@@ -12,11 +12,11 @@ class SliderViewController: UIViewController {
 
     private let backButton = LeButton()
     private let sliderValueLabel = UILabel()
-    private let centerSlider = RoundSlider()
-    private let topSlider = RoundSlider()
-    private let leftSlider = RoundSlider()
-    private let rightSlider = RoundSlider()
-    private let bottomSlider = RoundSlider()
+    private let centerSlider = CircularSlider()
+    private let topSlider = CircularSlider()
+    private let leftSlider = CircularSlider()
+    private let rightSlider = CircularSlider()
+    private let bottomSlider = CircularSlider()
     
     private var constraints = [NSLayoutConstraint]()
     
@@ -73,10 +73,11 @@ extension SliderViewController {
     }
     
     private func initCenterSlider() {
-        view.addSubview(centerSlider)
-        centerSlider.beginAngle = 0
-        centerSlider.endAngle = 359
+        centerSlider.beginAngle = 220
+        centerSlider.angle = 260
+        centerSlider.clockwise = true
         centerSlider.delegate = self
+        view.addSubview(centerSlider)
         
         centerSlider.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(centerSlider.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5))
@@ -86,10 +87,11 @@ extension SliderViewController {
     }
     
     private func initTopSlider() {
-        view.addSubview(topSlider)
-        topSlider.beginAngle = 20
-        topSlider.endAngle = 160
+        topSlider.beginAngle = 160
+        topSlider.angle = 140
+        topSlider.clockwise = true
         topSlider.delegate = self
+        view.addSubview(topSlider)
         
         topSlider.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(topSlider.heightAnchor.constraint(equalTo: centerSlider.heightAnchor, multiplier: 0.6))
@@ -101,7 +103,7 @@ extension SliderViewController {
     private func initBottomSlider() {
         view.addSubview(bottomSlider)
         bottomSlider.beginAngle = 200
-        bottomSlider.endAngle = 340
+        bottomSlider.angle = 140
         bottomSlider.delegate = self
         
         bottomSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -113,8 +115,9 @@ extension SliderViewController {
     
     private func initLeftSlider() {
         view.addSubview(leftSlider)
-        leftSlider.beginAngle = 110
-        leftSlider.endAngle = 250
+        leftSlider.beginAngle = 250
+        leftSlider.angle = 140
+        leftSlider.clockwise = true
         leftSlider.delegate = self
         
         leftSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -127,7 +130,7 @@ extension SliderViewController {
     private func initRightSlider() {
         view.addSubview(rightSlider)
         rightSlider.beginAngle = 290
-        rightSlider.endAngle = 70
+        rightSlider.angle = 140
         rightSlider.delegate = self
         
         rightSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -145,8 +148,8 @@ extension SliderViewController {
     private func updateViews() {}
 }
 
-extension SliderViewController: RoundSliderDelegate {
-    func onChanged(_ value: Float, slider: RoundSlider) {
+extension SliderViewController: CircularSliderDelegate {
+    func onChanged(_ value: Float, slider: CircularSlider) {
         var sliderName = ""
         if topSlider == slider {
             sliderName = "Top Slider"
