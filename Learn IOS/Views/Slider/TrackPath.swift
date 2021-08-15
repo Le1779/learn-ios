@@ -27,7 +27,9 @@ class TrackPath {
     private var clockwise: Bool
     private var radius: CGFloat = 0
     private var angleRange: AngleRange!
-    private var centerPoint: CGPoint = CGPoint(x: 0, y: 0)
+    private var centerPoint: CGPoint {
+        return CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+    }
     
     public init(bounds: CGRect, padding: CGFloat, angle: Int, beginAngle: Int, clockwise: Bool) {
         self.bounds = bounds.insetBy(dx: padding, dy: padding)
@@ -35,7 +37,6 @@ class TrackPath {
         self.clockwise = clockwise
         generateAngleRange(angle: angle, beginAngle: beginAngle)
         generateRadius()
-        generateCenterPoint()
         
         let path = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: self.angleRange.begin.radians, endAngle: self.angleRange.end.radians, clockwise: clockwise)
         self.path = path.cgPath
@@ -104,45 +105,6 @@ class TrackPath {
     private func generateRadius() {
         let height = bounds.height
         let width = bounds.width
-        radius = width > height ? width/2 : height/2
-    }
-    
-    /**
-     建立圓心
-     */
-    private func generateCenterPoint() {
-        let direction = getDirection()
-        if direction == "L" {
-            self.centerPoint = CGPoint(x: bounds.maxX + padding, y: bounds.midY)
-        } else if direction == "R" {
-            self.centerPoint = CGPoint(x: bounds.minX - padding, y: bounds.midY)
-        } else if direction == "T" {
-            self.centerPoint = CGPoint(x: bounds.midX, y: bounds.maxY + padding)
-        } else if direction == "B" {
-            self.centerPoint = CGPoint(x: bounds.midX, y: bounds.minY - padding)
-        } else {
-            self.centerPoint = CGPoint(x: bounds.midX, y: bounds.midY)
-        }
-    }
-    
-    private func getDirection() -> String{
-        if bounds.height == bounds.width || (angleRange.begin.value <= angleRange.end.value && clockwise) {
-            return "C"
-        }
-        
-        let beginQuadrant = angleRange.begin.quadrant
-        let endQuadrant = angleRange.end.quadrant
-        
-        if beginQuadrant == 2 && endQuadrant == 3 || beginQuadrant == 3 && endQuadrant == 2 {
-            return "L"
-        } else if beginQuadrant == 4 && endQuadrant == 1 || beginQuadrant == 1 && endQuadrant == 4 {
-            return "R"
-        } else if beginQuadrant == 1 && endQuadrant == 2 || beginQuadrant == 2 && endQuadrant == 1 {
-            return "T"
-        } else if beginQuadrant == 3 && endQuadrant == 4 || beginQuadrant == 4 && endQuadrant == 3 {
-            return "B"
-        } else {
-            return "C"
-        }
+        radius = width < height ? width/2 : height/2
     }
 }

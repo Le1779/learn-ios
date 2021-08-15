@@ -94,10 +94,10 @@ extension SliderViewController {
         view.addSubview(topSlider)
         
         topSlider.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(topSlider.heightAnchor.constraint(equalTo: centerSlider.heightAnchor, multiplier: 0.6))
-        constraints.append(topSlider.widthAnchor.constraint(equalTo: topSlider.heightAnchor, multiplier: 2))
+        constraints.append(topSlider.heightAnchor.constraint(equalTo: centerSlider.heightAnchor, multiplier: 1.2))
+        constraints.append(topSlider.widthAnchor.constraint(equalTo: topSlider.heightAnchor))
         constraints.append(topSlider.centerXAnchor.constraint(equalTo: view.centerXAnchor))
-        constraints.append(topSlider.bottomAnchor.constraint(equalTo: centerSlider.centerYAnchor))
+        constraints.append(topSlider.centerYAnchor.constraint(equalTo: centerSlider.centerYAnchor))
     }
     
     private func initBottomSlider() {
@@ -107,10 +107,10 @@ extension SliderViewController {
         bottomSlider.delegate = self
         
         bottomSlider.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(bottomSlider.heightAnchor.constraint(equalTo: centerSlider.heightAnchor, multiplier: 0.7))
-        constraints.append(bottomSlider.widthAnchor.constraint(equalTo: bottomSlider.heightAnchor, multiplier: 2))
+        constraints.append(bottomSlider.heightAnchor.constraint(equalTo: centerSlider.heightAnchor, multiplier: 1.4))
+        constraints.append(bottomSlider.widthAnchor.constraint(equalTo: bottomSlider.heightAnchor))
         constraints.append(bottomSlider.centerXAnchor.constraint(equalTo: view.centerXAnchor))
-        constraints.append(bottomSlider.topAnchor.constraint(equalTo: centerSlider.centerYAnchor))
+        constraints.append(bottomSlider.centerYAnchor.constraint(equalTo: centerSlider.centerYAnchor))
     }
     
     private func initLeftSlider() {
@@ -121,10 +121,10 @@ extension SliderViewController {
         leftSlider.delegate = self
         
         leftSlider.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(leftSlider.widthAnchor.constraint(equalTo: centerSlider.widthAnchor, multiplier: 0.8))
-        constraints.append(leftSlider.heightAnchor.constraint(equalTo: leftSlider.widthAnchor, multiplier: 2))
+        constraints.append(leftSlider.widthAnchor.constraint(equalTo: centerSlider.widthAnchor, multiplier: 1.6))
+        constraints.append(leftSlider.heightAnchor.constraint(equalTo: leftSlider.widthAnchor))
+        constraints.append(leftSlider.centerXAnchor.constraint(equalTo: centerSlider.centerXAnchor))
         constraints.append(leftSlider.centerYAnchor.constraint(equalTo: centerSlider.centerYAnchor))
-        constraints.append(leftSlider.trailingAnchor.constraint(equalTo: centerSlider.centerXAnchor))
     }
     
     private func initRightSlider() {
@@ -134,13 +134,11 @@ extension SliderViewController {
         rightSlider.delegate = self
         
         rightSlider.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(rightSlider.widthAnchor.constraint(equalTo: centerSlider.widthAnchor, multiplier: 0.9))
-        constraints.append(rightSlider.heightAnchor.constraint(equalTo: rightSlider.widthAnchor, multiplier: 2))
+        constraints.append(rightSlider.widthAnchor.constraint(equalTo: centerSlider.widthAnchor, multiplier: 1.8))
+        constraints.append(rightSlider.heightAnchor.constraint(equalTo: rightSlider.widthAnchor))
+        constraints.append(rightSlider.centerXAnchor.constraint(equalTo: centerSlider.centerXAnchor))
         constraints.append(rightSlider.centerYAnchor.constraint(equalTo: centerSlider.centerYAnchor))
-        constraints.append(rightSlider.leadingAnchor.constraint(equalTo: centerSlider.centerXAnchor))
     }
-    
-    
 }
 
 //MARK: Update Views
