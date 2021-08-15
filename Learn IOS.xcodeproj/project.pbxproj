@@ -11,6 +11,8 @@
 		1D06AEDB26C7C19D00F860B9 /* CircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06AEDA26C7C19D00F860B9 /* CircularSlider.swift */; };
 		1D06AEDD26C7C6F300F860B9 /* TrackPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06AEDC26C7C6F300F860B9 /* TrackPath.swift */; };
 		1D06AEDF26C7F0B300F860B9 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06AEDE26C7F0B300F860B9 /* Angle.swift */; };
+		1D06AEE126C8410700F860B9 /* ScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06AEE026C8410700F860B9 /* ScaleViewController.swift */; };
+		1D06AEE326C843AC00F860B9 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06AEE226C843AC00F860B9 /* Scale.swift */; };
 		1D0FCA08242B9B3000D485FD /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FCA07242B9B3000D485FD /* Custom.storyboard */; };
 		1D0FCA0B242B9B7D00D485FD /* CustomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */; };
 		1D0FCA0F242E3F3400D485FD /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0E242E3F3400D485FD /* ShadowView.swift */; };
@@ -75,6 +77,8 @@
 		1D06AEDA26C7C19D00F860B9 /* CircularSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSlider.swift; sourceTree = "<group>"; };
 		1D06AEDC26C7C6F300F860B9 /* TrackPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPath.swift; sourceTree = "<group>"; };
 		1D06AEDE26C7F0B300F860B9 /* Angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
+		1D06AEE026C8410700F860B9 /* ScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleViewController.swift; sourceTree = "<group>"; };
+		1D06AEE226C843AC00F860B9 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
 		1D0FCA07242B9B3000D485FD /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
 		1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewController.swift; sourceTree = "<group>"; };
 		1D0FCA0E242E3F3400D485FD /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			children = (
 				1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */,
 				1D4B501D26C3E13F00C5427F /* SliderViewController.swift */,
+				1D06AEE026C8410700F860B9 /* ScaleViewController.swift */,
 				1D87EA2B242F72F400E20BFC /* TouchpadViewController.swift */,
 				1D87EA2F24307A7F00E20BFC /* BrightAndKelvinViewController.swift */,
 				1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */,
@@ -338,6 +343,7 @@
 				1D4B501F26C3F21800C5427F /* Slider */,
 				1D4C69882424F6A600C2DD9B /* TableCell */,
 				1D4C69872424F66200C2DD9B /* BottomSheet */,
+				1D06AEE226C843AC00F860B9 /* Scale.swift */,
 				1D0FCA0E242E3F3400D485FD /* ShadowView.swift */,
 				1D87EA2D242F745F00E20BFC /* TouchpadView.swift */,
 				1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */,
@@ -437,6 +443,7 @@
 				1D30E348241A6012006CEC8F /* BmiCalculatorViewController.swift in Sources */,
 				1D622066242893F500F41513 /* RGBLightViewController.swift in Sources */,
 				1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */,
+				1D06AEE326C843AC00F860B9 /* Scale.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
 				1D30E350241BCC72006CEC8F /* LearnBottomSheetViewController.swift in Sources */,
 				1D30E34D241BCB78006CEC8F /* BottomSheetViewController.swift in Sources */,
@@ -449,6 +456,7 @@
 				1D6270DC23D34A9F001D146B /* LearnBLEScanViewController.swift in Sources */,
 				1D06AED726C6C57400F860B9 /* ThumbView.swift in Sources */,
 				1D87EA382430C29500E20BFC /* RGBSelectorViewController.swift in Sources */,
+				1D06AEE126C8410700F860B9 /* ScaleViewController.swift in Sources */,
 				1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */,
 				1D0FCA0F242E3F3400D485FD /* ShadowView.swift in Sources */,
 				1D62206224265B2E00F41513 /* SceneSwitchLight.swift in Sources */,

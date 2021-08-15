@@ -146,7 +146,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="sliderPage" storyboardName="Custom" referencedIdentifier="sliderPage" id="Ypz-KZ-Hmq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGh-EF-xWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456" y="-593"/>
+            <point key="canvasLocation" x="362" y="-594"/>
         </scene>
         <!--rgbSelectorPage-->
         <scene sceneID="KWM-34-06G">
@@ -155,6 +155,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6F-Vy-nrz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="678" y="-635"/>
+        </scene>
+        <!--scalePage-->
+        <scene sceneID="wDV-pK-J7A">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="scalePage" storyboardName="Custom" referencedIdentifier="scalePage" id="X6l-2m-CR0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gbN-a4-uDr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="579" y="-594"/>
         </scene>
         <!--colorPickerPage-->
         <scene sceneID="cEb-Od-LQy">
