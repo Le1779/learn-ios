@@ -67,6 +67,7 @@
 		1D87EA382430C29500E20BFC /* RGBSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */; };
 		1D9F8C70246D730A00D9A9E1 /* MoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F8C6F246D730A00D9A9E1 /* MoonViewController.swift */; };
 		1D9F8C72246D732200D9A9E1 /* MoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F8C71246D732200D9A9E1 /* MoonView.swift */; };
+		1DAE7A1C26CDB20900EC2706 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAE7A1B26CDB20900EC2706 /* CollectionViewController.swift */; };
 		1DC51CCC244ED5AA004433E4 /* StarrySkyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */; };
 		1DC7375E24A19E73009CEB7F /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7375D24A19E73009CEB7F /* ColorPickerViewController.swift */; };
 		1DC7376024A1A0BF009CEB7F /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7375F24A1A0BF009CEB7F /* ColorPicker.swift */; };
@@ -135,6 +136,7 @@
 		1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSelectorViewController.swift; sourceTree = "<group>"; };
 		1D9F8C6F246D730A00D9A9E1 /* MoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonViewController.swift; sourceTree = "<group>"; };
 		1D9F8C71246D732200D9A9E1 /* MoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonView.swift; sourceTree = "<group>"; };
+		1DAE7A1B26CDB20900EC2706 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyViewController.swift; sourceTree = "<group>"; };
 		1DC7375D24A19E73009CEB7F /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		1DC7375F24A1A0BF009CEB7F /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
@@ -154,15 +156,16 @@
 		1D0FCA09242B9B4800D485FD /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */,
-				1D4B501D26C3E13F00C5427F /* SliderViewController.swift */,
-				1D06AEE026C8410700F860B9 /* ScaleViewController.swift */,
-				1D87EA2B242F72F400E20BFC /* TouchpadViewController.swift */,
 				1D87EA2F24307A7F00E20BFC /* BrightAndKelvinViewController.swift */,
-				1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */,
+				1DAE7A1B26CDB20900EC2706 /* CollectionViewController.swift */,
 				1DC7375D24A19E73009CEB7F /* ColorPickerViewController.swift */,
-				1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */,
+				1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */,
 				1D9F8C6F246D730A00D9A9E1 /* MoonViewController.swift */,
+				1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */,
+				1D06AEE026C8410700F860B9 /* ScaleViewController.swift */,
+				1D4B501D26C3E13F00C5427F /* SliderViewController.swift */,
+				1DC51CCB244ED5A9004433E4 /* StarrySkyViewController.swift */,
+				1D87EA2B242F72F400E20BFC /* TouchpadViewController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				1D622066242893F500F41513 /* RGBLightViewController.swift in Sources */,
 				1D6270C123D09BA1001D146B /* LearnButtonViewController.swift in Sources */,
 				1D06AEE326C843AC00F860B9 /* Scale.swift in Sources */,
+				1DAE7A1C26CDB20900EC2706 /* CollectionViewController.swift in Sources */,
 				1D6270BD23D09BA1001D146B /* AppDelegate.swift in Sources */,
 				1D30E350241BCC72006CEC8F /* LearnBottomSheetViewController.swift in Sources */,
 				1D30E34D241BCB78006CEC8F /* BottomSheetViewController.swift in Sources */,

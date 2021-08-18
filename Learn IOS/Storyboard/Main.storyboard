@@ -212,6 +212,14 @@
             </objects>
             <point key="canvasLocation" x="-45" y="-591"/>
         </scene>
+        <!--collectionViewPage-->
+        <scene sceneID="zeh-Id-neY">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="collectionViewPage" storyboardName="Custom" referencedIdentifier="collectionViewPage" id="hXC-eD-xKu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQs-uU-6li" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="-544"/>
+        </scene>
         <!--modifyDevicePWDPage-->
         <scene sceneID="zXU-qV-Kq6">
             <objects>

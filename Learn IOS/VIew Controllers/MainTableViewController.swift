@@ -9,39 +9,59 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
+    
+    private var firstTime = true
+    private let debugPage = "collectionViewPage"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if firstTime && !debugPage.isEmpty {
+            if let controller = storyboard?.instantiateViewController(withIdentifier: debugPage) {
+                present(controller, animated: true, completion: nil)
+                firstTime = false
+            }
+        }
     }
 
     // MARK: - Table view data source
     
     var testList = [
-        PageList(sectionName: "UIKit", pages: [Page(name: "Button", id: "learnButtonPage"),
-                                               Page(name: "TextField", id: "learnTextFieldPage"),
-                                               Page(name: "Bottom Sheet", id: "learnBottomSheetPage"),
-                                               Page(name: "PageView", id: "learnPageViewPage"),
-                                               Page(name: "Date Picker", id: "learnDatePickerPage")]),
-        PageList(sectionName: "Custom View", pages: [Page(name: "Button", id: "customButtonPage"),
-                                                     Page(name: "Touchpad", id: "touchpadPage"),
-                                                     Page(name: "Bright & Kelvin", id: "brightAndKelvinPage"),
-                                                     Page(name: "RGB Selector", id: "rgbSelectorPage"),
-                                                     Page(name: "Color Picker", id: "colorPickerPage"),
-                                                     Page(name: "Starry Sky", id: "starrySkyPage"),
-                                                     Page(name: "Moon", id: "moonPage")]),
-        PageList(sectionName: "Bluetooth", pages: [Page(name: "Scan", id: "learnBLEScanPage"),
-                                                   Page(name: "Learn BLE", id: "learnBLEPage"),
-                                                   Page(name: "Modify Device Password", id: "modifyDevicePWDPage")]),
-        PageList(sectionName: "Lighting", pages: [Page(name: "Scene Switch", id: "sceneSwitchLightPage"),
-                                                  Page(name: "RGB", id: "rgbLightPage")]),
-        PageList(sectionName: "Homework", pages: [Page(name: "BmiCalculator", id: "layout_bmi_calculator")])
+        PageList(sectionName: "UIKit", pages: [
+                    Page(name: "Button", id: "learnButtonPage"),
+                    Page(name: "TextField", id: "learnTextFieldPage"),
+                    Page(name: "Bottom Sheet", id: "learnBottomSheetPage"),
+                    Page(name: "PageView", id: "learnPageViewPage"),
+                    Page(name: "Date Picker", id: "learnDatePickerPage")
+        ]),
+        PageList(sectionName: "Custom View", pages: [
+                    Page(name: "Bright & Kelvin", id: "brightAndKelvinPage"),
+                    Page(name: "Button", id: "customButtonPage"),
+                    Page(name: "Color Picker", id: "colorPickerPage"),
+                    Page(name: "Collection View", id: "collectionViewPage"),
+                    Page(name: "Moon", id: "moonPage"),
+                    Page(name: "RGB Selector", id: "rgbSelectorPage"),
+                    Page(name: "Scale", id: "scalePage"),
+                    Page(name: "Slider", id: "sliderPage"),
+                    Page(name: "Starry Sky", id: "starrySkyPage"),
+                    Page(name: "Touchpad", id: "touchpadPage")
+        ]),
+        PageList(sectionName: "Bluetooth", pages: [
+                    Page(name: "Scan", id: "learnBLEScanPage"),
+                    Page(name: "Learn BLE", id: "learnBLEPage"),
+                    Page(name: "Modify Device Password", id: "modifyDevicePWDPage")
+        ]),
+        PageList(sectionName: "Lighting", pages: [
+                    Page(name: "Scene Switch", id: "sceneSwitchLightPage"),
+                    Page(name: "RGB", id: "rgbLightPage")
+        ]),
+        PageList(sectionName: "Homework", pages: [
+                    Page(name: "BmiCalculator", id: "layout_bmi_calculator")
+        ])
     ]
     
     class PageList{
@@ -79,17 +99,13 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) 
-        print("\(#function) --- section = \(indexPath.section), row = \(indexPath.row)")
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         cell.textLabel?.text = self.testList[indexPath.section].pages[indexPath.row].name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        let title = self.testList[indexPath.section].pages[indexPath.row].name
-        print("selected \(title)")
         
         if let controller = storyboard?.instantiateViewController(withIdentifier: self.testList[indexPath.section].pages[indexPath.row].id) {
             present(controller, animated: true, completion: nil)
