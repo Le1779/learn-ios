@@ -32,6 +32,7 @@
 		1D30E35E241D2296006CEC8F /* ScanBleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D30E35C241D2296006CEC8F /* ScanBleTableViewCell.xib */; };
 		1D30E363241F6B1A006CEC8F /* BleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E362241F6B1A006CEC8F /* BleHelper.swift */; };
 		1D30E3652420A4F0006CEC8F /* BleDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D30E3642420A4F0006CEC8F /* BleDevice.swift */; };
+		1D3ABD2726CE98CE0026B6C1 /* CenterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3ABD2626CE98CE0026B6C1 /* CenterCollectionView.swift */; };
 		1D4B501126C1A20D00C5427F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501026C1A20D00C5427F /* UIColor.swift */; };
 		1D4B501326C1B1A100C5427F /* LeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501226C1B1A100C5427F /* LeButton.swift */; };
 		1D4B501626C2A79D00C5427F /* OnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B501526C2A79D00C5427F /* OnOffButton.swift */; };
@@ -99,6 +100,7 @@
 		1D30E35C241D2296006CEC8F /* ScanBleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanBleTableViewCell.xib; sourceTree = "<group>"; };
 		1D30E362241F6B1A006CEC8F /* BleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleHelper.swift; sourceTree = "<group>"; };
 		1D30E3642420A4F0006CEC8F /* BleDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleDevice.swift; sourceTree = "<group>"; };
+		1D3ABD2626CE98CE0026B6C1 /* CenterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCollectionView.swift; sourceTree = "<group>"; };
 		1D4B501026C1A20D00C5427F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1D4B501226C1B1A100C5427F /* LeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeButton.swift; sourceTree = "<group>"; };
 		1D4B501526C2A79D00C5427F /* OnOffButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnOffButton.swift; sourceTree = "<group>"; };
@@ -342,23 +344,32 @@
 		1D859D79241785860026746D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D4C69872424F66200C2DD9B /* BottomSheet */,
 				1D4B501426C2A77200C5427F /* Button */,
+				1DAE7A1D26CDB58800EC2706 /* CollectionView */,
 				1D4B501F26C3F21800C5427F /* Slider */,
 				1D4C69882424F6A600C2DD9B /* TableCell */,
-				1D4C69872424F66200C2DD9B /* BottomSheet */,
-				1D06AEE226C843AC00F860B9 /* Scale.swift */,
-				1D0FCA0E242E3F3400D485FD /* ShadowView.swift */,
-				1D87EA2D242F745F00E20BFC /* TouchpadView.swift */,
 				1D87EA3124307B5700E20BFC /* BrightAndKelvinTouchpadView.swift */,
-				1D87EA352430BD3D00E20BFC /* RGBSelector.swift */,
-				1D21DA392462682F00450209 /* StarrySkyView.swift */,
-				1D9F8C71246D732200D9A9E1 /* MoonView.swift */,
 				1DC7375F24A1A0BF009CEB7F /* ColorPicker.swift */,
 				1D4B501726C2CAFA00C5427F /* IndicatorLight.swift */,
+				1D9F8C71246D732200D9A9E1 /* MoonView.swift */,
+				1D87EA352430BD3D00E20BFC /* RGBSelector.swift */,
+				1D06AEE226C843AC00F860B9 /* Scale.swift */,
+				1D0FCA0E242E3F3400D485FD /* ShadowView.swift */,
+				1D21DA392462682F00450209 /* StarrySkyView.swift */,
+				1D87EA2D242F745F00E20BFC /* TouchpadView.swift */,
 				1D4B501026C1A20D00C5427F /* UIColor.swift */,
 				1D4B501926C2DFB500C5427F /* UILabel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1DAE7A1D26CDB58800EC2706 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1D3ABD2626CE98CE0026B6C1 /* CenterCollectionView.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +473,7 @@
 				1D87EA382430C29500E20BFC /* RGBSelectorViewController.swift in Sources */,
 				1D06AEE126C8410700F860B9 /* ScaleViewController.swift in Sources */,
 				1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */,
+				1D3ABD2726CE98CE0026B6C1 /* CenterCollectionView.swift in Sources */,
 				1D0FCA0F242E3F3400D485FD /* ShadowView.swift in Sources */,
 				1D62206224265B2E00F41513 /* SceneSwitchLight.swift in Sources */,
 				1D06AEDF26C7F0B300F860B9 /* Angle.swift in Sources */,
