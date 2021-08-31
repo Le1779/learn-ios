@@ -176,6 +176,21 @@
             </objects>
             <point key="canvasLocation" x="880" y="1548"/>
         </scene>
+        <!--Empty View Controller-->
+        <scene sceneID="Mx5-hc-qTg">
+            <objects>
+                <viewController storyboardIdentifier="emptyViewPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gwd-2b-tu5" customClass="EmptyViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eLi-zr-w2A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="I6Y-xL-fsk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6s-je-Fmb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="1548"/>
+        </scene>
         <!--Moon View Controller-->
         <scene sceneID="9Wm-qW-FXV">
             <objects>

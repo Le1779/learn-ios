@@ -11,7 +11,7 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     private var firstTime = true
-    private let debugPage = "collectionViewPage"
+    private let debugPage = "emptyViewPage"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class MainTableViewController: UITableViewController {
                     Page(name: "Button", id: "customButtonPage"),
                     Page(name: "Color Picker", id: "colorPickerPage"),
                     Page(name: "Collection View", id: "collectionViewPage"),
+                    Page(name: "Empty view", id: "emptyViewPage"),
                     Page(name: "Moon", id: "moonPage"),
                     Page(name: "RGB Selector", id: "rgbSelectorPage"),
                     Page(name: "Scale", id: "scalePage"),

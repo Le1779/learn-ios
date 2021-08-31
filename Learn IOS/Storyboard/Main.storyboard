@@ -122,7 +122,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="touchpadPage" storyboardName="Custom" referencedIdentifier="touchpadPage" id="woF-aC-C5Y" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVF-Bm-c77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="161" y="-635"/>
+            <point key="canvasLocation" x="-81" y="-379"/>
         </scene>
         <!--moonPage-->
         <scene sceneID="wNp-io-ayN">
@@ -130,7 +130,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="moonPage" storyboardName="Custom" referencedIdentifier="moonPage" id="1ND-hE-Cph" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="350-4g-bRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="-593"/>
+            <point key="canvasLocation" x="-99" y="-446"/>
+        </scene>
+        <!--emptyViewPage-->
+        <scene sceneID="tFE-nX-S7j">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="emptyViewPage" storyboardName="Custom" referencedIdentifier="emptyViewPage" id="fVs-Iu-djs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okx-6M-bT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71" y="-481"/>
         </scene>
         <!--brightAndKelvinPage-->
         <scene sceneID="oGh-KH-1NB">
@@ -138,7 +146,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="brightAndKelvinPage" storyboardName="Custom" referencedIdentifier="brightAndKelvinPage" id="vka-vT-29P" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8h-fh-hxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="-635"/>
+            <point key="canvasLocation" x="-49" y="-595"/>
         </scene>
         <!--sliderPage-->
         <scene sceneID="cE4-9Q-ifA">
@@ -146,7 +154,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="sliderPage" storyboardName="Custom" referencedIdentifier="sliderPage" id="Ypz-KZ-Hmq" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGh-EF-xWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362" y="-594"/>
+            <point key="canvasLocation" x="-93" y="-515"/>
         </scene>
         <!--rgbSelectorPage-->
         <scene sceneID="KWM-34-06G">
@@ -154,7 +162,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="rgbSelectorPage" storyboardName="Custom" referencedIdentifier="rgbSelectorPage" id="EVj-gt-nq8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6F-Vy-nrz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="-635"/>
+            <point key="canvasLocation" x="-71" y="-409"/>
         </scene>
         <!--scalePage-->
         <scene sceneID="wDV-pK-J7A">
@@ -162,7 +170,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="scalePage" storyboardName="Custom" referencedIdentifier="scalePage" id="X6l-2m-CR0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbN-a4-uDr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579" y="-594"/>
+            <point key="canvasLocation" x="83" y="-515"/>
         </scene>
         <!--colorPickerPage-->
         <scene sceneID="cEb-Od-LQy">
@@ -170,7 +178,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="colorPickerPage" storyboardName="Custom" referencedIdentifier="colorPickerPage" id="BZK-lP-Wwa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ak-Wz-LPu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="-634"/>
+            <point key="canvasLocation" x="180" y="-558"/>
         </scene>
         <!--learnDatePickerPage-->
         <scene sceneID="Rj0-cZ-YgH">
@@ -202,7 +210,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="customButtonPage" storyboardName="Custom" referencedIdentifier="customButtonPage" id="BY2-Z9-hYn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kaq-L1-qMP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="-635"/>
+            <point key="canvasLocation" x="-55" y="-558"/>
         </scene>
         <!--starrySkyPage-->
         <scene sceneID="DW3-nv-rAy">
@@ -210,7 +218,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="starrySkyPage" storyboardName="Custom" referencedIdentifier="starrySkyPage" id="gBe-JO-4VL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mf6-kh-X0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="-591"/>
+            <point key="canvasLocation" x="280" y="-515"/>
         </scene>
         <!--collectionViewPage-->
         <scene sceneID="zeh-Id-neY">
@@ -218,7 +226,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="collectionViewPage" storyboardName="Custom" referencedIdentifier="collectionViewPage" id="hXC-eD-xKu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQs-uU-6li" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-544"/>
+            <point key="canvasLocation" x="409" y="-558"/>
         </scene>
         <!--modifyDevicePWDPage-->
         <scene sceneID="zXU-qV-Kq6">
