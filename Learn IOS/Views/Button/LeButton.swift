@@ -26,15 +26,6 @@ class LeButton: UIButton {
     private var shadowLayer: ShadowView?
     private var shadowColor: UIColor?
     private var shadowBlur: CGFloat?
-    private var isDrawnShadow = false
-    
-    open override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        if !isDrawnShadow && shadowLayer != nil {
-            self.superview?.insertSubview(shadowLayer!, belowSubview: self)
-            isDrawnShadow = true
-        }
-    }
     
     public override init(frame: CGRect){
         super.init(frame: frame)
@@ -68,9 +59,15 @@ class LeButton: UIButton {
     }
     
     func setShadow(color: UIColor, blur: CGFloat) {
-        shadowColor = color
-        shadowBlur = blur
-        shadowLayer = ShadowView(shadowRadius: blur, shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 4) ,shadowColor: color)
+        self.shadowColor = color
+        self.shadowBlur = blur
+        if shadowLayer == nil {
+            shadowLayer = ShadowView(shadowRadius: blur, shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 4) ,shadowColor: color)
+            self.superview?.insertSubview(shadowLayer!, belowSubview: self)
+        } else {
+            shadowLayer?.setShadowRadius(shadowRadius: self.shadowBlur)
+            shadowLayer?.setShadowColor(shadowColor: self.shadowColor)
+        }
     }
 }
 
@@ -88,7 +85,6 @@ extension LeButton {
             shadow.setBounds(bounds: bounds)
             shadow.setCornerRadius(cornerRadius: layer.cornerRadius)
         }
-        
     }
 }
 
