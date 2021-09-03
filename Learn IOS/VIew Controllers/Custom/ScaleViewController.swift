@@ -70,8 +70,8 @@ extension ScaleViewController {
         circularScale.scaleColor = UIColor(hexString: "#E5E5E5")
         circularScale.scaleWidth = 3
         circularScale.units = 1/10
-        circularScale.beginAngle = 110
-        circularScale.angle = 140
+        circularScale.beginAngle = 220
+        circularScale.angle = 260
         circularScale.scaleType = .circular
         view.addSubview(circularScale)
         
@@ -84,8 +84,8 @@ extension ScaleViewController {
     
     private func initLeftSlider() {
         view.addSubview(leftSlider)
-        leftSlider.beginAngle = 250
-        leftSlider.angle = 140
+        leftSlider.beginAngle = 220
+        leftSlider.angle = 260
         leftSlider.clockwise = true
         
         leftSlider.translatesAutoresizingMaskIntoConstraints = false

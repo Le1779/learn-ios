@@ -83,7 +83,7 @@ class Scale: UIView {
         let path = UIBezierPath()
         for index in 0..<Int(1/units) + 1 {
             let isInterval = index % hintInterval == 0
-            let angle = beginAngle + index * Int(scaleAngle)
+            let angle = beginAngle - index * Int(scaleAngle)
             let pointA = getPoint(angle: angle, radius: radius - scaleHeight, centerPoint: centerPoint)
             path.move(to: pointA)
             
