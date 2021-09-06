@@ -12,6 +12,8 @@ class SliderViewController: UIViewController {
 
     private let backButton = LeButton()
     private let sliderValueLabel = UILabel()
+    private let randomButton = LeButton()
+    
     private let centerSlider = CircularSlider()
     private let topSlider = CircularSlider()
     private let leftSlider = CircularSlider()
@@ -34,6 +36,15 @@ class SliderViewController: UIViewController {
         UIImpactFeedbackGenerator().impactOccurred()
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @objc func onRandomButtonClick(_ sender:UIButton) {
+        UIImpactFeedbackGenerator().impactOccurred()
+        centerSlider.value = Float.random(in: 0...1)
+        leftSlider.value = Float.random(in: 0...1)
+        rightSlider.value = Float.random(in: 0...1)
+        topSlider.value = Float.random(in: 0...1)
+        bottomSlider.value = Float.random(in: 0...1)
+    }
 }
 
 //MARK: Initial Views
@@ -41,6 +52,7 @@ extension SliderViewController {
     private func initViews() {
         initBackButton()
         initSliderValueLabel()
+        initRandomButton()
         initCenterSlider()
         initTopSlider()
         initBottomSlider()
@@ -72,12 +84,28 @@ extension SliderViewController {
         constraints.append(sliderValueLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor))
     }
     
+    private func initRandomButton() {
+        view.addSubview(randomButton)
+        randomButton.cornerType = .round
+        randomButton.setBackgroundColor(UIColor(hexString: "#585858"))
+        randomButton.setTitle("Random", for: .normal)
+        randomButton.setTitleColor(UIColor(hexString: "#E8E8E8"), for: .normal)
+        randomButton.addTarget(self, action: #selector(onRandomButtonClick), for: .touchUpInside)
+        
+        randomButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(randomButton.centerXAnchor.constraint(equalTo: sliderValueLabel.centerXAnchor))
+        constraints.append(randomButton.centerYAnchor.constraint(equalTo: backButton.centerYAnchor))
+        constraints.append(randomButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2))
+        constraints.append(randomButton.heightAnchor.constraint(equalToConstant: 48))
+    }
+    
     private func initCenterSlider() {
         centerSlider.beginAngle = 220
         centerSlider.angle = 260
         centerSlider.clockwise = true
         centerSlider.delegate = self
         view.addSubview(centerSlider)
+        centerSlider.value = 0.5
         
         centerSlider.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(centerSlider.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5))

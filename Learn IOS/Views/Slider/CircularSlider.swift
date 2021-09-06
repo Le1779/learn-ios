@@ -44,8 +44,11 @@ class CircularSlider: UIControl {
         }
         set {
             let value = round(100*newValue)/100
-            self._value = value
-            delegate?.onChanged(value, slider: self)
+            if value >= 0 && value <= 1 {
+                self._value = value
+                updateThumbViewPosition()
+                delegate?.onChanged(value, slider: self)
+            }
         }
     }
     
@@ -73,6 +76,7 @@ class CircularSlider: UIControl {
         
         if thumbView == nil {
             thumbView = ThumbView(width: thumbWidth)
+            updateThumbViewPosition()
         }
     }
     
@@ -91,12 +95,28 @@ class CircularSlider: UIControl {
         let currentAngle = path.getAngleFromPoint(touch.location(in: self))
         let originAngle = path.getOriginAngle(currentAngle)
         let rate = Float(originAngle)/Float(angle)
-        if rate >= 0 && rate <= 1 {
-            thumbView.center = path.getPointFromAngle(currentAngle)
-            self.value = rate
-        }
+        self.value = rate
         
         return true
+    }
+    
+    private func updateThumbViewPosition() {
+        guard let path = trackPath else {
+            return
+        }
+        
+        guard let thumb = thumbView else {
+            return
+        }
+        
+        var currentAngle = Float(angle)*value
+        if clockwise {
+            currentAngle = Float(beginAngle) - currentAngle
+        } else {
+            currentAngle = Float(beginAngle) + currentAngle
+        }
+        
+        thumb.center = path.getPointFromAngle(Int(currentAngle))
     }
 }
 
