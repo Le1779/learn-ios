@@ -77,7 +77,7 @@ extension LeButton {
         if cornerType == .round {
             let edge = frame.size.width/4
             imageEdgeInsets = UIEdgeInsets(top: edge, left: edge, bottom: edge, right: edge)
-            layer.cornerRadius = frame.size.width * 0.5
+            layer.cornerRadius = frame.size.height * 0.5
         }
         
         if let shadow = shadowLayer {
