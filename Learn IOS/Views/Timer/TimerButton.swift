@@ -9,6 +9,16 @@
 import UIKit
 
 class TimerButton: LeButton {
+    
+    private var startTime: Date?
+    private var endTime: Date?
+    private let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
+    
+    
     private var size: CGSize = CGSize(width: 0.0, height: 0.0) {
         didSet {
             if oldValue.width != size.width || oldValue.height != size.height {
@@ -17,12 +27,14 @@ class TimerButton: LeButton {
         }
     }
     
-    var icon: UIImageView!
-    var title: UILabel!
+    private var icon: UIImageView!
+    private var title: UILabel!
+    private var time: UILabel!
     
-    var iconLC: NSLayoutConstraint!
-    var iconTC: NSLayoutConstraint!
-    var titleRC: NSLayoutConstraint!
+    private var iconLC: NSLayoutConstraint!
+    private var iconTC: NSLayoutConstraint!
+    private var titleRC: NSLayoutConstraint!
+    private var timeBC: NSLayoutConstraint!
     
     private var componentsConstraints = [NSLayoutConstraint]()
     
@@ -39,6 +51,18 @@ class TimerButton: LeButton {
         super.layoutSubviews()
         size = CGSize(width: frame.width, height: frame.height)
     }
+    
+    public func setTime(startTime: Date?, endTime: Date?) {
+        self.startTime = startTime
+        self.endTime = endTime
+        
+        guard let startTime = startTime, let endTime = endTime else {
+            time.text = "未設定"
+            return
+        }
+        
+        time.text = "\(timeFormatter.string(from: startTime))- \(timeFormatter.string(from: endTime))"
+    }
 }
 
 //MARK: Init
@@ -46,6 +70,7 @@ extension TimerButton {
     private func initComponents() {
         initIcon()
         initTitle()
+        initTime()
         NSLayoutConstraint.activate(componentsConstraints)
     }
     
@@ -76,6 +101,21 @@ extension TimerButton {
         componentsConstraints.append(title.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 8))
         componentsConstraints.append(title.centerYAnchor.constraint(equalTo: icon.centerYAnchor))
     }
+    
+    private func initTime() {
+        time = UILabel()
+        self.addSubview(time)
+        time.text = "未設定"
+        time.textColor = UIColor(hexString: "#585858")
+        time.textAlignment = .center
+        
+        time.translatesAutoresizingMaskIntoConstraints = false
+        timeBC = time.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        componentsConstraints.append(timeBC)
+        componentsConstraints.append(time.leadingAnchor.constraint(equalTo: icon.leadingAnchor))
+        componentsConstraints.append(time.trailingAnchor.constraint(equalTo: title.trailingAnchor))
+        componentsConstraints.append(time.topAnchor.constraint(equalTo: icon.bottomAnchor))
+    }
 }
 
 //MARK: Update
@@ -84,5 +124,6 @@ extension TimerButton {
         iconLC.constant = self.layer.cornerRadius
         iconTC.constant = self.layer.cornerRadius
         titleRC.constant = self.layer.cornerRadius * -1
+        timeBC.constant = self.layer.cornerRadius * -1
     }
 }
