@@ -191,6 +191,21 @@
             </objects>
             <point key="canvasLocation" x="1664" y="1548"/>
         </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="hYn-jz-CYN">
+            <objects>
+                <viewController storyboardIdentifier="timerPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QoC-oo-vJj" customClass="TimerViewController" customModule="Learn_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lp0-AX-g1p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ReX-hY-0jM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHI-yS-xUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2425" y="1548"/>
+        </scene>
         <!--Moon View Controller-->
         <scene sceneID="9Wm-qW-FXV">
             <objects>

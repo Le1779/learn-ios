@@ -124,6 +124,14 @@
             </objects>
             <point key="canvasLocation" x="-81" y="-379"/>
         </scene>
+        <!--timerPage-->
+        <scene sceneID="7gh-xM-Am7">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="timerPage" storyboardName="Custom" referencedIdentifier="timerPage" id="jcS-v1-y8F" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SsS-nj-wZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="154" y="-379"/>
+        </scene>
         <!--moonPage-->
         <scene sceneID="wNp-io-ayN">
             <objects>

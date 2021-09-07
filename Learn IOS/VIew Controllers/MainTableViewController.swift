@@ -11,7 +11,7 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     private var firstTime = true
-    private let debugPage = "sliderPage"
+    private let debugPage = "timerPage"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +49,7 @@ class MainTableViewController: UITableViewController {
                     Page(name: "Scale", id: "scalePage"),
                     Page(name: "Slider", id: "sliderPage"),
                     Page(name: "Starry Sky", id: "starrySkyPage"),
+                    Page(name: "Timer", id: "timerPage"),
                     Page(name: "Touchpad", id: "touchpadPage")
         ]),
         PageList(sectionName: "Bluetooth", pages: [
