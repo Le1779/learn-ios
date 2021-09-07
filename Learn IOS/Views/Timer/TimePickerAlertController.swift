@@ -11,6 +11,20 @@ import UIKit
 class TimePickerAlertController: UIAlertController {
     
     var delegate: TimePickerDelegate?
+    var startTime: Date? {
+        didSet {
+            if let picker = startTimePicker {
+                picker.date = startTime ?? Date()
+            }
+        }
+    }
+    var endTime: Date? {
+        didSet {
+            if let picker = endTimePicker {
+                picker.date = endTime ?? Date()
+            }
+        }
+    }
     
     let container = UIViewController()
     let startTitleLabel = UILabel()
@@ -84,12 +98,14 @@ extension TimePickerAlertController {
     private func initStartTimePicker() {
         startTimePicker = {
             let picker = UIDatePicker()
+            picker.date = startTime ?? Date()
             picker.timeZone = NSTimeZone.local
             picker.datePickerMode = .time
             if #available(iOS 13.4, *) {
                 picker.preferredDatePickerStyle = .wheels
             }
             container.view.addSubview(picker)
+            
             picker.translatesAutoresizingMaskIntoConstraints = false
             picker.widthAnchor.constraint(equalTo: container.view.widthAnchor, multiplier: 0.5).isActive = true
             picker.heightAnchor.constraint(equalToConstant: 300).isActive = true
@@ -102,12 +118,14 @@ extension TimePickerAlertController {
     private func initEndTimePicker() {
         endTimePicker = {
             let picker = UIDatePicker()
+            picker.date = endTime ?? Date()
             picker.timeZone = NSTimeZone.local
             picker.datePickerMode = .time
             if #available(iOS 13.4, *) {
                 picker.preferredDatePickerStyle = .wheels
             }
             container.view.addSubview(picker)
+            
             picker.translatesAutoresizingMaskIntoConstraints = false
             picker.widthAnchor.constraint(equalTo: container.view.widthAnchor, multiplier: 0.5).isActive = true
             picker.heightAnchor.constraint(equalToConstant: 300).isActive = true

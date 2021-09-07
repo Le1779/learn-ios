@@ -10,17 +10,25 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
+    private var startTime: Date?
+    private var endTime: Date?
+    
     let backButton = LeButton()
     let showAlertButton = LeButton()
     var timer: Timer!
     var timerButton: TimerButton!
     var timePicker: TimePickerAlertController!
     private var constraints = [NSLayoutConstraint]()
-    
-    var datePicker: UIDatePicker!
+    private let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startTime = timeFormatter.date(from: "09:30")
+        endTime = timeFormatter.date(from: "17:45")
         initViews()
     }
 
@@ -46,7 +54,6 @@ extension TimerViewController {
         initBackButton()
         initTimerButton()
         initShowAlertButton()
-        initDatePicker()
         NSLayoutConstraint.activate(constraints)
         
         initTimePicker()
@@ -55,6 +62,8 @@ extension TimerViewController {
     private func initTimePicker() {
         timePicker = TimePickerAlertController()
         timePicker.delegate = self
+        timePicker.startTime = startTime
+        timePicker.endTime = endTime
     }
     
     private func initBackButton() {
@@ -91,27 +100,14 @@ extension TimerViewController {
         self.view.addSubview(timerButton)
         timerButton.layer.cornerRadius = 28
         timerButton.setShadow(color: UIColor(hexString: "#00000020"), blur: 5)
+        timerButton.addTarget(self, action: #selector(onShowAlertButtonClick), for: .touchUpInside)
+        timerButton.setTime(startTime: startTime, endTime: endTime)
         
         timerButton.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(timerButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.4))
         constraints.append(timerButton.heightAnchor.constraint(equalTo: timerButton.widthAnchor, multiplier: 0.7))
         constraints.append(timerButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
         constraints.append(timerButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor))
-    }
-    
-    private func initDatePicker() {
-        datePicker = UIDatePicker()
-        self.view.addSubview(datePicker)
-        datePicker.datePickerMode = .time
-        if #available(iOS 13.4, *) {
-            datePicker.preferredDatePickerStyle = .wheels
-        }
-        
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(datePicker.widthAnchor.constraint(equalTo: self.view.widthAnchor))
-        constraints.append(datePicker.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3))
-        constraints.append(datePicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor))
-        constraints.append(datePicker.topAnchor.constraint(equalTo: timerButton.bottomAnchor, constant: 12))
     }
 }
 
@@ -122,12 +118,16 @@ extension TimerViewController {
 
 extension TimerViewController: TimePickerDelegate {
     func onChanged(start: Date, end: Date) {
+        self.startTime = start
+        self.endTime = end
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         print("Start: \(formatter.string(from: start)), End: \(formatter.string(from: end))")
+        timerButton.setTime(startTime: start, endTime: end)
     }
     
     func onClean() {
         print("Clean")
+        timerButton.setTime(startTime: nil, endTime: nil)
     }
 }
