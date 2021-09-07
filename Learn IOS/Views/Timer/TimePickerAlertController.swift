@@ -10,6 +10,8 @@ import UIKit
 
 class TimePickerAlertController: UIAlertController {
     
+    var delegate: TimePickerDelegate?
+    
     let container = UIViewController()
     let startTitleLabel = UILabel()
     let endTitleLabel = UILabel()
@@ -18,12 +20,20 @@ class TimePickerAlertController: UIAlertController {
     var constraints = [NSLayoutConstraint]()
     
     override var preferredStyle: UIAlertController.Style {
-            return .actionSheet
-        }
+        return .actionSheet
+    }
     
     init() {
         super.init(nibName: nil, bundle: nil)
         self.setValue(container, forKey: "contentViewController")
+        
+        self.addAction(UIAlertAction(title: "確認", style: .default, handler: { _ in
+            self.delegate?.onChanged(start: self.startTimePicker.date, end: self.endTimePicker.date)
+        }))
+        
+        self.addAction(UIAlertAction(title: "清除", style: .destructive, handler: { _ in
+            self.delegate?.onClean()
+        }))
     }
     
     required init?(coder: NSCoder) {
@@ -113,4 +123,9 @@ extension TimePickerAlertController {
     private func updateViews() {
         container.preferredContentSize = CGSize(width: self.view.frame.size.width, height: 300)
     }
+}
+
+protocol TimePickerDelegate {
+    func onChanged(start: Date, end: Date)
+    func onClean()
 }

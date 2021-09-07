@@ -14,7 +14,7 @@ class TimerViewController: UIViewController {
     let showAlertButton = LeButton()
     var timer: Timer!
     var timerButton: TimerButton!
-    var timePicker: UIAlertController!
+    var timePicker: TimePickerAlertController!
     private var constraints = [NSLayoutConstraint]()
     
     var datePicker: UIDatePicker!
@@ -38,67 +38,6 @@ class TimerViewController: UIViewController {
         UIImpactFeedbackGenerator().impactOccurred()
         present(timePicker, animated: true)
     }
-    
-    func makeDatePickerAlert() -> UIAlertController {
-        let container = UIViewController()
-        container.preferredContentSize = CGSize(width: self.view.frame.size.width,height: 300)
-        
-        let startTimeTitle = UILabel()
-        container.view.addSubview(startTimeTitle)
-        startTimeTitle.text = "Start time"
-        
-        startTimeTitle.translatesAutoresizingMaskIntoConstraints = false
-        startTimeTitle.topAnchor.constraint(equalTo: container.view.topAnchor, constant: 24).isActive = true
-        startTimeTitle.leadingAnchor.constraint(equalTo: container.view.leadingAnchor, constant: 24).isActive = true
-        startTimeTitle.widthAnchor.constraint(equalTo: container.view.widthAnchor, multiplier: 0.5)
-        
-        let startTimePicker: UIDatePicker = {
-            let picker = UIDatePicker()
-            picker.timeZone = NSTimeZone.local
-            picker.datePickerMode = .time
-            if #available(iOS 13.4, *) {
-                picker.preferredDatePickerStyle = .wheels
-            }
-            container.view.addSubview(picker)
-            picker.translatesAutoresizingMaskIntoConstraints = false
-            picker.widthAnchor.constraint(equalTo: container.view.widthAnchor, multiplier: 0.5).isActive = true
-            picker.heightAnchor.constraint(equalToConstant: 300).isActive = true
-            picker.topAnchor.constraint(equalTo: startTimeTitle.topAnchor).isActive = true
-            picker.leadingAnchor.constraint(equalTo: container.view.leadingAnchor).isActive = true
-            return picker
-        }()
-        
-        let endTimePicker: UIDatePicker = {
-            let picker = UIDatePicker()
-            picker.timeZone = NSTimeZone.local
-            picker.datePickerMode = .time
-            if #available(iOS 13.4, *) {
-                picker.preferredDatePickerStyle = .wheels
-            }
-            container.view.addSubview(picker)
-            picker.translatesAutoresizingMaskIntoConstraints = false
-            picker.widthAnchor.constraint(equalTo: container.view.widthAnchor, multiplier: 0.5).isActive = true
-            picker.heightAnchor.constraint(equalToConstant: 300).isActive = true
-            picker.topAnchor.constraint(equalTo: container.view.topAnchor).isActive = true
-            picker.trailingAnchor.constraint(equalTo: container.view.trailingAnchor).isActive = true
-            return picker
-        }()
-        
-        
-        let selectAction = UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            //self.formateAndShowPickedDate()
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in
-            //self.pickerTextField.text = ""
-        })
-        
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.setValue(container, forKey: "contentViewController")
-        alert.addAction(selectAction)
-        alert.addAction(cancelAction)
-        return alert
-    }
 }
 
 //MARK: Initial Views
@@ -114,17 +53,8 @@ extension TimerViewController {
     }
     
     private func initTimePicker() {
-        let selectAction = UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            //self.formateAndShowPickedDate()
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in
-            //self.pickerTextField.text = ""
-        })
-        
         timePicker = TimePickerAlertController()
-        timePicker.addAction(selectAction)
-        timePicker.addAction(cancelAction)
+        timePicker.delegate = self
     }
     
     private func initBackButton() {
@@ -188,4 +118,16 @@ extension TimerViewController {
 //MARK: Update Views
 extension TimerViewController {
     private func updateViews() {}
+}
+
+extension TimerViewController: TimePickerDelegate {
+    func onChanged(start: Date, end: Date) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        print("Start: \(formatter.string(from: start)), End: \(formatter.string(from: end))")
+    }
+    
+    func onClean() {
+        print("Clean")
+    }
 }
