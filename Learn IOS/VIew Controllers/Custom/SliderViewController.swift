@@ -13,6 +13,7 @@ class SliderViewController: UIViewController {
     private let backButton = LeButton()
     private let sliderValueLabel = UILabel()
     private let randomButton = LeButton()
+    private let enableButton = LeButton()
     
     private let centerSlider = CircularSlider()
     private let topSlider = CircularSlider()
@@ -45,6 +46,17 @@ class SliderViewController: UIViewController {
         topSlider.value = Float.random(in: 0...1)
         bottomSlider.value = Float.random(in: 0...1)
     }
+    
+    @objc func onEnableButtonClick(_ sender:UIButton) {
+        UIImpactFeedbackGenerator().impactOccurred()
+        centerSlider.isEnabled = !centerSlider.isEnabled
+        leftSlider.isEnabled = !leftSlider.isEnabled
+        rightSlider.isEnabled = !rightSlider.isEnabled
+        topSlider.isEnabled = !topSlider.isEnabled
+        bottomSlider.isEnabled = !bottomSlider.isEnabled
+        
+        enableButton.setTitle(centerSlider.isEnabled ? "Disable" : "Enable", for: .normal)
+    }
 }
 
 //MARK: Initial Views
@@ -53,6 +65,8 @@ extension SliderViewController {
         initBackButton()
         initSliderValueLabel()
         initRandomButton()
+        initEnableButton()
+        
         initCenterSlider()
         initTopSlider()
         initBottomSlider()
@@ -93,10 +107,25 @@ extension SliderViewController {
         randomButton.addTarget(self, action: #selector(onRandomButtonClick), for: .touchUpInside)
         
         randomButton.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(randomButton.centerXAnchor.constraint(equalTo: sliderValueLabel.centerXAnchor))
-        constraints.append(randomButton.centerYAnchor.constraint(equalTo: backButton.centerYAnchor))
+        constraints.append(randomButton.leadingAnchor.constraint(equalTo: backButton.leadingAnchor))
+        constraints.append(randomButton.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 24))
         constraints.append(randomButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2))
         constraints.append(randomButton.heightAnchor.constraint(equalToConstant: 48))
+    }
+    
+    private func initEnableButton() {
+        view.addSubview(enableButton)
+        enableButton.cornerType = .round
+        enableButton.setBackgroundColor(UIColor(hexString: "#585858"))
+        enableButton.setTitle("Enable", for: .normal)
+        enableButton.setTitleColor(UIColor(hexString: "#E8E8E8"), for: .normal)
+        enableButton.addTarget(self, action: #selector(onEnableButtonClick), for: .touchUpInside)
+        
+        enableButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(enableButton.leadingAnchor.constraint(equalTo: randomButton.trailingAnchor, constant: 24))
+        constraints.append(enableButton.centerYAnchor.constraint(equalTo: randomButton.centerYAnchor))
+        constraints.append(enableButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.2))
+        constraints.append(enableButton.heightAnchor.constraint(equalToConstant: 48))
     }
     
     private func initCenterSlider() {

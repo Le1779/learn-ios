@@ -14,6 +14,11 @@ class CircularSlider: UIControl {
     public var angle: Int
     public var beginAngle: Int
     public var clockwise: Bool = false
+    public override var isEnabled: Bool {
+        didSet{
+            thumbView.isHidden = !isEnabled
+        }
+    }
     
     private var trackPath: TrackPath?
     private var trackLayer: TrackLayer! {
