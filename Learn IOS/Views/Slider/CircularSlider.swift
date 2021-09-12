@@ -16,7 +16,9 @@ class CircularSlider: UIControl {
     public var clockwise: Bool = false
     public override var isEnabled: Bool {
         didSet{
-            thumbView.isHidden = !isEnabled
+            if thumbView != nil {
+                thumbView.isHidden = !isEnabled
+            }
         }
     }
     
@@ -39,6 +41,8 @@ class CircularSlider: UIControl {
             if let path = trackPath {
                 thumbView.center = path.getPointFromAngle(beginAngle)
             }
+            
+            thumbView.isHidden = !isEnabled
         }
     }
     
