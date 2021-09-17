@@ -10,7 +10,7 @@ import UIKit
 
 class CircularSlider: UIControl {
     
-    public var delegate: CircularSliderDelegate?
+    public weak var delegate: CircularSliderDelegate?
     public var angle: Int
     public var beginAngle: Int
     public var clockwise: Bool = false
@@ -129,6 +129,6 @@ class CircularSlider: UIControl {
     }
 }
 
-protocol CircularSliderDelegate {
+protocol CircularSliderDelegate: NSObjectProtocol {
     func onChanged(_ value: Float, slider: CircularSlider)
 }
