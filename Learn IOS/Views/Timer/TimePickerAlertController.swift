@@ -10,7 +10,7 @@ import UIKit
 
 class TimePickerAlertController: UIAlertController {
     
-    var delegate: TimePickerDelegate?
+    weak var delegate: TimePickerDelegate?
     var startTime: Date? {
         didSet {
             if let picker = startTimePicker {
@@ -143,7 +143,7 @@ extension TimePickerAlertController {
     }
 }
 
-protocol TimePickerDelegate {
+protocol TimePickerDelegate: NSObjectProtocol {
     func onChanged(start: Date, end: Date)
     func onClean()
 }
