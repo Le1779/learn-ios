@@ -10,7 +10,14 @@ import UIKit
 
 class ThumbView: UIView {
     
+    var image: UIImage? {
+        didSet {
+            setupImageView()
+        }
+    }
+    
     private var width: CGFloat
+    private var imageView: UIImageView?
     
     public init(width: CGFloat){
         self.width = width
@@ -27,5 +34,24 @@ class ThumbView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupImageView() {
+        guard let image = image else {
+            return
+        }
+        
+        if imageView == nil {
+            imageView = UIImageView()
+            self.addSubview(imageView!)
+        }
+        
+        imageView?.image = image.withTintColor(UIColor(hexString: "#585858"))
+        
+        imageView?.translatesAutoresizingMaskIntoConstraints = false
+        imageView?.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6).isActive = true
+        imageView?.heightAnchor.constraint(equalTo: imageView!.widthAnchor).isActive = true
+        imageView?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        imageView?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
 }

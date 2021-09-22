@@ -133,6 +133,8 @@ extension SliderViewController {
         centerSlider.angle = 260
         centerSlider.clockwise = true
         centerSlider.delegate = self
+        centerSlider.thumbWidth = 32
+        centerSlider.thumbImage = UIImage(named: "Brightness")
         view.addSubview(centerSlider)
         centerSlider.value = 0.5
         

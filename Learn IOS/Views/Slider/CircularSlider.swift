@@ -45,6 +45,13 @@ class CircularSlider: UIControl {
             thumbView.isHidden = !isEnabled
         }
     }
+    public var thumbImage: UIImage? {
+        didSet {
+            if thumbView != nil {
+                thumbView.image = thumbImage
+            }
+        }
+    }
     
     private var _value: Float = 0
     public var value: Float {
@@ -86,6 +93,10 @@ class CircularSlider: UIControl {
         if thumbView == nil {
             thumbView = ThumbView(width: thumbWidth)
             updateThumbViewPosition()
+        }
+        
+        if thumbImage != nil {
+            thumbView.image = thumbImage
         }
     }
     
