@@ -17,6 +17,7 @@ class CustomButtonViewController: UIViewController {
     private let fanButton = LeButton()
     private let onOffButton = OnOffButton()
     private let uvcButton = UVCButton()
+    private let naturalWindButton = NaturalWindButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class CustomButtonViewController: UIViewController {
     @objc func onClick(_ sender:UIButton) {
         onOffButton.isOn = !onOffButton.isOn
         uvcButton.isOn = !uvcButton.isOn
+        naturalWindButton.isOn = !naturalWindButton.isOn
         UIImpactFeedbackGenerator().impactOccurred()
     }
 }
@@ -43,6 +45,7 @@ extension CustomButtonViewController {
         initFanButton()
         initOnOffButton()
         initUVCButton()
+        initNaturalWindButton()
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -117,6 +120,21 @@ extension CustomButtonViewController {
         constraints.append(uvcButton.leadingAnchor.constraint(equalTo: onOffButton.trailingAnchor, constant: 24))
         constraints.append(uvcButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2))
         constraints.append(uvcButton.heightAnchor.constraint(equalTo: uvcButton.widthAnchor, multiplier: 1.3))
+    }
+    
+    private func initNaturalWindButton() {
+        view.addSubview(naturalWindButton)
+        //naturalWindButton.cornerType = .round
+        //naturalWindButton.setImage(withName: "Leaf", tintColor: UIColor(hexString: "#4CAF50"))
+        //naturalWindButton.setBackgroundColor(UIColor(hexString: "#C8C8C840"))
+        naturalWindButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+        
+        
+        naturalWindButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(naturalWindButton.topAnchor.constraint(equalTo: onOffButton.bottomAnchor, constant: 48))
+        constraints.append(naturalWindButton.leadingAnchor.constraint(equalTo: onOffButton.leadingAnchor))
+        constraints.append(naturalWindButton.widthAnchor.constraint(equalToConstant: 48))
+        constraints.append(naturalWindButton.heightAnchor.constraint(equalTo: backButton.widthAnchor))
     }
 }
 

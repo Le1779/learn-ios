@@ -11,7 +11,7 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     private var firstTime = true
-    private let debugPage = "sliderPage"
+    private let debugPage = "customButtonPage"
 
     override func viewDidLoad() {
         super.viewDidLoad()
