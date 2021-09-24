@@ -21,6 +21,20 @@ class LeButton: UIButton {
         }
     }
     
+    public var setImageSizeWithWidth = true {
+        didSet {
+            update()
+        }
+    }
+    
+    private var size: CGSize = CGSize(width: 0.0, height: 0.0) {
+        didSet {
+            if oldValue.width != size.width || oldValue.height != size.height {
+                update()
+            }
+        }
+    }
+    
     private var originalBackgroundColor: UIColor?
     private var activeBackgroundColor: UIColor?
     private var shadowLayer: ShadowView?
@@ -39,7 +53,7 @@ class LeButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        update()
+        size = CGSize(width: frame.width, height: frame.height)
     }
     
     func setTitle(_ text: String, tintColor: UIColor = .black) {
@@ -74,9 +88,13 @@ class LeButton: UIButton {
 //MARK: Update
 extension LeButton {
     private func update() {
+        if self.size.width != 0 && self.size.height != 0 {
+            let imageSize = (setImageSizeWithWidth ? frame.size.width : frame.size.height)/2
+            let image = self.imageView?.image?.resizeImage(imageSize).withRenderingMode(.alwaysTemplate)
+            super.setImage(image, for: .normal)
+        }
+        
         if cornerType == .round {
-            let edge = frame.size.width/4
-            imageEdgeInsets = UIEdgeInsets(top: edge, left: edge, bottom: edge, right: edge)
             layer.cornerRadius = frame.size.height * 0.5
         }
         

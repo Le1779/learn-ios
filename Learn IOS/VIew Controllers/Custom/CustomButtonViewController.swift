@@ -70,6 +70,7 @@ extension CustomButtonViewController {
         lightButton.setBackgroundColor(UIColor(hexString: "#F4BF71"))
         lightButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
         lightButton.layer.cornerRadius = 20
+        lightButton.setImageSizeWithWidth = false
         lightButton.setTitle("亮度/色溫", tintColor: UIColor(hexString: "#585858"))
         lightButton.setShadow(color: UIColor(hexString: "#F4BF71"), blur: 10)
         
@@ -84,6 +85,7 @@ extension CustomButtonViewController {
         view.addSubview(fanButton)
         fanButton.setImage(withName: "Fan", tintColor: UIColor(hexString: "#585858"))
         fanButton.layer.cornerRadius = 20
+        fanButton.setImageSizeWithWidth = false
         fanButton.setTitle("風扇", tintColor: UIColor(hexString: "#585858"))
         fanButton.setShadow(color: UIColor(hexString: "#00000020"), blur: 10)
         
