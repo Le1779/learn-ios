@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "fan-2.png",
+      "filename" : "fan 1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "fan-3.png",
+      "filename" : "fan 2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "fan-4.png",
+      "filename" : "fan 3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
