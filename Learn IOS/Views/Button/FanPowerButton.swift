@@ -34,8 +34,13 @@ class FanPowerButton: LeButton {
     
     public override init(frame: CGRect){
         super.init(frame: frame)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         self.cornerType = .round
         self.setImage(withName: "Fan", tintColor: UIColor(hexString: "#585858"))
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     required init?(coder: NSCoder) {
@@ -46,6 +51,10 @@ class FanPowerButton: LeButton {
         super.updateLayout()
         self.setShadow(color: UIColor(hexString: "#00000020"), blur: 5)
         updateStatus()
+        rotate()
+    }
+    
+    @objc func applicationDidBecomeActive() {
         rotate()
     }
 }
