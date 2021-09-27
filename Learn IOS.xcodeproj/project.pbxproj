@@ -69,6 +69,7 @@
 		1D87EA362430BD3D00E20BFC /* RGBSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA352430BD3D00E20BFC /* RGBSelector.swift */; };
 		1D87EA382430C29500E20BFC /* RGBSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */; };
 		1D8FDEA126FC59B1009637EE /* NaturalWindButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FDEA026FC59B1009637EE /* NaturalWindButton.swift */; };
+		1D8FDEA326FC8A2C009637EE /* FanPowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FDEA226FC8A2C009637EE /* FanPowerButton.swift */; };
 		1D8FDEA526FD68EB009637EE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FDEA426FD68EB009637EE /* UIImage.swift */; };
 		1D9F8C70246D730A00D9A9E1 /* MoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F8C6F246D730A00D9A9E1 /* MoonViewController.swift */; };
 		1D9F8C72246D732200D9A9E1 /* MoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F8C71246D732200D9A9E1 /* MoonView.swift */; };
@@ -146,6 +147,7 @@
 		1D87EA352430BD3D00E20BFC /* RGBSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSelector.swift; sourceTree = "<group>"; };
 		1D87EA372430C29500E20BFC /* RGBSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBSelectorViewController.swift; sourceTree = "<group>"; };
 		1D8FDEA026FC59B1009637EE /* NaturalWindButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalWindButton.swift; sourceTree = "<group>"; };
+		1D8FDEA226FC8A2C009637EE /* FanPowerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanPowerButton.swift; sourceTree = "<group>"; };
 		1D8FDEA426FD68EB009637EE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		1D9F8C6F246D730A00D9A9E1 /* MoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonViewController.swift; sourceTree = "<group>"; };
 		1D9F8C71246D732200D9A9E1 /* MoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				1D8FDEA026FC59B1009637EE /* NaturalWindButton.swift */,
 				1D4B501526C2A79D00C5427F /* OnOffButton.swift */,
 				1D4B501B26C2E0E000C5427F /* UVCButton.swift */,
+				1D8FDEA226FC8A2C009637EE /* FanPowerButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				1D06AEE126C8410700F860B9 /* ScaleViewController.swift in Sources */,
 				1D7395312421D39800916EB0 /* BleDeviceManager.swift in Sources */,
 				1D3ABD2726CE98CE0026B6C1 /* CenterCollectionView.swift in Sources */,
+				1D8FDEA326FC8A2C009637EE /* FanPowerButton.swift in Sources */,
 				1D0FCA0F242E3F3400D485FD /* ShadowView.swift in Sources */,
 				1D62206224265B2E00F41513 /* SceneSwitchLight.swift in Sources */,
 				1D06AEDF26C7F0B300F860B9 /* Angle.swift in Sources */,
