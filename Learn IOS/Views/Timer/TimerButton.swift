@@ -55,7 +55,7 @@ class TimerButton: LeButton {
             return
         }
         
-        time.text = "\(timeFormatter.string(from: startTime))- \(timeFormatter.string(from: endTime))"
+        time.text = "\(timeFormatter.string(from: startTime)) - \(timeFormatter.string(from: endTime))"
     }
 }
 
