@@ -54,6 +54,7 @@ class LeButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         size = CGSize(width: frame.width, height: frame.height)
+        updateShadowLayer()
     }
     
     func setTitle(_ text: String, tintColor: UIColor = .black) {
@@ -94,8 +95,6 @@ class LeButton: UIButton {
         if cornerType == .round {
             layer.cornerRadius = frame.size.height * 0.5
         }
-        
-        updateShadowLayer()
     }
 }
 
