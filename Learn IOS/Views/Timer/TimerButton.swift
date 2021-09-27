@@ -18,15 +18,6 @@ class TimerButton: LeButton {
         return formatter
     }()
     
-    
-    private var size: CGSize = CGSize(width: 0.0, height: 0.0) {
-        didSet {
-            if oldValue.width != size.width || oldValue.height != size.height {
-                updateLayout()
-            }
-        }
-    }
-    
     private var icon: UIImageView!
     private var title: UILabel!
     private var time: UILabel!
@@ -47,9 +38,12 @@ class TimerButton: LeButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        size = CGSize(width: frame.width, height: frame.height)
+    override func updateLayout() {
+        super.updateLayout()
+        iconLC.constant = self.layer.cornerRadius
+        iconTC.constant = self.layer.cornerRadius
+        titleRC.constant = self.layer.cornerRadius * -1
+        timeBC.constant = self.layer.cornerRadius * -1
     }
     
     public func setTime(startTime: Date?, endTime: Date?) {
@@ -115,15 +109,5 @@ extension TimerButton {
         componentsConstraints.append(time.leadingAnchor.constraint(equalTo: icon.leadingAnchor))
         componentsConstraints.append(time.trailingAnchor.constraint(equalTo: title.trailingAnchor))
         componentsConstraints.append(time.topAnchor.constraint(equalTo: icon.bottomAnchor))
-    }
-}
-
-//MARK: Update
-extension TimerButton {
-    private func updateLayout() {
-        iconLC.constant = self.layer.cornerRadius
-        iconTC.constant = self.layer.cornerRadius
-        titleRC.constant = self.layer.cornerRadius * -1
-        timeBC.constant = self.layer.cornerRadius * -1
     }
 }

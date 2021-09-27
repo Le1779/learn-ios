@@ -17,20 +17,20 @@ class LeButton: UIButton {
     
     public var cornerType: CornerType = .normal {
         didSet {
-            update()
+            updateLayout()
         }
     }
     
     public var setImageSizeWithWidth = true {
         didSet {
-            update()
+            updateLayout()
         }
     }
     
     private var size: CGSize = CGSize(width: 0.0, height: 0.0) {
         didSet {
             if oldValue.width != size.width || oldValue.height != size.height {
-                update()
+                updateLayout()
             }
         }
     }
@@ -75,19 +75,16 @@ class LeButton: UIButton {
     func setShadow(color: UIColor, blur: CGFloat) {
         self.shadowColor = color
         self.shadowBlur = blur
-        if shadowLayer == nil {
-            shadowLayer = ShadowView(shadowRadius: blur, shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 4) ,shadowColor: color)
-            self.superview?.insertSubview(shadowLayer!, belowSubview: self)
-        } else {
-            shadowLayer?.setShadowRadius(shadowRadius: self.shadowBlur)
-            shadowLayer?.setShadowColor(shadowColor: self.shadowColor)
+        if let shadowLayer = shadowLayer {
+            shadowLayer.removeFromSuperview()
         }
+        
+        shadowLayer = ShadowView(shadowRadius: blur, shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 4) ,shadowColor: color)
+        self.superview?.insertSubview(shadowLayer!, belowSubview: self)
+        updateShadowLayer()
     }
-}
-
-//MARK: Update
-extension LeButton {
-    private func update() {
+    
+    func updateLayout() {
         if self.size.width != 0 && self.size.height != 0 {
             let imageSize = (setImageSizeWithWidth ? frame.size.width : frame.size.height)/2
             let image = self.imageView?.image?.resizeImage(imageSize).withRenderingMode(.alwaysTemplate)
@@ -98,6 +95,13 @@ extension LeButton {
             layer.cornerRadius = frame.size.height * 0.5
         }
         
+        updateShadowLayer()
+    }
+}
+
+//MARK: Update
+extension LeButton {
+    private func updateShadowLayer() {
         if let shadow = shadowLayer {
             shadow.setFrame(frame: frame)
             shadow.setBounds(bounds: bounds)

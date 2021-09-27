@@ -16,14 +16,6 @@ class OnOffButton: LeButton {
         }
     }
     
-    private var size: CGSize = CGSize(width: 0.0, height: 0.0) {
-        didSet {
-            if oldValue.width != size.width || oldValue.height != size.height {
-                updateLayout()
-            }
-        }
-    }
-    
     private var indicatorLight = IndicatorLight()
     private var statusLabel = UILabel()
     
@@ -40,9 +32,15 @@ class OnOffButton: LeButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        size = CGSize(width: frame.width, height: frame.height)
+    /**
+     更新子元件的約束，狀態文字垂直置中於指示燈與底部，最少都給予10個邊距
+     */
+    override func updateLayout() {
+        super.updateLayout()
+        let radius = layer.cornerRadius < 10 ? 10 : layer.cornerRadius
+        indicatorLightTC.constant = radius
+        statusLabelBC.constant = -1 * radius/2
+        updateStatus()
     }
 }
 
@@ -87,16 +85,6 @@ extension OnOffButton {
 
 //MARK: Update
 extension OnOffButton {
-    /**
-     更新子元件的約束，狀態文字垂直置中於指示燈與底部，最少都給予10個邊距
-     */
-    private func updateLayout() {
-        let radius = layer.cornerRadius < 10 ? 10 : layer.cornerRadius
-        indicatorLightTC.constant = radius
-        statusLabelBC.constant = -1 * radius/2
-        updateStatus()
-    }
-    
     /**
      更新指示燈與文字，且文字會自動響應寬度
      */

@@ -17,14 +17,6 @@ class UVCButton: LeButton {
         }
     }
     
-    private var size: CGSize = CGSize(width: 0.0, height: 0.0) {
-        didSet {
-            if oldValue.width != size.width || oldValue.height != size.height {
-                updateLayout()
-            }
-        }
-    }
-    
     private var label = UILabel()
     private var borderLayer: CAGradientLayer!
     private var borderMaskLayer = CAShapeLayer()
@@ -41,9 +33,18 @@ class UVCButton: LeButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        size = CGSize(width: frame.width, height: frame.height)
+    /**
+     更新字體大小與字體顏色 & 邊框的大小
+     */
+    override func updateLayout() {
+        super.updateLayout()
+        label.setFontSizeToFill()
+        let gradient = getGradientLayer(bounds: label.bounds)
+        label.textColor = gradientColor(bounds: label.bounds, gradientLayer: gradient)
+        
+        borderLayer.frame = bounds
+        borderMaskLayer.lineWidth = frame.size.width * 0.08
+        borderMaskLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
     }
 }
 
@@ -87,19 +88,6 @@ extension UVCButton {
 
 //MARK: Update
 extension UVCButton {
-    /**
-     更新字體大小與字體顏色 & 邊框的大小
-     */
-    private func updateLayout() {
-        label.setFontSizeToFill()
-        let gradient = getGradientLayer(bounds: label.bounds)
-        label.textColor = gradientColor(bounds: label.bounds, gradientLayer: gradient)
-        
-        borderLayer.frame = bounds
-        borderMaskLayer.lineWidth = frame.size.width * 0.08
-        borderMaskLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
-    }
-    
     private func updateStatus() {
         borderLayer.opacity = isOn ? 1 : 0
     }

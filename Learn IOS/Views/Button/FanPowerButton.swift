@@ -30,14 +30,6 @@ class FanPowerButton: LeButton {
         }
     }
     
-    private var size: CGSize = CGSize(width: 0.0, height: 0.0) {
-        didSet {
-            if oldValue.width != size.width || oldValue.height != size.height {
-                updateLayout()
-            }
-        }
-    }
-    
     private var rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
     
     public override init(frame: CGRect){
@@ -50,20 +42,16 @@ class FanPowerButton: LeButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        size = CGSize(width: frame.width, height: frame.height)
+    override func updateLayout() {
+        super.updateLayout()
+        self.setShadow(color: UIColor(hexString: "#00000020"), blur: 5)
+        updateStatus()
+        rotate()
     }
 }
 
 //MARK: Update
 extension FanPowerButton {
-    private func updateLayout() {
-        self.setShadow(color: UIColor(hexString: "#00000020"), blur: 5)
-        updateStatus()
-        rotate()
-    }
-    
     private func updateStatus() {
         self.tintColor = isOn ? UIColor(hexString: "#585858") : UIColor(hexString: "#C8C8C8")
         
