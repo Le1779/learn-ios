@@ -20,6 +20,7 @@ class CustomButtonViewController: UIViewController {
     private let naturalWindButton = NaturalWindButton()
     private let fanPowerButton = FanPowerButton()
     private let fanSpeedSlider = UISlider()
+    private let clockDirectionButton = ClockDirectionButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,9 @@ class CustomButtonViewController: UIViewController {
         UIImpactFeedbackGenerator().impactOccurred()
     }
     
-    @objc func changeDirection(_ sender:UIButton) {
+    @objc func onFanDirectionChange(_ sender:UIButton) {
         fanPowerButton.clockwise = !fanPowerButton.clockwise
+        clockDirectionButton.clockwise = !clockDirectionButton.clockwise
         UIImpactFeedbackGenerator().impactOccurred()
     }
     
@@ -61,6 +63,7 @@ extension CustomButtonViewController {
         initNaturalWindButton()
         initFanPowerButton()
         initFanSpeedSlider()
+        initClockDirectionButton()
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -152,7 +155,7 @@ extension CustomButtonViewController {
     
     private func initFanPowerButton() {
         view.addSubview(fanPowerButton)
-        fanPowerButton.addTarget(self, action: #selector(changeDirection), for: .touchUpInside)
+        fanPowerButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
         
         fanPowerButton.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(fanPowerButton.topAnchor.constraint(equalTo: naturalWindButton.topAnchor))
@@ -169,6 +172,17 @@ extension CustomButtonViewController {
         constraints.append(fanSpeedSlider.leadingAnchor.constraint(equalTo: lightButton.leadingAnchor))
         constraints.append(fanSpeedSlider.trailingAnchor.constraint(equalTo: fanButton.trailingAnchor))
         constraints.append(fanSpeedSlider.topAnchor.constraint(equalTo: fanPowerButton.bottomAnchor, constant: 12))
+    }
+    
+    private func initClockDirectionButton() {
+        view.addSubview(clockDirectionButton)
+        clockDirectionButton.addTarget(self, action: #selector(onFanDirectionChange), for: .touchUpInside)
+        
+        clockDirectionButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(clockDirectionButton.topAnchor.constraint(equalTo: naturalWindButton.topAnchor))
+        constraints.append(clockDirectionButton.leadingAnchor.constraint(equalTo: fanPowerButton.trailingAnchor, constant: 48))
+        constraints.append(clockDirectionButton.widthAnchor.constraint(equalToConstant: 48))
+        constraints.append(clockDirectionButton.heightAnchor.constraint(equalTo: clockDirectionButton.widthAnchor))
     }
 }
 
