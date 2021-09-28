@@ -17,6 +17,12 @@ class UVCButton: LeButton {
         }
     }
     
+    var lineWidthRatio = 0.08 {
+        didSet {
+            borderMaskLayer.lineWidth = frame.size.width * lineWidthRatio
+        }
+    }
+    
     private var label = UILabel()
     private var borderLayer: CAGradientLayer!
     private var borderMaskLayer = CAShapeLayer()
@@ -43,7 +49,7 @@ class UVCButton: LeButton {
         label.textColor = gradientColor(bounds: label.bounds, gradientLayer: gradient)
         
         borderLayer.frame = bounds
-        borderMaskLayer.lineWidth = frame.size.width * 0.08
+        borderMaskLayer.lineWidth = frame.size.width * lineWidthRatio
         borderMaskLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
     }
 }

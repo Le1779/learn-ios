@@ -21,6 +21,7 @@ class CustomButtonViewController: UIViewController {
     private let fanPowerButton = FanPowerButton()
     private let fanSpeedSlider = UISlider()
     private let clockDirectionButton = ClockDirectionButton()
+    private let smallUVCButton = UVCButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class CustomButtonViewController: UIViewController {
         uvcButton.isOn = !uvcButton.isOn
         naturalWindButton.isOn = !naturalWindButton.isOn
         fanPowerButton.isOn = !fanPowerButton.isOn
+        smallUVCButton.isOn = !smallUVCButton.isOn
         UIImpactFeedbackGenerator().impactOccurred()
     }
     
@@ -64,6 +66,7 @@ extension CustomButtonViewController {
         initFanPowerButton()
         initFanSpeedSlider()
         initClockDirectionButton()
+        initSmallUVCButton()
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -183,6 +186,21 @@ extension CustomButtonViewController {
         constraints.append(clockDirectionButton.leadingAnchor.constraint(equalTo: fanPowerButton.trailingAnchor, constant: 48))
         constraints.append(clockDirectionButton.widthAnchor.constraint(equalToConstant: 48))
         constraints.append(clockDirectionButton.heightAnchor.constraint(equalTo: clockDirectionButton.widthAnchor))
+    }
+    
+    private func initSmallUVCButton() {
+        view.addSubview(smallUVCButton)
+        smallUVCButton.setShadow(color: UIColor(hexString: "#00000020"), blur: 5)
+        smallUVCButton.layer.cornerRadius = 24
+        smallUVCButton.lineWidthRatio = 0.125
+        
+        smallUVCButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+        
+        smallUVCButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(smallUVCButton.topAnchor.constraint(equalTo: naturalWindButton.topAnchor))
+        constraints.append(smallUVCButton.leadingAnchor.constraint(equalTo: clockDirectionButton.trailingAnchor, constant: 48))
+        constraints.append(smallUVCButton.widthAnchor.constraint(equalToConstant: 48))
+        constraints.append(smallUVCButton.heightAnchor.constraint(equalTo: smallUVCButton.widthAnchor))
     }
 }
 
