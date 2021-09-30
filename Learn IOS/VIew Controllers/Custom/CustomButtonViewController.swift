@@ -40,12 +40,16 @@ class CustomButtonViewController: UIViewController {
         onOffButton.isOn = !onOffButton.isOn
         uvcButton.isOn = !uvcButton.isOn
         naturalWindButton.isOn = !naturalWindButton.isOn
-        fanPowerButton.isOn = !fanPowerButton.isOn
         smallUVCButton.isOn = !smallUVCButton.isOn
         lightPowerButton.isOn = !lightPowerButton.isOn
         nightLightPowerButton.isOn = !nightLightPowerButton.isOn
         shieldButton.isOn = !shieldButton.isOn
         UIImpactFeedbackGenerator().impactOccurred()
+    }
+    
+    @objc func onFanPowerClick(_ sender: UIButton) {
+        fanPowerButton.isOn = !fanPowerButton.isOn
+        smallUVCButton.isEnabled = fanPowerButton.isOn
     }
     
     @objc func onFanDirectionChange(_ sender:UIButton) {
@@ -167,7 +171,7 @@ extension CustomButtonViewController {
     
     private func initFanPowerButton() {
         view.addSubview(fanPowerButton)
-        fanPowerButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+        fanPowerButton.addTarget(self, action: #selector(onFanPowerClick), for: .touchUpInside)
         
         fanPowerButton.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(fanPowerButton.topAnchor.constraint(equalTo: naturalWindButton.topAnchor))

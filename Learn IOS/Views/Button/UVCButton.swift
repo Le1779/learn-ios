@@ -13,13 +13,20 @@ class UVCButton: LeButton {
     
     var isOn: Bool = true {
         didSet {
-            updateStatus()
+            updateBorderLayer()
         }
     }
     
     var lineWidthRatio = 0.08 {
         didSet {
             borderMaskLayer.lineWidth = frame.size.width * lineWidthRatio
+        }
+    }
+    
+    override var isEnabled: Bool {
+        didSet {
+            updateBorderLayer()
+            updateFontColor()
         }
     }
     
@@ -32,7 +39,6 @@ class UVCButton: LeButton {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         initComponents()
-        updateStatus()
     }
     
     required init?(coder: NSCoder) {
@@ -45,8 +51,8 @@ class UVCButton: LeButton {
     override func updateLayout() {
         super.updateLayout()
         label.setFontSizeToFill()
-        let gradient = getGradientLayer(bounds: label.bounds)
-        label.textColor = gradientColor(bounds: label.bounds, gradientLayer: gradient)
+        updateBorderLayer()
+        updateFontColor()
         
         borderLayer.frame = bounds
         borderMaskLayer.lineWidth = frame.size.width * lineWidthRatio
@@ -94,8 +100,17 @@ extension UVCButton {
 
 //MARK: Update
 extension UVCButton {
-    private func updateStatus() {
-        borderLayer.opacity = isOn ? 1 : 0
+    private func updateBorderLayer() {
+        borderLayer.opacity = isOn && isEnabled ? 1 : 0
+    }
+    
+    private func updateFontColor() {
+        if isEnabled {
+            let gradient = getGradientLayer(bounds: label.bounds)
+            label.textColor = gradientColor(bounds: label.bounds, gradientLayer: gradient)
+        } else {
+            label.textColor = UIColor(hexString: "#C8C8C8")
+        }
     }
 }
 
