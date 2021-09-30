@@ -12,10 +12,13 @@ class ShieldButton: LeButton {
     
     var isOn: Bool = true {
         didSet {
-            let imageName = isOn ? "Shield" : "ShieldOutline"
-            let imageColor = UIColor(hexString: isOn ? "#585858" : "#C8C8C8")
-            self.setImage(withName: imageName, tintColor: imageColor)
-            self.updateLayout()
+            updateImage()
+        }
+    }
+    
+    override var isEnabled: Bool {
+        didSet {
+            updateImage()
         }
     }
     
@@ -32,5 +35,12 @@ class ShieldButton: LeButton {
     override func updateLayout() {
         super.updateLayout()
         self.setShadow(color: UIColor(hexString: "#00000020"), blur: 5)
+    }
+    
+    private func updateImage() {
+        let imageName = isOn ? "Shield" : "ShieldOutline"
+        let imageColor = UIColor(hexString: isOn && isEnabled ? "#585858" : "#C8C8C8")
+        self.setImage(withName: imageName, tintColor: imageColor)
+        super.updateLayout()
     }
 }

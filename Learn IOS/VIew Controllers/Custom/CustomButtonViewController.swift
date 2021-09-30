@@ -41,9 +41,14 @@ class CustomButtonViewController: UIViewController {
         uvcButton.isOn = !uvcButton.isOn
         naturalWindButton.isOn = !naturalWindButton.isOn
         smallUVCButton.isOn = !smallUVCButton.isOn
-        lightPowerButton.isOn = !lightPowerButton.isOn
         nightLightPowerButton.isOn = !nightLightPowerButton.isOn
         shieldButton.isOn = !shieldButton.isOn
+        UIImpactFeedbackGenerator().impactOccurred()
+    }
+    
+    @objc func onLightPowerClick(_ sender: UIButton) {
+        lightPowerButton.isOn = !lightPowerButton.isOn
+        shieldButton.isEnabled = lightPowerButton.isOn
         UIImpactFeedbackGenerator().impactOccurred()
     }
     
@@ -221,7 +226,7 @@ extension CustomButtonViewController {
     
     private func initLightPowerButton() {
         view.addSubview(lightPowerButton)
-        lightPowerButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+        lightPowerButton.addTarget(self, action: #selector(onLightPowerClick), for: .touchUpInside)
         
         lightPowerButton.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(lightPowerButton.topAnchor.constraint(equalTo: fanSpeedSlider.bottomAnchor, constant: 48))
