@@ -50,6 +50,8 @@ class CustomButtonViewController: UIViewController {
     @objc func onFanPowerClick(_ sender: UIButton) {
         fanPowerButton.isOn = !fanPowerButton.isOn
         smallUVCButton.isEnabled = fanPowerButton.isOn
+        naturalWindButton.isEnabled = fanPowerButton.isOn
+        UIImpactFeedbackGenerator().impactOccurred()
     }
     
     @objc func onFanDirectionChange(_ sender:UIButton) {

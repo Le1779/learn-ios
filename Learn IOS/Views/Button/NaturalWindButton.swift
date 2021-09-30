@@ -16,6 +16,12 @@ class NaturalWindButton: LeButton {
         }
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            updateStatus()
+        }
+    }
+    
     public override init(frame: CGRect){
         super.init(frame: frame)
         self.cornerType = .round
@@ -37,6 +43,6 @@ class NaturalWindButton: LeButton {
 //MARK: Update
 extension NaturalWindButton {
     private func updateStatus() {
-        self.tintColor = isOn ? UIColor(hexString: "#4CAF50") : UIColor(hexString: "#C8C8C8")
+        self.tintColor = isOn && isEnabled ? UIColor(hexString: "#4CAF50") : UIColor(hexString: "#C8C8C8")
     }
 }
