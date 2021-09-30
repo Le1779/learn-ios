@@ -120,11 +120,15 @@ extension UVCButton {
      產生漸層的顏色
      */
     func gradientColor(bounds: CGRect, gradientLayer :CAGradientLayer) -> UIColor? {
-          UIGraphicsBeginImageContext(gradientLayer.bounds.size)
-          gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
-          let image = UIGraphicsGetImageFromCurrentImageContext()
-          UIGraphicsEndImageContext()
-          return UIColor(patternImage: image!)
+        if bounds.size.width == 0 || bounds.size.height == 0 {
+            return nil
+        }
+        
+        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
+        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return UIColor(patternImage: image!)
     }
     
     /**
