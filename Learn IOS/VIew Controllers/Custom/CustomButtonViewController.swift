@@ -22,6 +22,7 @@ class CustomButtonViewController: UIViewController {
     private let fanSpeedSlider = UISlider()
     private let clockDirectionButton = ClockDirectionButton()
     private let smallUVCButton = UVCButton()
+    private let lightPowerButton = LightPowerButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class CustomButtonViewController: UIViewController {
         naturalWindButton.isOn = !naturalWindButton.isOn
         fanPowerButton.isOn = !fanPowerButton.isOn
         smallUVCButton.isOn = !smallUVCButton.isOn
+        lightPowerButton.isOn = !lightPowerButton.isOn
         UIImpactFeedbackGenerator().impactOccurred()
     }
     
@@ -67,6 +69,7 @@ extension CustomButtonViewController {
         initFanSpeedSlider()
         initClockDirectionButton()
         initSmallUVCButton()
+        initLightPowerButton()
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -201,6 +204,17 @@ extension CustomButtonViewController {
         constraints.append(smallUVCButton.leadingAnchor.constraint(equalTo: clockDirectionButton.trailingAnchor, constant: 48))
         constraints.append(smallUVCButton.widthAnchor.constraint(equalToConstant: 48))
         constraints.append(smallUVCButton.heightAnchor.constraint(equalTo: smallUVCButton.widthAnchor))
+    }
+    
+    private func initLightPowerButton() {
+        view.addSubview(lightPowerButton)
+        lightPowerButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+        
+        lightPowerButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(lightPowerButton.topAnchor.constraint(equalTo: fanSpeedSlider.bottomAnchor, constant: 48))
+        constraints.append(lightPowerButton.leadingAnchor.constraint(equalTo: naturalWindButton.leadingAnchor))
+        constraints.append(lightPowerButton.widthAnchor.constraint(equalToConstant: 48))
+        constraints.append(lightPowerButton.heightAnchor.constraint(equalTo: lightPowerButton.widthAnchor))
     }
 }
 

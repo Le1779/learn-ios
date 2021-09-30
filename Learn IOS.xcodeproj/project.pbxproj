@@ -16,6 +16,7 @@
 		1D0FCA08242B9B3000D485FD /* Custom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0FCA07242B9B3000D485FD /* Custom.storyboard */; };
 		1D0FCA0B242B9B7D00D485FD /* CustomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */; };
 		1D0FCA0F242E3F3400D485FD /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0E242E3F3400D485FD /* ShadowView.swift */; };
+		1D17578527045C050045C173 /* LightPowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17578427045C050045C173 /* LightPowerButton.swift */; };
 		1D21DA3A2462682F00450209 /* StarrySkyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D21DA392462682F00450209 /* StarrySkyView.swift */; };
 		1D28D05526DCD16500923667 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28D05426DCD16500923667 /* EmptyViewController.swift */; };
 		1D28D05726DCD4D200923667 /* EmptyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28D05626DCD4D200923667 /* EmptyCollectionView.swift */; };
@@ -93,6 +94,7 @@
 		1D0FCA07242B9B3000D485FD /* Custom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Custom.storyboard; sourceTree = "<group>"; };
 		1D0FCA0A242B9B7D00D485FD /* CustomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewController.swift; sourceTree = "<group>"; };
 		1D0FCA0E242E3F3400D485FD /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		1D17578427045C050045C173 /* LightPowerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightPowerButton.swift; sourceTree = "<group>"; };
 		1D21DA392462682F00450209 /* StarrySkyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyView.swift; sourceTree = "<group>"; };
 		1D28D05426DCD16500923667 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		1D28D05626DCD4D200923667 /* EmptyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				1D8FDEA827019016009637EE /* ClockDirectionButton.swift */,
 				1D8FDEA226FC8A2C009637EE /* FanPowerButton.swift */,
 				1D4B501226C1B1A100C5427F /* LeButton.swift */,
+				1D17578427045C050045C173 /* LightPowerButton.swift */,
 				1D8FDEA026FC59B1009637EE /* NaturalWindButton.swift */,
 				1D4B501526C2A79D00C5427F /* OnOffButton.swift */,
 				1D4B501B26C2E0E000C5427F /* UVCButton.swift */,
@@ -536,6 +539,7 @@
 				1D4B501126C1A20D00C5427F /* UIColor.swift in Sources */,
 				1D87EA362430BD3D00E20BFC /* RGBSelector.swift in Sources */,
 				1D6270D523D14394001D146B /* MainTableViewController.swift in Sources */,
+				1D17578527045C050045C173 /* LightPowerButton.swift in Sources */,
 				1D859D6F241776A10026746D /* BleScanTableViewCell.swift in Sources */,
 				1D4B501E26C3E13F00C5427F /* SliderViewController.swift in Sources */,
 				1D303C3624CE791E00630B70 /* ModifyDevicePWDViewController.swift in Sources */,
