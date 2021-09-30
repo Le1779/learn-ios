@@ -12,8 +12,13 @@ class ClockDirectionButton: LeButton {
     
     var clockwise: Bool = true {
         didSet {
-            self.setImage(withName: clockwise ? "Clockwise" : "CounterClockwise", tintColor: UIColor(hexString: "#585858"))
-            self.updateLayout()
+            updateImage()
+        }
+    }
+    
+    override var isEnabled: Bool {
+        didSet {
+            updateImage()
         }
     }
     
@@ -30,5 +35,12 @@ class ClockDirectionButton: LeButton {
     override func updateLayout() {
         super.updateLayout()
         self.setShadow(color: UIColor(hexString: "#00000020"), blur: 5)
+    }
+    
+    private func updateImage() {
+        let imageName = clockwise ? "Clockwise" : "CounterClockwise"
+        let imageColor = UIColor(hexString: isEnabled ? "#585858" : "#C8C8C8")
+        self.setImage(withName: imageName, tintColor: imageColor)
+        super.updateLayout()
     }
 }
