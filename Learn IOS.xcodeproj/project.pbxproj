@@ -18,6 +18,7 @@
 		1D0FCA0F242E3F3400D485FD /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FCA0E242E3F3400D485FD /* ShadowView.swift */; };
 		1D17578527045C050045C173 /* LightPowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17578427045C050045C173 /* LightPowerButton.swift */; };
 		1D175787270551710045C173 /* NightLightPowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D175786270551700045C173 /* NightLightPowerButton.swift */; };
+		1D17578927055C350045C173 /* ShieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17578827055C350045C173 /* ShieldButton.swift */; };
 		1D21DA3A2462682F00450209 /* StarrySkyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D21DA392462682F00450209 /* StarrySkyView.swift */; };
 		1D28D05526DCD16500923667 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28D05426DCD16500923667 /* EmptyViewController.swift */; };
 		1D28D05726DCD4D200923667 /* EmptyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28D05626DCD4D200923667 /* EmptyCollectionView.swift */; };
@@ -97,6 +98,7 @@
 		1D0FCA0E242E3F3400D485FD /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1D17578427045C050045C173 /* LightPowerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightPowerButton.swift; sourceTree = "<group>"; };
 		1D175786270551700045C173 /* NightLightPowerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightLightPowerButton.swift; sourceTree = "<group>"; };
+		1D17578827055C350045C173 /* ShieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldButton.swift; sourceTree = "<group>"; };
 		1D21DA392462682F00450209 /* StarrySkyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyView.swift; sourceTree = "<group>"; };
 		1D28D05426DCD16500923667 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		1D28D05626DCD4D200923667 /* EmptyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionView.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				1D8FDEA026FC59B1009637EE /* NaturalWindButton.swift */,
 				1D175786270551700045C173 /* NightLightPowerButton.swift */,
 				1D4B501526C2A79D00C5427F /* OnOffButton.swift */,
+				1D17578827055C350045C173 /* ShieldButton.swift */,
 				1D4B501B26C2E0E000C5427F /* UVCButton.swift */,
 			);
 			path = Button;
@@ -536,6 +539,7 @@
 				1D30E356241CFA97006CEC8F /* LearnBLEViewController.swift in Sources */,
 				1D30E363241F6B1A006CEC8F /* BleHelper.swift in Sources */,
 				1D6270D823D18047001D146B /* LearnBLEViewControllerOLD.swift in Sources */,
+				1D17578927055C350045C173 /* ShieldButton.swift in Sources */,
 				1D30E35D241D2296006CEC8F /* ScanBleTableViewCell.swift in Sources */,
 				1D28D05526DCD16500923667 /* EmptyViewController.swift in Sources */,
 				1D06AEDB26C7C19D00F860B9 /* CircularSlider.swift in Sources */,

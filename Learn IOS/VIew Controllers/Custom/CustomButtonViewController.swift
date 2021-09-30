@@ -24,6 +24,7 @@ class CustomButtonViewController: UIViewController {
     private let smallUVCButton = UVCButton()
     private let lightPowerButton = LightPowerButton()
     private let nightLightPowerButton = NightLightPowerButton()
+    private let shieldButton = ShieldButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class CustomButtonViewController: UIViewController {
         smallUVCButton.isOn = !smallUVCButton.isOn
         lightPowerButton.isOn = !lightPowerButton.isOn
         nightLightPowerButton.isOn = !nightLightPowerButton.isOn
+        shieldButton.isOn = !shieldButton.isOn
         UIImpactFeedbackGenerator().impactOccurred()
     }
     
@@ -73,6 +75,7 @@ extension CustomButtonViewController {
         initSmallUVCButton()
         initLightPowerButton()
         initNightLightPowerButton()
+        initShieldButton()
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -228,7 +231,18 @@ extension CustomButtonViewController {
         constraints.append(nightLightPowerButton.topAnchor.constraint(equalTo: fanSpeedSlider.bottomAnchor, constant: 48))
         constraints.append(nightLightPowerButton.leadingAnchor.constraint(equalTo: lightPowerButton.trailingAnchor, constant: 48))
         constraints.append(nightLightPowerButton.widthAnchor.constraint(equalToConstant: 48))
-        constraints.append(nightLightPowerButton.heightAnchor.constraint(equalTo: lightPowerButton.widthAnchor))
+        constraints.append(nightLightPowerButton.heightAnchor.constraint(equalTo: nightLightPowerButton.widthAnchor))
+    }
+    
+    private func initShieldButton() {
+        view.addSubview(shieldButton)
+        shieldButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+        
+        shieldButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(shieldButton.topAnchor.constraint(equalTo: fanSpeedSlider.bottomAnchor, constant: 48))
+        constraints.append(shieldButton.leadingAnchor.constraint(equalTo: nightLightPowerButton.trailingAnchor, constant: 48))
+        constraints.append(shieldButton.widthAnchor.constraint(equalToConstant: 48))
+        constraints.append(shieldButton.heightAnchor.constraint(equalTo: shieldButton.widthAnchor))
     }
 }
 
