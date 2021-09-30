@@ -23,6 +23,7 @@ class CustomButtonViewController: UIViewController {
     private let clockDirectionButton = ClockDirectionButton()
     private let smallUVCButton = UVCButton()
     private let lightPowerButton = LightPowerButton()
+    private let nightLightPowerButton = NightLightPowerButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class CustomButtonViewController: UIViewController {
         fanPowerButton.isOn = !fanPowerButton.isOn
         smallUVCButton.isOn = !smallUVCButton.isOn
         lightPowerButton.isOn = !lightPowerButton.isOn
+        nightLightPowerButton.isOn = !nightLightPowerButton.isOn
         UIImpactFeedbackGenerator().impactOccurred()
     }
     
@@ -70,6 +72,7 @@ extension CustomButtonViewController {
         initClockDirectionButton()
         initSmallUVCButton()
         initLightPowerButton()
+        initNightLightPowerButton()
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -215,6 +218,17 @@ extension CustomButtonViewController {
         constraints.append(lightPowerButton.leadingAnchor.constraint(equalTo: naturalWindButton.leadingAnchor))
         constraints.append(lightPowerButton.widthAnchor.constraint(equalToConstant: 48))
         constraints.append(lightPowerButton.heightAnchor.constraint(equalTo: lightPowerButton.widthAnchor))
+    }
+    
+    private func initNightLightPowerButton() {
+        view.addSubview(nightLightPowerButton)
+        nightLightPowerButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+        
+        nightLightPowerButton.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(nightLightPowerButton.topAnchor.constraint(equalTo: fanSpeedSlider.bottomAnchor, constant: 48))
+        constraints.append(nightLightPowerButton.leadingAnchor.constraint(equalTo: lightPowerButton.trailingAnchor, constant: 48))
+        constraints.append(nightLightPowerButton.widthAnchor.constraint(equalToConstant: 48))
+        constraints.append(nightLightPowerButton.heightAnchor.constraint(equalTo: lightPowerButton.widthAnchor))
     }
 }
 
