@@ -27,6 +27,12 @@ class LeButton: UIButton {
         }
     }
     
+    public var imageRatio: CGFloat = 0.5 {
+        didSet {
+            updateLayout()
+        }
+    }
+    
     private var size: CGSize = CGSize(width: 0.0, height: 0.0) {
         didSet {
             if oldValue.width != size.width || oldValue.height != size.height {
@@ -87,7 +93,7 @@ class LeButton: UIButton {
     
     func updateLayout() {
         if self.size.width != 0 && self.size.height != 0 {
-            let imageSize = (setImageSizeWithWidth ? frame.size.width : frame.size.height)/2
+            let imageSize = (setImageSizeWithWidth ? frame.size.width : frame.size.height) * imageRatio
             let image = self.imageView?.image?.resizeImage(imageSize).withRenderingMode(.alwaysTemplate)
             super.setImage(image, for: .normal)
         }
