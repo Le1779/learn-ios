@@ -63,7 +63,6 @@ class CircularSlider: UIControl {
             if value >= 0 && value <= 1 {
                 self._value = value
                 updateThumbViewPosition()
-                delegate?.onChanged(value, slider: self)
             }
         }
     }
@@ -116,7 +115,7 @@ class CircularSlider: UIControl {
         let originAngle = path.getOriginAngle(currentAngle)
         let rate = Float(originAngle)/Float(angle)
         self.value = rate
-        
+        delegate?.onChanged(value, slider: self)
         return true
     }
     
