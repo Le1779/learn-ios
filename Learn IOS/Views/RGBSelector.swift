@@ -140,6 +140,7 @@ class RGBSelector: UITableViewController {
             
             self.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
             self.backgroundColor = .clear
+            self.selectionStyle = .none
         }
         
         required init?(coder: NSCoder) {
